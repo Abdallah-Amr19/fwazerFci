@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار إسلامي</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #f4e6d4;
+            /* background-image: url('./16217.jpg'); */
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 20px;
+            color: #5a3e2b;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 245, 225, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(90, 62, 43, 0.3);
+            border: 2px solid #8b5e3c;
+        }
+        h1 {
+            color: #8b5e3c;
+            font-weight: bold;
+            border-bottom: 2px solid #5a3e2b;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .task-card, .question-card {
+            background: #fdf3e7;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(90, 62, 43, 0.2);
+            margin-bottom: 15px;
+            text-align: right;
+        }
+        .task-card label, .question-card p {
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .task-card input[type="checkbox"] {
+            margin-left: 10px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            background: #8b5e3c;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .options button:hover {
+            background: #5a3e2b;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .progress {
+            height: 20px;
+            background-color: #8b5e3c;
+            width: 0;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="logo"><img src="./DALL·E 2025-02-02 17.19.58 - A minimalist logo featuring the name 'fwazeerFci' in a simple and elegant brown design. The typography should be clean and modern, with a single subtl.png" alt=""></div>
+        <h1>1:رمضان</h1>
+        <div id="quiz">
+            <div class="question-card">
+                <p>ما هو أول مسجد بُني في الإسلام؟</p>
+                <div class="options">
+                    <button onclick="checkAnswer(this, 'صح')">مسجد قباء</button>
+                    <button onclick="checkAnswer(this, 'خطأ')">المسجد النبوي</button>
+                    <button onclick="checkAnswer(this, 'خطأ')">المسجد الأقصى</button>
+                    <button onclick="checkAnswer(this, 'خطأ')">المسجد الحرام</button>
+                </div>
+            </div>
+        </div>
+        <h1>المهام اليومية</h1>
+        <div class="task-card">
+            <input type="checkbox" id="task1" onclick="updateScore()">
+            <label for="task1">صلاة الفجر</label>
+        </div>
+        <div class="task-card">
+            <input type="checkbox" id="task2" onclick="updateScore()">
+            <label for="task2">قراءة القرآن</label>
+        </div>
+        <div class="task-card">
+            <input type="checkbox" id="task3" onclick="updateScore()">
+            <label for="task3">الذكر الصباحي</label>
+        </div>
+        <div class="task-card">
+            <input type="checkbox" id="task4" onclick="updateScore()">
+            <label for="task4">مساعدة الآخرين</label>
+        </div>
+        <h1>نتيجتك</h1>
+        <div class="progress-bar">
+            <div class="progress" id="progress">0%</div>
+        </div>
+    </div>
+    <script>
+        let score = 0;
+        function checkAnswer(button, status) {
+            if (status === 'صح') {
+                score++;
+            }
+            updateProgress();
+        }
+        function updateScore() {
+            score++;
+            updateProgress();
+        }
+        function updateProgress() {
+            let progress = document.getElementById('progress');
+            let percentage = (score / 10) * 100;
+            progress.style.width = percentage + '%';
+            progress.innerText = Math.round(percentage) + '%';
+        }
+    </script>
+</body>
+</html>
