@@ -9,8 +9,8 @@
         
         body {
             font-family: 'Amiri', serif;
-            /* background-color: #f4e6d4; */
-            background-color: aqua;
+            background-color: #f4e6d4;
+            
             /* background-image: url('./16217.jpg'); */
             background-size: cover;
             background-attachment: fixed;
@@ -27,7 +27,7 @@
             box-shadow: 0 0 15px rgba(90, 62, 43, 0.3);
             border: 2px solid #8b5e3c;
         }
-        h1 {
+        h1,h3 {
             color: #8b5e3c;
             font-weight: bold;
             border-bottom: 2px solid #5a3e2b;
@@ -85,7 +85,8 @@
 <body>
     <div class="container">
       <div class="logo"><img src="./DALL·E 2025-02-02 17.19.58 - A minimalist logo featuring the name 'fwazeerFci' in a simple and elegant brown design. The typography should be clean and modern, with a single subtl.png" alt=""></div>
-        <h1>2:رمضان</h1>
+        <h1>1:رمضان</h1>
+        <h3>السؤال الاول</h3>
         <div id="quiz">
             <div class="question-card">
                 <p>ما هو أول مسجد بُني في الإسلام؟</p>
@@ -100,19 +101,23 @@
         <h1>المهام اليومية</h1>
         <div class="task-card">
             <input type="checkbox" id="task1" onclick="updateScore()">
-            <label for="task1">صلاة الفجر</label>
+            <label for="task1"> الصلوات الخمس</label>
         </div>
         <div class="task-card">
             <input type="checkbox" id="task2" onclick="updateScore()">
-            <label for="task2">قراءة القرآن</label>
+            <label for="task2">ورد القرآن</label>
         </div>
         <div class="task-card">
             <input type="checkbox" id="task3" onclick="updateScore()">
-            <label for="task3">الذكر الصباحي</label>
+            <label for="task3"> اذكار الصباح</label>
         </div>
         <div class="task-card">
             <input type="checkbox" id="task4" onclick="updateScore()">
-            <label for="task4">مساعدة الآخرين</label>
+            <label for="task4"> اذكار المساء</label>
+        </div>
+        <div class="task-card">
+            <input type="checkbox" id="task5" onclick="updateScore()">
+            <label for="task5"> قيام الليل </label>
         </div>
         <h1>نتيجتك</h1>
         <div class="progress-bar">
