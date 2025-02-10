@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اختبار إسلامي</title>
+    <title>Fawazeer Fci</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
         
         body {
             font-family: 'Amiri', serif;
             background-color: #f4e6d4;
-            
-            /* background-image: url('./16217.jpg'); */
             background-size: cover;
             background-attachment: fixed;
             text-align: center;
@@ -33,6 +31,20 @@
             border-bottom: 2px solid #5a3e2b;
             padding-bottom: 10px;
             margin-bottom: 20px;
+        }
+        .result{
+            display: flex;
+            justify-content: center;
+        }
+        .result p:first-child{
+            font-size: 26px;
+            color: #2E8B57;
+            font-weight: bold;
+        }
+        .result p:last-child{
+            font-size: 26px;
+            color:crimson;
+            font-weight: bold;
         }
         .task-card, .question-card {
             background: #fdf3e7;
@@ -80,11 +92,17 @@
             color: white;
             line-height: 20px;
         }
+        .points-display {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b5e3c;
+        }
     </style>
 </head>
 <body>
-    <div class="container" >
-      <div class="logo" style="display: flex; justify-content: center;"><img src="./DALL·E 2025-02-02 17.19.58 - A minimalist logo featuring the name 'fwazeerFci' in a simple and elegant brown design. The typography should be clean and modern, with a single subtl.png" alt=""></div>
+    <div class="container">
+        <div class="logo" style="display: flex; justify-content: center;"><img src="./DALL·E 2025-02-02 17.19.58 - A minimalist logo featuring the name 'fwazeerFci' in a simple and elegant brown design. The typography should be clean and modern, with a single subtl.png" alt=""></div>
         <h1>1:رمضان</h1>
         <h3>السؤال الثاني</h3>
         <div id="quiz">
@@ -96,51 +114,74 @@
                     <button onclick="checkAnswer(this, 'خطأ')">المسجد الأقصى</button>
                     <button onclick="checkAnswer(this, 'خطأ')">المسجد الحرام</button>
                 </div>
+                <div class="result">
+                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
             </div>
         </div>
         <h1>المهام اليومية</h1>
         <div class="task-card">
-            <input type="checkbox" id="task1" onclick="updateScore()">
+            <input type="checkbox" id="task1" onclick="updateScore(10)">
             <label for="task1"> الصلوات الخمس</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task2" onclick="updateScore()">
+            <input type="checkbox" id="task2" onclick="updateScore(10)">
             <label for="task2">ورد القرآن</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task3" onclick="updateScore()">
+            <input type="checkbox" id="task3" onclick="updateScore(10)">
             <label for="task3"> اذكار الصباح</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task4" onclick="updateScore()">
+            <input type="checkbox" id="task4" onclick="updateScore(10)">
             <label for="task4"> اذكار المساء</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task5" onclick="updateScore()">
+            <input type="checkbox" id="task5" onclick="updateScore(10)">
             <label for="task5"> قيام الليل </label>
         </div>
+
         <h1>نتيجتك</h1>
         <div class="progress-bar">
             <div class="progress" id="progress">0%</div>
         </div>
+        <div class="points-display" id="points">0 نقطة من 5 نقاط</div>
     </div>
     <script>
+        const corect = document.getElementById("corect_ans");
+        const false_ans = document.getElementById("false_ans");
+        corect.style.display = "none";
+        false_ans.style.display = "none";
         let score = 0;
+
         function checkAnswer(button, status) {
             if (status === 'صح') {
-                score++;
+                score += 25; 
+                corect.style.display = "block";
+                false_ans.style.display = "none";
+            } else {
+                false_ans.style.display = "block";
+                corect.style.display = "none";
             }
             updateProgress();
         }
-        function updateScore() {
-            score++;
+
+        function updateScore(points) {
+            score += points;  
             updateProgress();
         }
+
         function updateProgress() {
             let progress = document.getElementById('progress');
-            let percentage = (score / 10) * 100;
+            let pointsDisplay = document.getElementById('points');
+            let percentage = Math.min(score, 100);
+            
+            let pointsEarned = (percentage / 100 * 5).toFixed(1);
+            
             progress.style.width = percentage + '%';
             progress.innerText = Math.round(percentage) + '%';
+            pointsDisplay.innerText = pointsEarned + ' نقطة من 5 نقاط';
         }
     </script>
 </body>
