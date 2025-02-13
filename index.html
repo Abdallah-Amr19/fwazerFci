@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Lemonada:wght@300..700&family=Noto+Sans+JP:wght@100..900&family=Rakkas&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
     <title>Fawazeer Fci</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
-        
+    
+    
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Hind:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
         body {
-            font-family: 'Amiri', serif;
+            font-family: "Aref Ruqaa", serif;
             background: linear-gradient(135deg, #f4e6d4, #e0c8a8);
             background-size: 200% 200%;
             animation: gradientAnimation 10s ease infinite;
@@ -32,6 +35,7 @@
             border-bottom: 2px solid #5a3e2b;
             padding-bottom: 10px;
             margin-bottom: 20px;
+            font-size: 26px;
         }
         .result{
             display: flex;
@@ -69,8 +73,10 @@ color: #2E8B57;
             text-align: right;
         }
         .task-card label, .question-card p {
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
+    font-family: "Baloo Bhaijaan 2", serif;
+
         }
         .task-card input[type="checkbox"] {
             margin-left: 10px;
@@ -97,7 +103,7 @@ color: #2E8B57;
         .progress-bar {
             width: 100%;
             background-color: #ddd;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             margin-top: 20px;
         }
@@ -109,6 +115,8 @@ color: #2E8B57;
             color: white;
             line-height: 20px;
             transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+            padding-block: 5px;
+
         }
         .progress.completed {
             animation: glowAnimation 1.5s infinite alternate;
@@ -169,6 +177,16 @@ button {
     font-size: 18px;
     cursor: pointer;
     transition: background 0.3s ease-in-out, transform 0.2s ease;
+    font-family: "Baloo Bhaijaan 2", serif;
+}
+.reset-button{
+    font-family: "Baloo Bhaijaan 2", serif;
+
+}
+@media(max-width:480px){
+    #answerInput {
+        width: 91.7%;
+    }
 }
 
 button:hover {
@@ -284,7 +302,7 @@ button:active {
         <div class="logo" style="display: flex; justify-content: center;">
             <img src="./DALL·E 2025-02-02 17.19.58 - A minimalist logo featuring the name 'fwazeerFci' in a simple and elegant brown design. The typography should be clean and modern, with a single subtl.png" alt="">
         </div>
-        <h1>2:رمضان</h1>
+        <h1 style="font-size: 43px;">1:رمضان</h1>
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
@@ -303,37 +321,7 @@ button:active {
                     <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
                 </p>
             </div>
-        <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟</p>
-                <div class="options">
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">الأكل من الشجره</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">القتل</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">الحسد</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">السرقة</button>
-                </div>
-                <div class="result">
-                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="define_ans2"> <span>الحسد</span><br> وذلك عندما حسد إبليس سيدنا آدم علي مكانته عند الله تعالى
-                    <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
-                </p>
-            </div>
-            <h3>السؤال الثالث</h3>
-<div class="question-card">
-    <p>ما هو أول بيت بني في الأرض لعبادة الله؟</p>
-    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-    <div class="result">
-        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-    </div>
-    <p id="defineTextAnswer" style="display: none;">
-        <span>الكعبة المشرفة</span><br>
-        وهي أول بيت وضع للناس لعبادة الله تعالى.
-    </p>
-</div>
+       
         </div>
         <h1>المهام اليومية</h1>
         <div class="task-card">
@@ -362,7 +350,7 @@ button:active {
             <div class="progress" id="progress">0%</div>
         </div>
         <div class="points-display" id="points">0 نقطة من 5 نقاط</div>
-        <button  id="resetButton" class="reset-button">إعادة تعيين البيانات</button>
+        <button style="display: none;"  id="resetButton" class="reset-button">إعادة تعيين البيانات</button>
     </div>
 
     <script>
