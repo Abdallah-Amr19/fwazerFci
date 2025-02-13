@@ -39,17 +39,41 @@
 </div>
 
     <script>
-        // نجيب كل الأزرار عن طريق الـ class
-        const buttons = document.querySelectorAll('.myButton');
+         function checkTextAnswer() {
+    const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
+    const correctAnswers = ["الكعبة المشرفة", "الكعبة", "بيت الله الحرام"]; // إجابات صحيحة متعددة
+    const correctTextAnswer = document.getElementById('correctTextAnswer');
+    const falseTextAnswer = document.getElementById('falseTextAnswer');
+    const defineTextAnswer = document.getElementById('defineTextAnswer');
 
-        // نضيف event listener لكل زر
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                // نعطل الزر بعد النقر
-                button.disabled = true;
-                alert(`تم النقر على ${button.textContent} ولن يعمل مرة أخرى.`);
-            });
-        });
+    // التحقق مما إذا كانت الإجابة المدخلة تطابق أيًا من الإجابات الصحيحة
+    const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
+
+    if (isCorrect) {
+        correctTextAnswer.style.display = "block";
+        falseTextAnswer.style.display = "none";
+        defineTextAnswer.style.display = "none";
+        score += 25; // إضافة النقاط
+        createConfetti();
+        localStorage.setItem('textAnswerState', 'correct');
+    } else {
+        falseTextAnswer.style.display = "block";
+        correctTextAnswer.style.display = "none";
+        defineTextAnswer.style.display = "block";
+        localStorage.setItem('textAnswerState', 'wrong');
+    }
+
+    updateProgress(); // تحديث شريط التقدم
+    localStorage.setItem('score', score); // حفظ النقاط في localStorage
+}
+
+// 8888888888888888
+const submit_button = document.getElementById('submit_button');
+
+submit_button.addEventListener('click', function() {
+    submit_button.disabled = true;
+})
+       
     </script>
 </body>
 </html>
