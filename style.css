@@ -1,0 +1,83 @@
+/* New Animations CSS */
+@keyframes slideInRight {
+  from {
+      transform: translateX(100px);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(139, 94, 60, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(139, 94, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 94, 60, 0); }
+}
+
+@keyframes taskComplete {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { 
+      transform: scale(1);
+      color: #2E8B57;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #8b5e3c;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+      transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Additional Styles */
+.question-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(90, 62, 43, 0.3);
+}
+
+.options button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.options button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(90, 62, 43, 0.2);
+}
+
+.options button:active {
+  transform: translateY(0);
+}

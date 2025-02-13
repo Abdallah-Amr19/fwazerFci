@@ -9,9 +9,9 @@
         
         body {
             font-family: 'Amiri', serif;
-            background-color: #f4e6d4;
-            background-size: cover;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #f4e6d4, #e0c8a8);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
             text-align: center;
             padding: 20px;
             color: #5a3e2b;
@@ -40,11 +40,13 @@
             font-size: 26px;
             color: #2E8B57;
             font-weight: bold;
+            animation: correctAnimation 0.5s ease-in-out;
         }
         .result p:last-child{
             font-size: 26px;
-            color:crimson;
+            color: crimson;
             font-weight: bold;
+            animation: wrongAnimation 0.5s ease-in-out;
         }
         .task-card, .question-card {
             background: #fdf3e7;
@@ -72,7 +74,10 @@
             color: white;
             font-size: 18px;
             cursor: pointer;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.2s ease;
+        }
+        .options button:active {
+            transform: scale(0.95); /* انضغاط عند الضغط */
         }
         .options button:hover {
             background: #5a3e2b;
@@ -91,13 +96,199 @@
             text-align: center;
             color: white;
             line-height: 20px;
+            transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+        }
+        .progress.completed {
+            animation: glowAnimation 1.5s infinite alternate; /* توهج عند اكتمال النسبة */
         }
         .points-display {
             margin-top: 10px;
             font-size: 20px;
             font-weight: bold;
             color: #8b5e3c;
+            animation: scaleAnimation 0.5s ease-in-out;
         }
+
+        /* Animations */
+        @keyframes correctAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); background-color: #d4edda; }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes wrongAnimation {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes scaleAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glowAnimation {
+            0% { box-shadow: 0 0 10px #8b5e3c; }
+            100% { box-shadow: 0 0 20px #8b5e3c; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .task-card input[type="checkbox"]:checked + label {
+            animation: bounce 0.5s ease; /* تأرجح عند التحديد */
+        }
+        /* New Animations CSS */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(139, 94, 60, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(139, 94, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 94, 60, 0); }
+}
+
+@keyframes taskComplete {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { 
+        transform: scale(1);
+        color: #2E8B57;
+    }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #8b5e3c;
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Additional Styles */
+.question-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(90, 62, 43, 0.3);
+}
+
+.options button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.options button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(90, 62, 43, 0.2);
+}
+
+.options button:active {
+    transform: translateY(0);
+}
+/* ... (Previous CSS remains the same) ... */
+
+/* Celebration Ribbons */
+.celebration-ribbon {
+    position: fixed;
+    top: -100px;
+    width: 8px;
+    height: 100px;
+    background-color: #FFD700;
+    transform-origin: 50% 0;
+    animation: fallRibbon 3s ease-in infinite;
+    z-index: 1000;
+}
+
+.ribbon-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: waveRibbon 2s ease-in-out infinite;
+}
+
+@keyframes fallRibbon {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes waveRibbon {
+    0%, 100% {
+        transform: skewX(0deg);
+    }
+    25% {
+        transform: skewX(10deg);
+    }
+    75% {
+        transform: skewX(-10deg);
+    }
+}
+
+/* Container position relative for ribbons */
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Make sure ribbons appear above other content */
+.celebration-ribbon {
+    pointer-events: none;
+}
     </style>
 </head>
 <body>
@@ -182,7 +373,201 @@
             progress.style.width = percentage + '%';
             progress.innerText = Math.round(percentage) + '%';
             pointsDisplay.innerText = pointsEarned + ' نقطة من 5 نقاط';
+
+            if (percentage === 100) {
+                progress.classList.add('completed');
+            } else {
+                progress.classList.remove('completed');
+            }
         }
+// Utility function for adding multiple classes
+function addClasses(element, classes) {
+    classes.forEach(cls => element.classList.add(cls));
+}
+
+// Utility function for removing multiple classes
+function removeClasses(element, classes) {
+    classes.forEach(cls => element.classList.remove(cls));
+}
+
+// Animation for question cards
+function animateQuestionCard() {
+    const questionCards = document.querySelectorAll('.question-card');
+    questionCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 100);
+    });
+}
+
+// Enhanced check answer animation
+function checkAnswer(button, status) {
+    const corect = document.getElementById("corect_ans");
+    const false_ans = document.getElementById("false_ans");
+    const buttons = document.querySelectorAll('.options button');
+    
+    // Reset all buttons
+    buttons.forEach(btn => {
+        btn.style.transform = 'scale(1)';
+        btn.style.backgroundColor = '#8b5e3c';
+    });
+    
+    if (status === 'صح') {
+        score += 25;
+        button.style.backgroundColor = '#2E8B57';
+        button.style.transform = 'scale(1.05)';
+        
+        // Animate correct answer display
+        corect.style.display = "block";
+        corect.style.animation = "slideInRight 0.5s ease-out, bounce 1s ease infinite";
+        false_ans.style.display = "none";
+        
+        // Confetti effect
+        createConfetti();
+    } else {
+        button.style.backgroundColor = '#DC143C';
+        button.style.animation = "shake 0.5s ease-in-out";
+        
+        false_ans.style.display = "block";
+        false_ans.style.animation = "slideInLeft 0.5s ease-out";
+        corect.style.display = "none";
+    }
+    
+    updateProgress();
+}
+
+// Confetti effect
+function createConfetti() {
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confetti.style.opacity = Math.random();
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 5000);
+    }
+}
+
+// Enhanced progress bar animation
+function updateProgress() {
+    const progress = document.getElementById('progress');
+    const pointsDisplay = document.getElementById('points');
+    let percentage = Math.min(score, 100);
+    
+    // Smooth progress bar animation
+    progress.style.transition = 'width 1s cubic-bezier(0.4, 0, 0.2, 1)';
+    progress.style.width = percentage + '%';
+    
+    // Animated counter
+    animateValue(progress, parseInt(progress.innerText), Math.round(percentage), 1000);
+    
+    let pointsEarned = (percentage / 100 * 5).toFixed(1);
+    pointsDisplay.innerText = pointsEarned + ' نقطة من 5 نقاط';
+    
+    if (percentage === 100) {
+        progress.classList.add('completed');
+        progress.style.animation = "pulse 2s infinite";
+    } else {
+        progress.classList.remove('completed');
+    }
+}
+
+// Animate number counter
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.innerText = value + '%';
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Task checkbox animation
+function initializeTaskAnimations() {
+    const checkboxes = document.querySelectorAll('.task-card input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const label = this.nextElementSibling;
+            if (this.checked) {
+                label.style.animation = "taskComplete 0.5s ease-out forwards";
+                updateScore(10);
+            } else {
+                label.style.animation = "none";
+                score -= 10;
+                updateProgress();
+            }
+        });
+    });
+}
+// ... (Previous animation code remains the same until updateProgress function)
+
+function updateProgress() {
+    const progress = document.getElementById('progress');
+    const pointsDisplay = document.getElementById('points');
+    let percentage = Math.min(score, 100);
+    
+    // Smooth progress bar animation
+    progress.style.transition = 'width 1s cubic-bezier(0.4, 0, 0.2, 1)';
+    progress.style.width = percentage + '%';
+    
+    // Animated counter
+    animateValue(progress, parseInt(progress.innerText), Math.round(percentage), 1000);
+    
+    let pointsEarned = (percentage / 100 * 5).toFixed(1);
+    pointsDisplay.innerText = pointsEarned + ' نقطة من 5 نقاط';
+    
+    if (percentage === 100) {
+        progress.classList.add('completed');
+        progress.style.animation = "pulse 2s infinite";
+        createCelebrationRibbons();
+    } else {
+        progress.classList.remove('completed');
+        removeCelebrationRibbons();
+    }
+}
+
+// Create celebration ribbons
+function createCelebrationRibbons() {
+    // Remove existing ribbons first
+    removeCelebrationRibbons();
+    
+    // Create multiple ribbons with different colors
+    const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEEAD'];
+    const container = document.querySelector('.container');
+    
+    for (let i = 0; i < 20; i++) {
+        const ribbon = document.createElement('div');
+        ribbon.className = 'celebration-ribbon';
+        ribbon.style.left = `${Math.random() * 100}%`;
+        ribbon.style.animationDelay = `${Math.random() * 2}s`;
+        ribbon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Create a wave pattern in the ribbon
+        const wave = document.createElement('div');
+        wave.className = 'ribbon-wave';
+        ribbon.appendChild(wave);
+        
+        container.appendChild(ribbon);
+    }
+}
+
+// Remove celebration ribbons
+function removeCelebrationRibbons() {
+    const ribbons = document.querySelectorAll('.celebration-ribbon');
+    ribbons.forEach(ribbon => ribbon.remove());
+}
     </script>
 </body>
 </html>
