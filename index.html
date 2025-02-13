@@ -142,6 +142,64 @@ color: #2E8B57;
         .reset-button:active {
             transform: translateY(0);
         }
+        #answerInput {
+    width: 95.7%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #8b5e3c;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Amiri', serif;
+    text-align: right;
+}
+
+#answerInput::placeholder {
+    color: #aaa;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background: #8b5e3c;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+button:hover {
+    background: #5a3e2b;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#correctTextAnswer, #falseTextAnswer {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;
+}
+
+#correctTextAnswer {
+    color: #2E8B57;
+    animation: correctAnimation 0.5s ease-in-out;
+}
+
+#falseTextAnswer {
+    color: crimson;
+    animation: wrongAnimation 0.5s ease-in-out;
+}
+
+#defineTextAnswer span {
+    font-size: 36px;
+    color: #2E8B57;
+}
 
         /* Animations */
         @keyframes correctAnimation {
@@ -262,6 +320,20 @@ color: #2E8B57;
                     <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
                 </p>
             </div>
+            <h3>السؤال الثالث</h3>
+<div class="question-card">
+    <p>ما هو أول بيت بني في الأرض لعبادة الله؟</p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>الكعبة المشرفة</span><br>
+        وهي أول بيت وضع للناس لعبادة الله تعالى.
+    </p>
+</div>
         </div>
         <h1>المهام اليومية</h1>
         <div class="task-card">
@@ -290,7 +362,7 @@ color: #2E8B57;
             <div class="progress" id="progress">0%</div>
         </div>
         <div class="points-display" id="points">0 نقطة من 5 نقاط</div>
-        <button style="display: none;" id="resetButton" class="reset-button">إعادة تعيين البيانات</button>
+        <button  id="resetButton" class="reset-button">إعادة تعيين البيانات</button>
     </div>
 
     <script>
@@ -311,9 +383,86 @@ color: #2E8B57;
         define_ans2.style.display = "none";
 
         let score = 0;
+        function checkTextAnswer() {
+    const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
+    const correctAnswers = ["الكعبة المشرفة", "الكعبة", "بيت الله الحرام"]; // إجابات صحيحة متعددة
+    const correctTextAnswer = document.getElementById('correctTextAnswer');
+    const falseTextAnswer = document.getElementById('falseTextAnswer');
+    const defineTextAnswer = document.getElementById('defineTextAnswer');
 
+    // التحقق مما إذا كانت الإجابة المدخلة تطابق أيًا من الإجابات الصحيحة
+    const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
+
+    if (isCorrect) {
+        correctTextAnswer.style.display = "block";
+        falseTextAnswer.style.display = "none";
+        defineTextAnswer.style.display = "none";
+        score += 25; // إضافة النقاط
+        createConfetti();
+        localStorage.setItem('textAnswerState', 'correct');
+    } else {
+        falseTextAnswer.style.display = "block";
+        correctTextAnswer.style.display = "none";
+        defineTextAnswer.style.display = "block";
+        localStorage.setItem('textAnswerState', 'wrong');
+    }
+
+    updateProgress(); // تحديث شريط التقدم
+    localStorage.setItem('score', score); // حفظ النقاط في localStorage
+}
+
+// دالة لتوحيد شكل النص العربي
+function normalizeArabicText(text) {
+    return text
+        .trim()
+        .toLowerCase()
+        // إزالة التشكيل
+        .replace(/[\u064B-\u065F]/g, '')
+        // توحيد شكل الهمزات والألف
+        .replace(/[أإآا]/g, 'ا')
+        .replace(/[ىي]/g, 'ي')
+        .replace(/ة/g, 'ه');
+}
+const submit_button = document.getElementById('submit_button');
+
+submit_button.addEventListener('click', function() {
+    submit_button.disabled = true;
+})
+window.addEventListener('load', () => {
+    const answerInput = document.getElementById('answerInput');
+    const submitButton = document.querySelector('.submit-button');
+    const correctTextAnswer = document.getElementById('correctTextAnswer');
+    const falseTextAnswer = document.getElementById('falseTextAnswer');
+    const defineTextAnswer = document.getElementById('defineTextAnswer');
+
+    if (localStorage.getItem('textAnswerSubmitted') === 'true') {
+        answerInput.disabled = true;
+        submitButton.disabled = true;
+        
+        if (localStorage.getItem('textAnswerCorrect') === 'true') {
+            correctTextAnswer.style.display = "block";
+            falseTextAnswer.style.display = "none";
+            defineTextAnswer.style.display = "none";
+        } else {
+            falseTextAnswer.style.display = "block";
+            correctTextAnswer.style.display = "none";
+            defineTextAnswer.style.display = "block";
+        }
+    }
+    const savedTextAnswer = localStorage.getItem('textAnswerState');
+    if (savedTextAnswer === 'correct') {
+        document.getElementById('correctTextAnswer').style.display = 'block';
+    } else if (savedTextAnswer === 'wrong') {
+        document.getElementById('falseTextAnswer').style.display = 'block';
+        document.getElementById('defineTextAnswer').style.display = 'block';
+    }
+});
         // دالة لإعادة تعيين جميع البيانات
         function resetAllData() {
+            document.getElementById('answerInput').value = '';
+    document.getElementById('correctTextAnswer').style.display = 'none';
+    document.getElementById('falseTextAnswer').style.display = 'none';
+    document.getElementById('defineTextAnswer').style.display = 'none';
             if (true) {
                 // مسح جميع البيانات من Local Storage
                 localStorage.clear();
