@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعطيل الأزرار بعد النقر</title>
+</head>
+<body>
+    <button class="myButton">زر 1</button>
+    <button class="myButton">زر 2</button>
+    <button class="myButton">زر 3</button>
+    <button class="myButton">زر 4</button>
+
+    <script>
+        // نجيب كل الأزرار عن طريق الـ class
+        const buttons = document.querySelectorAll('.myButton');
+
+        // نضيف event listener لكل زر
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                // نعطل الزر بعد النقر
+                button.disabled = true;
+                alert(`تم النقر على ${button.textContent} ولن يعمل مرة أخرى.`);
+            });
+        });
+    </script>
+</body>
+</html>
