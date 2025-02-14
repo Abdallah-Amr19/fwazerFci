@@ -344,23 +344,23 @@ button:active {
         </div>
         <h1>المهام اليومية</h1>
         <div class="task-card">
-            <input type="checkbox" id="task1" onclick="updateScore(10)">
+            <input class="checkboxs" type="checkbox" id="task1" onclick="updateScore(10)">
             <label for="task1">الصلوات الخمس</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task2" onclick="updateScore(10)">
+            <input class="checkboxs" type="checkbox" id="task2" onclick="updateScore(10)">
             <label for="task2">ورد القرآن</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task3" onclick="updateScore(10)">
+            <input class="checkboxs" type="checkbox" id="task3" onclick="updateScore(10)">
             <label for="task3">اذكار الصباح</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task4" onclick="updateScore(10)">
+            <input class="checkboxs" type="checkbox" id="task4" onclick="updateScore(10)">
             <label for="task4">اذكار المساء</label>
         </div>
         <div class="task-card">
-            <input type="checkbox" id="task5" onclick="updateScore(10)">
+            <input class="checkboxs" type="checkbox" id="task5" onclick="updateScore(10)">
             <label for="task5">قيام الليل</label>
         </div>
 
@@ -369,7 +369,7 @@ button:active {
             <div class="progress" id="progress">0%</div>
         </div>
         <div class="points-display" id="points">0 نقطة من 5 نقاط</div>
-        <button style="display: none;" id="resetButton" class="reset-button">إعادة تعيين البيانات</button>
+        <button style="display: block;" id="resetButton" class="reset-button">إعادة تعيين البيانات</button>
     </div>
 
     <script>
@@ -534,6 +534,17 @@ window.addEventListener('load', () => {
                     task.nextElementSibling.style.animation = "taskComplete 0.5s ease-out forwards";
                 }
             });
+            const checkboxes = document.querySelectorAll(".checkboxs");
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            checkbox.disabled = true;
+          
+        } 
+    });
+});
+        
 
             const buttons = document.querySelectorAll('.ans_buttons');
             buttons.forEach(button => {
@@ -541,6 +552,7 @@ window.addEventListener('load', () => {
                 const savedButtonState = localStorage.getItem(buttonId);
                 if (savedButtonState === 'clicked') {
                     button.disabled = true;
+                    
                 }
             });
 
