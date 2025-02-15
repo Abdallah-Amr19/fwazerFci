@@ -318,6 +318,8 @@ button:active {
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">القتل</button>
                     <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">الحسد</button>
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">السرقة</button>
+                    <button class="strike" onclick="checkAnswer(this, 'خطأ')">السرقة</button>
+                    
                 </div>
                 <div class="result">
                     <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
@@ -482,6 +484,7 @@ window.addEventListener('load', () => {
                 tasks.forEach(task => {
                     task.checked = false;
                     task.nextElementSibling.style.animation = "none";
+                  
                 });
                 
                 // إعادة تعيين الأزرار
@@ -490,6 +493,7 @@ window.addEventListener('load', () => {
                     button.disabled = false;
                     
                 });
+                
 
                 // const buttons2 = document.querySelectorAll('.ans_buttons2');
                 // buttons2.forEach(button2 => {
@@ -535,13 +539,27 @@ window.addEventListener('load', () => {
                 }
             });
             const checkboxes = document.querySelectorAll(".checkboxs");
+            const task_card = document.querySelectorAll(" .task-card");
+           
+
+   
 
 checkboxes.forEach(checkbox => {
+    
     checkbox.addEventListener('change', function () {
         if (this.checked) {
             checkbox.disabled = true;
           
         } 
+    });
+});
+task_card.forEach(card => {
+    
+    card.addEventListener('click', function () {
+      
+            card.style.opacity = "16%"
+            
+        
     });
 });
         
