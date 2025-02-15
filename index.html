@@ -301,6 +301,33 @@ button:active {
                 opacity: 0;
             }
         }
+        .task-card input[type="checkbox"] {
+            appearance: none; /* إخفاء المظهر الافتراضي */
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8b5e3c;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            position: relative;
+    top: 0.7vw;
+        }
+.task-card input[type="checkbox"]:checked{
+    background-color: #8b5e3c; /* تغيير لون الخلفية عند التحديد */
+    border-color: #8b5e3c;
+}        
+.task-card input[type="checkbox"]:checked::after {
+    content: "✔";
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: -4px;
+    /* bottom: 0; */
+    right: 0;
+    left: 0;
+        }
     </style>
 </head>
 <body>
@@ -345,23 +372,23 @@ button:active {
             </div>
         </div>
         <h1>المهام اليومية</h1>
-        <div class="task-card">
+        <div  id="task-card1" class="task-card">
             <input class="checkboxs" type="checkbox" id="task1" onclick="updateScore(10)">
             <label for="task1">الصلوات الخمس</label>
         </div>
-        <div class="task-card">
+        <div id="task-card2" class="task-card">
             <input class="checkboxs" type="checkbox" id="task2" onclick="updateScore(10)">
             <label for="task2">ورد القرآن</label>
         </div>
-        <div class="task-card">
+        <div id="task-card3" class="task-card">
             <input class="checkboxs" type="checkbox" id="task3" onclick="updateScore(10)">
             <label for="task3">اذكار الصباح</label>
         </div>
-        <div class="task-card">
+        <div id="task-card4" class="task-card">
             <input class="checkboxs" type="checkbox" id="task4" onclick="updateScore(10)">
             <label for="task4">اذكار المساء</label>
         </div>
-        <div class="task-card">
+        <div id="task-card5" class="task-card">
             <input class="checkboxs" type="checkbox" id="task5" onclick="updateScore(10)">
             <label for="task5">قيام الليل</label>
         </div>
@@ -538,41 +565,7 @@ window.addEventListener('load', () => {
                     task.nextElementSibling.style.animation = "taskComplete 0.5s ease-out forwards";
                 }
             });
-            const checkboxes = document.querySelectorAll(".checkboxs");
-            const task_card = document.querySelectorAll(" .task-card");
            
-
-   
-
-checkboxes.forEach(checkbox => {
-    
-    checkbox.addEventListener('change', function () {
-        if (this.checked) {
-            checkbox.disabled = true;
-          
-        } 
-    });
-});
-task_card.forEach(card => {
-    
-    card.addEventListener('click', function () {
-      
-            card.style.opacity = "15%"
-            
-        
-    });
-});
-        
-
-            const buttons = document.querySelectorAll('.ans_buttons');
-            buttons.forEach(button => {
-                const buttonId = button.textContent.trim();
-                const savedButtonState = localStorage.getItem(buttonId);
-                if (savedButtonState === 'clicked') {
-                    button.disabled = true;
-                    
-                }
-            });
 
             // const buttons2 = document.querySelectorAll('.ans_buttons2');
             // buttons2.forEach(button2 => {
@@ -746,6 +739,92 @@ task_card.forEach(card => {
                 }
             });
         });
+        const taskCards = document.querySelectorAll('.task-card');
+
+// استعادة الحالة من Local Storage عند تحميل الصفحة
+window.addEventListener('load', () => {
+    taskCards.forEach(card => {
+        const cardId = card.id; // استخدام الـ ID كمفتاح
+        const savedOpacity = localStorage.getItem(cardId);
+        if (savedOpacity) {
+            card.style.opacity = savedOpacity; // تطبيق الحالة المحفوظة
+        }
+    });
+});
+
+// تحديث الحالة في Local Storage عند النقر على الـ Task Card
+taskCards.forEach(card => {
+    card.addEventListener('click', function () {
+        const cardId = card.id; // استخدام الـ ID كمفتاح
+        card.style.opacity = "16%"; // تغيير الـ opacity
+        localStorage.setItem(cardId, "16%"); // حفظ الحالة في Local Storage
+    });
+});
+
+const checkboxes = document.querySelectorAll(".checkboxs");
+
+// استعادة الحالة من Local Storage عند تحميل الصفحة
+window.addEventListener('load', () => {
+    checkboxes.forEach(checkbox => {
+        const checkboxId = checkbox.id; // استخدام الـ ID كمفتاح
+        const savedState = localStorage.getItem(checkboxId);
+        if (savedState === 'checked') {
+            checkbox.checked = true;
+            checkbox.disabled = true; // تعطيل الـ Checkbox إذا كان محددًا
+        }
+    });
+});
+
+// تحديث الحالة في Local Storage عند تغيير حالة الـ Checkbox
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        const checkboxId = checkbox.id; // استخدام الـ ID كمفتاح
+        if (this.checked) {
+            checkbox.disabled = true; // تعطيل الـ Checkbox
+            localStorage.setItem(checkboxId, 'checked'); // حفظ الحالة في Local Storage
+        }
+    });
+});
+
+            const buttons = document.querySelectorAll('.ans_buttons');
+            buttons.forEach(button => {
+                const buttonId = button.textContent.trim();
+                const savedButtonState = localStorage.getItem(buttonId);
+                if (savedButtonState === 'clicked') {
+                    button.disabled = true;
+                    
+                }
+            });
+
+            const checkboxess = document.querySelectorAll('input[type="checkbox"]');
+// استعادة الحالة من Local Storage عند تحميل الصفحة
+window.addEventListener('load', () => {
+    checkboxess.forEach(checkbox => {
+        const checkboxId = checkbox.id;
+        const savedState = localStorage.getItem(checkboxId);
+        if (savedState === 'checked') {
+            checkbox.checked = true;
+            checkbox.style.backgroundColor = "#8b5e3c";
+            checkbox.style.borderColor = "#8b5e3c";
+        }
+    });
+});
+
+// تحديث الحالة في Local Storage عند تغيير حالة الـ Checkbox
+checkboxess.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        const checkboxId = checkbox.id;
+        if (this.checked) {
+            this.style.backgroundColor = "#8b5e3c";
+            this.style.borderColor = "#8b5e3c";
+            localStorage.setItem(checkboxId, 'checked');
+        } else {
+            this.style.backgroundColor = "";
+            this.style.borderColor = "";
+            localStorage.removeItem(checkboxId);
+        }
+    });
+});
     </script>
 </body>
 </html>
