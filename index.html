@@ -348,12 +348,12 @@ button:active {
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
-                <p>ما هو اخر ذنب اُرتكب في السماء و الأرض ؟</p>
+                <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟</p>
                 <div class="options">
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> من الشجره</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الغناء</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">المعازف</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">محمد</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الأكل من الشجره</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">القتل</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">الحسد</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">السرقة</button>
                 </div>
                 <div class="result">
                     <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
@@ -365,7 +365,7 @@ button:active {
             </div>
             <h3>السؤال الثاني</h3>
             <div class="question-card">
-                <p>ما هو اخر بيت بني في الأرض لعبادة الله؟</p>
+                <p>ما هو أول بيت بني في الأرض لعبادة الله؟</p>
                 <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
                 <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
                 <div class="result">
@@ -427,7 +427,7 @@ button:active {
         let score = 0;
         function checkTextAnswer() {
     const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
-   const correctAnswers = ["مسي ", "كرستيانو", " محمدصلاح "];
+   const correctAnswers = ["الكعبة المشرفة", "الكعبة", "بيت الله الحرام"];
     const correctTextAnswer = document.getElementById('correctTextAnswer');
     const falseTextAnswer = document.getElementById('falseTextAnswer');
     const defineTextAnswer = document.getElementById('defineTextAnswer');
