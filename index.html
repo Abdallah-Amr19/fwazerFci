@@ -338,7 +338,7 @@ button:active {
 <body>
     <div class="container">
         <div class="icon_con">
-            <button style="display: block;" id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <button style="display: none;" id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
         </div>
         
         <div class="logo" style="display: flex; justify-content: center;">
@@ -552,7 +552,7 @@ window.addEventListener('load', () => {
         }
 
         // إضافة مستمع الحدث لزر إعادة التعيين
-        document.getElementById('resetButton').addEventListener('click', resetAllData);
+        // resetAllData;
 
         // استعادة البيانات من Local Storage عند تحميل الصفحة
         window.addEventListener('load', () => {
