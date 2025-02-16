@@ -131,10 +131,10 @@ color: #2E8B57;
             animation: scaleAnimation 0.5s ease-in-out;
         }
 
-        .reset-button {
+        .resetButton {
             margin-top: 20px;
             padding: 12px 24px;
-            background-color: #dc3545;
+            background: transparent;
             color: white;
             border: none;
             border-radius: 8px;
@@ -144,12 +144,12 @@ color: #2E8B57;
             transition: all 0.3s ease;
         }
 
-        .reset-button:hover {
-            background-color: #c82333;
+        .resetButton:hover {
+           
             transform: translateY(-2px);
         }
 
-        .reset-button:active {
+        .resetButton:active {
             transform: translateY(0);
         }
         #answerInput {
@@ -167,7 +167,7 @@ color: #2E8B57;
     color: #aaa;
 }
 
-button {
+#submit_button,.ans_buttons {
     display: block;
     width: 100%;
     padding: 12px;
@@ -185,6 +185,9 @@ button {
     font-family: "Baloo Bhaijaan 2", serif;
 
 }
+.icon_con{
+    transform: translate(5%, -45%);
+}
 @media(max-width:480px){
     #answerInput {
         width: 91.7%;
@@ -192,10 +195,13 @@ button {
     body{
         background: linear-gradient(135deg, #f4e6d4, #e0c8a8);
     }
+    .icon_con{
+        transform: translate(7%, -44%);
+    }
 
 }
 
-button:hover {
+#submit_button:hover {
     background: #5a3e2b;
 }
 
@@ -331,10 +337,14 @@ button:active {
 </head>
 <body>
     <div class="container">
+        <div class="icon_con">
+            <button style="display: block;" id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+        </div>
+        
         <div class="logo" style="display: flex; justify-content: center;">
             <img src="./DALL·E 2025-02-02 17.19.58 - A minimalist logo featuring the name 'fwazeerFci' in a simple and elegant brown design. The typography should be clean and modern, with a single subtl.png" alt="">
         </div>
-        <h1 style="font-size: 43px;">1:رمضان</h1>
+        <h1 style="font-size: 43px;">1:رمضان </h1>
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
@@ -344,8 +354,6 @@ button:active {
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">القتل</button>
                     <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">الحسد</button>
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">السرقة</button>
-                    <button class="strike" onclick="checkAnswer(this, 'خطأ')">السرقة</button>
-                    
                 </div>
                 <div class="result">
                     <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
@@ -397,7 +405,6 @@ button:active {
             <div class="progress" id="progress">0%</div>
         </div>
         <div class="points-display" id="points">0 نقطة من 5 نقاط</div>
-        <button style="display: block;" id="resetButton" class="reset-button">إعادة تعيين البيانات</button>
     </div>
 
     <script>
