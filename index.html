@@ -554,11 +554,9 @@ window.addEventListener('load', () => {
         }
 
         // إضافة مستمع الحدث لزر إعادة التعيين
-        document.getElementById('resetButton').addEventListener('click', resetAllData);
-        const resetButton = document.getElementById("resetButton")
-        resetButton.addEventListener("click",function(){
+        resetAllData()
 // resetButton.style.display = "none"
-        })
+        
         // استعادة البيانات من Local Storage عند تحميل الصفحة
         window.addEventListener('load', () => {
             const savedScore = localStorage.getItem('score');
