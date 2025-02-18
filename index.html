@@ -340,6 +340,7 @@ button:active {
     <div class="container">
         <div class="icon_con">
             <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
         </div>
         
         <div class="logo" style="display: flex; justify-content: center;">
@@ -507,7 +508,6 @@ window.addEventListener('load', () => {
     document.getElementById('correctTextAnswer').style.display = 'none';
     document.getElementById('falseTextAnswer').style.display = 'none';
     document.getElementById('defineTextAnswer').style.display = 'none';
-            if (true) {
                 // مسح جميع البيانات من Local Storage
                 localStorage.clear();
                 
@@ -528,14 +528,9 @@ window.addEventListener('load', () => {
                     button.disabled = false;
                     
                 });
-               
-                
-                // const submit_button = document.getElementById('submit_button');
-
                 const submit_button = document.getElementById('submit_button');
-
-
-    submit_button.disabled = false;
+                submit_button.disabled = false;
+                
 
 
                 // const buttons2 = document.querySelectorAll('.ans_buttons2');
@@ -544,60 +539,45 @@ window.addEventListener('load', () => {
                     
                 // });
                 
-              
+                
                 // إعادة تعيين حالة الإجابة
                 corect.style.display = "none";
                 false_ans.style.display = "none";
                 define_ans.style.display = "none";
                
-                ans_buttons.forEach(button => {
-                button.style.backgroundColor = '#8b5e3c';
-                
-            });
-           
-        
-           
-            ans_buttons.forEach(btn => {
-                btn.disabled = false;
-                localStorage.setItem(btn.textContent.trim(), 'clicked');
-            });
-        
-           
+               ans_buttons.forEach(button => {
+               button.style.backgroundColor = '#8b5e3c';
 
+            
+           });
                 // corect2.style.display = "none";
                 // false_ans2.style.display = "none";
                 // تحديث شريط التقدم
                 updateProgress();
-                resetTasksH()
-                resetCheckboxA()
                 
                 // إزالة جميع الأشرطة الاحتفالية
                 removeCelebrationRibbons();
+                resetCheckboxA()
+                resetTasksH()
                 
                 // إعادة تحميل الصفحة
+                // location.reload();
             }
-        }
-
-       
- 
-        // إضافة مستمع الحدث لزر إعادة التعيين
+        
         const resetButton = document.getElementById('resetButton');
-
+        const resetButton2 = document.getElementById('resetButton2');
         // دالة لإعادة تعيين البيانات
         
         // حدث النقر على الزر
         resetButton.addEventListener('click', function () {
             resetAllData(); // إعادة تعيين البيانات
             resetButton.style.display = "none"; // إخفاء الزر
-
             // حفظ حالة الزر في localStorage
             localStorage.setItem('resetButtonState', 'hidden');
         });
-
         // استعادة حالة الزر عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function () {
             const buttonState = localStorage.getItem('resetButtonState');
-
             if (buttonState === 'hidden') {
                 resetButton.style.display = "none"; // إخفاء الزر إذا كانت حالته مخفية
             } else {
@@ -605,15 +585,24 @@ window.addEventListener('load', () => {
             }
         });
 
-        // دالة لإعادة تعيين كل شيء (اختيارية)
-        function resetEverything() {
-            localStorage.removeItem('resetButtonState'); // مسح حالة الزر من localStorage
-            resetButton.style.display = "block"; // إعادة عرض الزر
-           
-        }
 
-        
+        resetButton2.addEventListener('click', function () {
+            resetAllData(); // إعادة تعيين البيانات
+            resetButton2.style.display = "none"; // إخفاء الزر
+            // حفظ حالة الزر في localStorage
+            localStorage.setItem('resetButtonState2', 'hidden');
+        });
+        // استعادة حالة الزر عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttonState2 = localStorage.getItem('resetButtonState2');
+            if (buttonState2 === 'hidden') {
+                resetButton2.style.display = "none"; // إخفاء الزر إذا كانت حالته مخفية
+            } else {
+                resetButton2.style.display = "block"; // عرض الزر إذا لم يكن مخفيًا
+            }
+        });
 
+      
         // استعادة البيانات من Local Storage عند تحميل الصفحة
         window.addEventListener('load', () => {
             const savedScore = localStorage.getItem('score');
@@ -670,7 +659,6 @@ window.addEventListener('load', () => {
 
         //     }
         });
-        
 
         function checkAnswer(button, status) {
             if (status === 'صح') {
@@ -688,7 +676,11 @@ window.addEventListener('load', () => {
                 define_ans.style.display = "block";
 
             }
-        
+            
+            ans_buttons.forEach(btn => {
+                btn.disabled = true;
+                localStorage.setItem(btn.textContent.trim(), 'clicked');
+            });
             
             updateProgress();
             localStorage.setItem('score', score);
@@ -815,17 +807,6 @@ window.addEventListener('load', () => {
     });
 });
 
-function resetTasksH(){
-    const taskCards = document.querySelectorAll('.task-card');
-
-taskCards.forEach(card => {
-
-
-card.style.opacity = "100%"; 
-});
-
-
-}
 // تحديث الحالة في Local Storage عند النقر على الـ Task Card
 taskCards.forEach(card => {
     card.addEventListener('click', function () {
@@ -901,27 +882,6 @@ window.addEventListener('load', () => {
         }
     });
 });
-function resetCheckboxA(){
-    const checkboxess = document.querySelectorAll('input[type="checkbox"]');
-// استعادة الحالة من Local Storage عند تحميل الصفحة
-
-    checkboxess.forEach(checkbox => {
-      
-            checkbox.style.backgroundColor = "#fdf3e7";
-            checkbox.style.borderColor = "#8b5e3c";
-        }
-    );
-
-    checkboxes.forEach(checkbox => {
-    
-       
-            checkbox.disabled = false; // تعطيل الـ Checkbox
-            // حفظ الحالة في Local Storage
-        
-    });
-
-
-}
 
 // تحديث الحالة في Local Storage عند تغيير حالة الـ Checkbox
 checkboxess.forEach(checkbox => {
@@ -939,8 +899,32 @@ checkboxess.forEach(checkbox => {
     });
 });
 
+function resetCheckboxA(){
+    const checkboxess = document.querySelectorAll('input[type="checkbox"]');
+// استعادة الحالة من Local Storage عند تحميل الصفحة
+    checkboxess.forEach(checkbox => {
+      
+            checkbox.style.backgroundColor = "#fdf3e7";
+            checkbox.style.borderColor = "#8b5e3c";
+        }
+    );
+    checkboxes.forEach(checkbox => {
+    
+       
+            checkbox.disabled = false; // تعطيل الـ Checkbox
+            // حفظ الحالة في Local Storage
+        
+    });
+}
 
+function resetTasksH(){
+    const taskCards = document.querySelectorAll('.task-card');
+taskCards.forEach(card => {
+card.style.opacity = "100%"; 
+});
+}
 
+// localStorage.clear()
     </script>
 </body>
 </html>
