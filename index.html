@@ -31,6 +31,28 @@
             box-shadow: 0 0 15px rgba(90, 62, 43, 0.3);
             border: 2px solid #8b5e3c;
         }
+        .logo{
+            display: flex
+;
+    justify-content: center;
+    flex-direction: column;
+    /* text-align: center; */
+    align-items: center;
+        }
+        .logo img {
+width: 200px;
+transform: translateY(22%);
+        }
+        .logo p {
+            font-size: 40px;
+            font-weight: bolder;
+            color: #604129;
+            line-height: 1;
+    font-family: "Baloo Bhaijaan 2", serif;
+letter-spacing: 2.8px;
+        }
+            
+        
         h1,h3 {
             color: #8b5e3c;
             font-weight: bold;
@@ -339,12 +361,13 @@ button:active {
 <body>
     <div class="container">
         <div class="icon_con">
-            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
             <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
         </div>
         
-        <div class="logo" style="display: flex; justify-content: center;">
-            <img src="./DALL·E 2025-02-02 17.19.58 - A minimalist logo featuring the name 'fwazeerFci' in a simple and elegant brown design. The typography should be clean and modern, with a single subtl.png" alt="">
+        <div class="logo">
+            <img src="./islamic.svg" alt="">
+            <p>فوازير <br>Fci</p>
         </div>
         <h1 style="font-size: 43px;">1:رمضان </h1>
         <h3>السؤال الأول</h3>
@@ -502,7 +525,6 @@ window.addEventListener('load', () => {
         document.getElementById('defineTextAnswer').style.display = 'block';
     }
 });
-        // دالة لإعادة تعيين جميع البيانات
         function resetAllData() {
             document.getElementById('answerInput').value = '';
     document.getElementById('correctTextAnswer').style.display = 'none';
@@ -564,38 +586,38 @@ window.addEventListener('load', () => {
                 // location.reload();
             }
         
-        const resetButton = document.getElementById('resetButton');
-        const resetButton2 = document.getElementById('resetButton2');
-        // دالة لإعادة تعيين البيانات
+        // const resetButton = document.getElementById('resetButton');
+        // // دالة لإعادة تعيين البيانات
         
-        // حدث النقر على الزر
-        resetButton.addEventListener('click', function () {
-            resetAllData(); // إعادة تعيين البيانات
-            resetButton.style.display = "none"; // إخفاء الزر
-            // حفظ حالة الزر في localStorage
-            localStorage.setItem('resetButtonState', 'hidden');
-        });
-        // استعادة حالة الزر عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', function () {
-            const buttonState = localStorage.getItem('resetButtonState');
-            if (buttonState === 'hidden') {
-                resetButton.style.display = "none"; // إخفاء الزر إذا كانت حالته مخفية
-            } else {
-                resetButton.style.display = "block"; // عرض الزر إذا لم يكن مخفيًا
-            }
-        });
+        // // حدث النقر على الزر
+        // resetButton.addEventListener('click', function () {
+        //     resetAllData(); // إعادة تعيين البيانات
+        //     resetButton.style.display = "none"; // إخفاء الزر
+        //     // حفظ حالة الزر في localStorage
+        //     localStorage.setItem('resetButtonState', 'hidden');
+        // });
+        // // استعادة حالة الزر عند تحميل الصفحة
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const buttonState = localStorage.getItem('resetButtonState');
+        //     if (buttonState === 'hidden') {
+        //         resetButton.style.display = "none"; // إخفاء الزر إذا كانت حالته مخفية
+        //     } else {
+        //         resetButton.style.display = "block"; // عرض الزر إذا لم يكن مخفيًا
+        //     }
+        // });
 
+        const resetButton2 = document.getElementById('resetButton2');
 
         resetButton2.addEventListener('click', function () {
             resetAllData(); // إعادة تعيين البيانات
             resetButton2.style.display = "none"; // إخفاء الزر
             // حفظ حالة الزر في localStorage
-            localStorage.setItem('resetButtonState2', 'hidden');
+            localStorage.setItem('resetButtonState2', 'hidden2');
         });
         // استعادة حالة الزر عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function () {
             const buttonState2 = localStorage.getItem('resetButtonState2');
-            if (buttonState2 === 'hidden') {
+            if (buttonState2 === 'hidden2') {
                 resetButton2.style.display = "none"; // إخفاء الزر إذا كانت حالته مخفية
             } else {
                 resetButton2.style.display = "block"; // عرض الزر إذا لم يكن مخفيًا
