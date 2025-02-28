@@ -46,32 +46,37 @@
    
 
     <script>
-        // الوقت الحالي
+        
+window.addEventListener('load', () => {
+    let countDownDate;
+
+    if (localStorage.getItem('countDownDate')) {
+        countDownDate = parseInt(localStorage.getItem('countDownDate'));
+    } else {
         const now = new Date().getTime();
+        countDownDate = now + (16 * 60 * 60 * 1000); 
+        localStorage.setItem('countDownDate', countDownDate); 
+    }
 
-        // الوقت الهدف (4 ساعات من الآن)
-        const countDownDate = now + (17 * 60 * 60 * 1000); // 4 ساعات بالميلي ثانية
+    const countdownFunction = setInterval(function() {
+        const currentTime = new Date().getTime();
+        const distance = countDownDate - currentTime;
 
-        const countdownFunction = setInterval(function() {
-            const currentTime = new Date().getTime();
-            const distance = countDownDate - currentTime;
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // حساب الساعات، الدقائق، والثواني
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
 
-            // عرض النتيجة في العنصر المحدد
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-
-            // إذا انتهى الوقت، عرض رسالة
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
-            }
-        }, 1000);
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
+            localStorage.removeItem('countDownDate'); 
+        }
+    }, 1000);
+});
     </script>
     <div class="container">
         <div class="icon_con">
