@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعطيل الأزرار بعد النقر</title>
+    <link rel="stylesheet" href="style.css">
+
+    <title>  data</title>
 </head>
 <body>
-    <h3>السؤال الثاني</h3>
+    <div class="container">
+        <div id="quiz">
+
+
+    <h3>السؤال الأول</h3>
             <div class="question-card">
                 <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟</p>
                 <div class="options">
@@ -19,13 +25,13 @@
                     <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
                     <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ans2"> <span>الحسد</span><br> وذلك عندما حسد إبليس سيدنا آدم علي مكانته عند الله تعالى
+                <p id="define_ans2"> <span>الحسد</span><br> وذلك عندما حسد إبليس علي مكانته عند الله تعالى
                     <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
                 </p>
             </div>
-            <h3>السؤال الثالث</h3>
+            <h3>السؤال الثاني</h3>
 <div class="question-card">
-    <p>ما هو أول بيت بني في الأرض لعبادة الله؟</p>
+    <p>ما هو الحيوان الذي اُتهم بشئ لم يفعله</p>
     <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
     <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
     <div class="result">
@@ -33,47 +39,812 @@
         <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
     </div>
     <p id="defineTextAnswer" style="display: none;">
-        <span>الكعبة المشرفة</span><br>
-        وهي أول بيت وضع للناس لعبادة الله تعالى.
+        <span> ذئب النبي يوسف عليه السلام </span><br>
     </p>
 </div>
 
-    <script>
-         function checkTextAnswer() {
-    const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
-    const correctAnswers = ["الكعبة المشرفة", "الكعبة", "بيت الله الحرام"]; // إجابات صحيحة متعددة
-    const correctTextAnswer = document.getElementById('correctTextAnswer');
-    const falseTextAnswer = document.getElementById('falseTextAnswer');
-    const defineTextAnswer = document.getElementById('defineTextAnswer');
+<!-- اليوم الثاني -->
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p> من هو أول من قدر الوقت ؟</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">سيدنا نوح عليه السلام</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> سيدنا محمد عليه الصلاه والسلام </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> سيدنا صالح عليه السلام</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">سيدنا إدريس عليه السلام</button>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>سيدنا نوح</span><br> في السفينة ليعرف مواقيت الصلاة
+    </p>
+</div>
 
-    // التحقق مما إذا كانت الإجابة المدخلة تطابق أيًا من الإجابات الصحيحة
-    const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>  كم عدد اعمار اهل الجنة ؟ </p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> 31 </button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">32</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">33</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">25</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>الحسد</span><br> وذلك عندما حسد إبليس علي مكانته عند الله تعالى
+                    <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
+                </p>
+            </div>
 
-    if (isCorrect) {
-        correctTextAnswer.style.display = "block";
-        falseTextAnswer.style.display = "none";
-        defineTextAnswer.style.display = "none";
-        score += 25; // إضافة النقاط
-        createConfetti();
-        localStorage.setItem('textAnswerState', 'correct');
-    } else {
-        falseTextAnswer.style.display = "block";
-        correctTextAnswer.style.display = "none";
-        defineTextAnswer.style.display = "block";
-        localStorage.setItem('textAnswerState', 'wrong');
-    }
+<!-- اليوم الثالث  -->
 
-    updateProgress(); // تحديث شريط التقدم
-    localStorage.setItem('score', score); // حفظ النقاط في localStorage
-}
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>ما هي الصلاة التي لا نسجد ولا نركع فيها </p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span> صلاة الجنازة</span><br>
+        const correctAnswers = ["الجنازه","الجنازة", "صلاة الجنازه", " صلاة الجنازة"];
+    </p>
+</div>
 
-// 8888888888888888
-const submit_button = document.getElementById('submit_button');
-
-submit_button.addEventListener('click', function() {
-    submit_button.disabled = true;
-})
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>أركان الصلاة لا تسقط عمدا ولا سهوا ولا جهلا</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> صح </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> خطأ</button>
        
-    </script>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>صح</span><br> أركان الصلاة هي دعائمها التي لا تصح دونها مثل أركان أي بناء،
+        <br> .فإذا ترك المصلي ركنا من أركان الصلاة عمدا بطلت صلاته
+    </p>
+</div>
+
+
+<!-- اليوم الرابع -->
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <div class="hent_btn">
+        <button id="hent_btn"><img src="./logic.svg" alt=""></button>
+<p id="p3"> (السوره في الجزء ال 21)</p>
+    </div>
+<p>ما هي السوره التي تنتهي بهذه الأيات </p>
+<p id="p2"> لِّيُعَذِّبَ ٱللَّهُ ٱلۡمُنَٰفِقِينَ وَٱلۡمُنَٰفِقَٰتِ وَٱلۡمُشۡرِكِينَ وَٱلۡمُشۡرِكَٰتِ وَيَتُوبَ ٱللَّهُ عَلَى ٱلۡمُؤۡمِنِينَ وَٱلۡمُؤۡمِنَٰتِۗ وَكَانَ ٱللَّهُ غَفُورٗا رَّحِيمَۢا
+</p>
+
+
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>سوره الأحزاب</span>
+        const correctAnswers = [ "الاحزاب", "الأحزاب"];
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>كم عدد أركان الإيمان </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">5</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">6</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">7</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">8</button>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <div id="define_ans">
+
+    <p> <span>6</span><br> <ul>
+        <li>الأيمان بالله </li>
+        <li>الأيمان بالملائكة</li>
+        <li>الأيمان بالكتب</li>
+        <li>الأيمان بالرسل</li>
+        <li>الأيمان باليوم الأخر</li>
+        <li>الأيمان بالقدر (خيره و شره )</li>
+        
+    </ul>
+    </p>
+</div>
+</div>
+
+<!-- اليوم الخامس -->
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>كم عدد خزنه جهنم ؟</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">8</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">19</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">17</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">317</button>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>19</span><br> (سَأُصْلِيهِ سَقَرَ، وَمَا أَدْرَاكَ مَا سَقَرُ، لَا تُبْقِى وَلَا تَذَرُ، لَوَّاحَةٌ لِلْبَشَرِ، عَلَيْهَا تِسْعَةَ عَشَرَ) سورة المدثر.
+
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>كم عدد ابواب جهنم </p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> 8 </button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">7</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">6</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">5</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>7</span>
+                </p>
+            </div>
+
+
+<!-- اليوم السادس -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>من مِن ضمن هؤلاء الأنبياء ليس عربياً </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">محمد عليه الصلاة والسلام</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">إسماعيل عليه السلام</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">شعيب عليه السلام</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">صالح عليه السلام</button>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <div id="define_ans">
+
+        <p> <span>إسماعيل عليه السلام</span><br> <ul>
+           <li>محمد عليه الصلاه والسلام</li>
+           <li>شعيب عليه السلام </li>
+           <li>صالح عليه السلام</li>
+           <li>هود عليه السلام</li>
+           <li>صالح عليه السلام</li>
+            
+        </ul>
+        </p>
+    </div>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>من هو النبي الذي آمن معه جميع أفراد قومه</p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>يونس عليه السلام</span><br>وَأَرْسَلْنَاهُ إِلَى مِائَةِ أَلْفٍ أَوْ يَزِيدُونَ * فَآمَنُوا فَمَتَّعْنَاهُمْ إِلَى حِينٍ﴾ [سورة الصافات: 147، 148]
+        const correctAnswers = ["يونس" , "يونس عليه السلام"];
+    </p>
+</div>
+
+<!-- اليوم السابع -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>ما هو الطعام الذي حرمه النبي علي نفسه</p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>العسل</span><br>فالنبي صلى الله عليه وسلم لم يكن مخطئا في تحريم العسل على نفسه, وإنما فعل ذلك اعتقادا منه وجود رائحة فيه, كما صرح له بعض أزواجه بذلك، وكان صلى الله عليه وسلم حريصا ألا يوجد منه إلا ريح طيب، لأنه يناجي ربه ويناجي الملائكة
+        const correctAnswers = ["العسل"];
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>من هو الصحابي الملقب ب سفير الأسلام</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">زيد بن حارثه </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">ابو عبيده بن الجراح</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">مصعب بن عمير</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">على بن أبي طالب</button>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>مصعب بن عمير</span>
+
+    </p>
+</div>
+
+<!-- اليوم الثامن  -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>من هو النبي الذي دفنه الشيطان حيا</p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>شيث عليه السلام</span><br>فالنبي صلى الله عليه وسلم لم يكن مخطئا في تحريم العسل على نفسه, وإنما فعل ذلك اعتقادا منه وجود رائحة فيه, كما صرح له بعض أزواجه بذلك، وكان صلى الله عليه وسلم حريصا ألا يوجد منه إلا ريح طيب، لأنه يناجي ربه ويناجي الملائكة
+        const correctAnswers = ["شيث","شيث عليه السلام"];
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+<p>الطهارة ليست شرطا لصحة الأذان ؟</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> صح </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">خطأ </button>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>صح</span>
+
+    </p>
+</div>
+
+<!-- اليوم التاسع  -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>من أركان الصلاة ...؟</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">الركوع والسجود و الطمأنينة</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">التسبيح في الركوع و السجود</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">التشهد الأول</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">جميع ما سبق</button>
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <div id="define_ans">
+
+        <p> <span>الركوع والسجود و الطمأنينة</span><br> <ul>
+          <li>القيام في الفرض على القادر</li>
+          <li>تكبيرة الإحرام </li>
+          <li>قراءة الفاتحة</li>
+          <li>الركوع </li>
+          <li>الرفع من الركوع</li>
+          <li>الاعتدال قائما</li>
+          <li>السجود </li>
+          <li> الرفع من السجود</li>
+          <li>الجلوس بين السجدتين</li>
+          <li>لطمأنينة وهي السكون في كل ركن فعلي</li>
+          <li>التشهد الأخير</li>
+          <li>لجلوس للتشهد الأخير وللتسليمتين</li>
+          <li>التسليمتان </li>
+          <li>ترتيب الأركان</li>
+
+            
+        </ul>
+        </p>
+    </div>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>من مكروهات الصلاة ؟</p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> تكرار الفاتحة </button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">تعمد زيادة ركن فعلي</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">تقديم السجود علي الركوع</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>تعمد زيادة ركن فعلي</span>
+                </p>
+            </div>
+
+<!-- اليوم العاشر  -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>لو تشهد وسلم فى صلاة رباعية بعد الركعة الثالثة</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">تبطل صلاته ويلزمه الاعادة </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">يكفيه أن يسجد للسهو فقط ولا يأت بالركعة الرابعة</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">يقوم ويأت بالركعة الرابعة ويتم الصلاة ويسجد للسهو</button>
+        
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>يقوم ويأت بالركعة الرابعة ويتم الصلاة ويسجد للسهو</span>
+    
+
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>يعذر بترك الجماعة</p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> لو حصل له أذى شديد بسبب ثلج أو ريح شديده</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">إذا حضر الطعام وهو محتاج إليه</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">أن يخاف من فوات الرفقة فى السفر</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">جميع ما سبق</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>جميع ما سبق</span>
+                </p>
+            </div>
+
+<!-- اليوم ال11  -->
+
+
+            <h3>السؤال الأول</h3>
+<div class="question-card">
+    <p> فى الحديث ( لا صلاة ........خلف الصف)
+    </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">لامرأة</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">لجماعة</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">لمنفرد</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">للصبيان</button>
+        
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>لمنفرد</span>
+    
+
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p> لو صلى مع الإمام رجل واحد فقط فإنه</p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">يقف خلفه</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">يقف عن يمينه محاذيا له</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">يقف عن يساره محاذيا له</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">يقف عن يمينه ويتأخر عنه قليلا</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>يقف عن يمينه محاذيا له</span>
+                </p>
+            </div>
+
+<!-- اليوم ال 12  -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>لو نسى الإمام التشهد الأوسط وقام للثالثة  </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">يتابعه المأموم ويسجد معه للسهو</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">يسبح له المأموم حتى يعود للتشهد الأوسط</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">ينفرد عنه المأموم ويكمل الصلاة وحده</button>
+        
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>يتابعه المأموم ويسجد معه للسهو</span>
+    
+
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>من عجز عن الركوع فقط فى الصلاة فله أن يصلى جالسا من اول الصلاة </p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> صح</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">خطأ</button>                   
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>خطأ</span>
+                </p>
+            </div>
+<!-- اليوم ال 13  -->
+
+            <h3>السؤال الأول</h3>
+<div class="question-card">
+    <p> إذا أئتم المسافر بمقيم فإنه....؟
+    </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">يلزمه الإتمام وليس له القصر</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">له أن يقصر الصلاة</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">كلاهما صحيح فله الاتمام أو القصر </button>        
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>يلزمه الإتمام وليس له القصر</span>
+    
+
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>مما يحرم فعله فى صلاة الجمعة</p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">الكلام والإمام يخطب </button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">تخطى رقاب الناس أثناء الخطبة</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">جميع ما سبق</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>جميع ما سبق</span>
+                </p>
+            </div>
+
+<!-- اليوم ال 14  -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>  تختلف صلاة الخوف فى الحرب عن الصلاة العادية فى
+    </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">عدد الركعات</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">صفة الصلاة نفسها</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">حمل السلاح فيها</button>        
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">جميع ما سبق</button>
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>جميع ما سبق</span>
+
+
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>صلاة الكسوف ركعتان فى كل ركعة يركع</p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">مرة واحدة</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">مرتان</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">4 مرات</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>مرتان</span>
+                </p>
+            </div>
+
+<!-- اليوم ال 15  -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>  يسن قضاء صلاة العيد لمن فاتته ...؟
+    </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> صح</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">خطأ</button>     
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>خطأ</span>
+
+
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>من السُنة .....؟ </p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">تعجيل صلاة عيد الفطر وتأخير صلاة عيد الأضحى</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">تعجيل صلاة عيد الفطر والأضحى</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">تعجيل صلاة عيد الأضحى وتأخير صلاة عيد الفطر</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>تعجيل صلاة عيد الأضحى وتأخير صلاة عيد الفطر</span>
+                </p>
+            </div>
+
+<!-- اليوم ال 16  -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>قال رسول الله صلى الله عليه وسلم "من صام رمضان ...... و ...... غفر له ما تقدم من ذنبه.</p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span style="font-size: 32px;">قال رسول الله صلى الله عليه وسلم "من صام رمضان إيمانا واحتسابا غفر له ما تقدم من ذنبه.</span>
+        const correctAnswers = ["ايمانا و احتسابا","ايماناواحتسابا"];
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>  تختلف صلاة الخوف فى الحرب عن الصلاة العادية فى
+    </p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">رطبات فإن لم يجد فتمرات فإن لم يجد فجرعات من الماء</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">تمرات فإن لم يجد فرطبات  فإن لم يجد فجرعات من الماء</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">جرعات من الماء فإن لم يجد فتمرات فإن لم يجد فرطبات </button>        
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span style="font-size: 32px;"> رطبات فإن لم يجد فتمرات فإن لم يجد فجرعات من الماء </span>
+
+
+    </p>
+</div>
+
+<!-- اليوم ال 17  -->
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>تَسَحَّرُوا فَإِنَّ فِي السَّحُورِ .....؟ </p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span style="font-size: 36px;">تَسَحَّرُوا فَإِنَّ فِي السَّحُورِ بَرَكَةً</span>
+        
+        const correctAnswers = ["بركه","بركة"];
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>صيام يوم عرفه يكفر ..... وصيام يوم عاشوراء يكفر .....؟</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">سنة ,سنتين</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">سنتين,سنة</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الكبائر, الصغائر</button>        
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>سنة ,سنتين</span>
+
+
+    </p>
+</div>
+
+<!-- اليوم ال 18  -->
+
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>أفضل الصيام .....؟</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">الأثنين و الخميس</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">ثلاث ايام من كل شهر  </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">صوم يوم و إفطار يوم</button>        
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>صوم يوم و إفطار يوم</span>
+
+
+    </p>
+</div>
+
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>ما حكم صيام يوم الشك (اليوم الأخير من شعبان إذا لم يُرَ الهلال)؟</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">جائز بلا كراهة</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">مكروه فقط</button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> محرم إلا لمن كان له عادة صيام</button> 
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">يجب صيامه احتياطًا</button>
+
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span style="font-size: 32px;">محرم إلا لمن كان له عادة صيام</span>
+
+
+    </p>
+</div>
+
+
+
+<!-- اليوم ال 19 -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <div class="hent_btn">
+        <button id="hent_btn"><img src="./logic.svg" alt=""></button>
+<p id="p3"> (السوره في الجزء ال 21)</p>
+    </div>
+<p>ما هي السوره التي تبدأ بهذه الأيات </p>
+<p id="p2">ٱلَّذِينَ كَفَرُواْ وَصَدُّواْ عَن سَبِيلِ ٱللَّهِ أَضَلَّ أَعۡمَٰلَهُمۡ
+</p>
+
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>سوره محمد</span>
+        const correctAnswers = [ "محمد"];
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>من هو اول رسول بُعث في الأرض</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">سيدنا أدم </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> سيدنا إبراهيم </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> سيدنا نوح</button> 
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">سيدنا صالح</button>
+
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>سيدنا نوح</span>
+        <br>
+        أول الرسل إلى أهل الأرض بعدما وقع الشرك فيها هو نوح مثلما قال آدم: أنت أول رسول أرسل الله إلى أهل الأرض. يعني بعدما وقع الشرك، أما آدم فهو رسول ونبي بالنسبة إلى نفسه وذُريته قبل وقوع الشرك.
+    </p>
+</div>
+
+<!-- اليوم ال 20 -->
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+    <p>ما هو اليوم الذي نجا الله فيه موسي عليه السلام</p>
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>عاشوراء</span>
+        اليوم الذي نجى الله فيه النبي موسى -عليه السلام- ومن معه من المؤمنين وأغرق فرعون وجنوده في اليم.
+        const correctAnswers = ["عاشوراء "];
+    </p>
+</div>
+
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>كم عدد مفاتيح الغيب التي لا يعلمها الي الله</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> 3 </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> 10  </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> 8</button> 
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">5</button>
+
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>5</span>
+        <br>
+        عن ابن عمر - رضي الله عنهما - عن النبي - صلى الله عليه وسلم - أنه قال: ( مفاتيح الغيب خمس لا يعلمها إلا الله، لا يعلم ما تغيض الأرحام إلا الله، ولا يعلم ما في غد إلا الله، ولا يعلم متى يأتي المطر أحد إلا الله، ولا تدري نفس بأي أرض تموت إلا الله، ولا يعلم متى تقوم الساعة إلا الله ) 
+    </p>
+</div>
+
+<!-- اليوم ال 21 -->
+
+
+<h3>السؤال الأول</h3>
+<div class="question-card">
+<p>ما هي الغزوة التي لم يشارك بها النبي محمد صلي الله عليه وسلم</p>
+    <div class="options">
+        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> غزوة تبوك </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> غزوة مؤته  </button>
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">غزوةالخندق</button> 
+        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">غزوةالأنفال</button>
+
+
+    </div>
+    <div class="result">
+        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ans"> <span>غزوة مؤته </span>
+    
+    </p>
+</div>
+
+
+<h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>كم عدد الرسل الذين ذكروا في القران الكريم </p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">12</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">15</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">25</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">33</button>
+                </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>25</span>
+                </p>
+            </div>
+
+
+
+
+</div>
+</div>
+    <script src="./script.js"></script>
 </body>
 </html>

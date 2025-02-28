@@ -10,20 +10,82 @@
    
 </head>
 <body>
+    <style>
+        #countdown {
+            font-size: 24px;
+            font-family: 'Aref Ruqaa', serif;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #countdown span {
+            font-weight: bold;
+            color: #333;
+        }
+        .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color:rgba(139, 94, 60, 0.99)
+}
+
+    </style>
+    <div class="overlay">
+        <div id="countdown">
+            <span id="hours"></span> ساعات 
+            <span id="minutes"></span> دقائق 
+            <span id="seconds"></span> ثواني
+        </div>
+    </div>
+   
+
+    <script>
+        // الوقت الحالي
+        const now = new Date().getTime();
+
+        // الوقت الهدف (4 ساعات من الآن)
+        const countDownDate = now + (4 * 60 * 60 * 1000); // 4 ساعات بالميلي ثانية
+
+        const countdownFunction = setInterval(function() {
+            const currentTime = new Date().getTime();
+            const distance = countDownDate - currentTime;
+
+            // حساب الساعات، الدقائق، والثواني
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // عرض النتيجة في العنصر المحدد
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // إذا انتهى الوقت، عرض رسالة
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
+            }
+        }, 1000);
+    </script>
     <div class="container">
         <div class="icon_con">
             <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
-            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
         </div>
         
         <div class="logo">
-            <img src="./islamic.svg" alt="">
-            <p>فوازير <br>Fci</p>
+            <img src=".//photo_2025-02-28_18-30-06 (1).svg" alt="">
         </div>
-        <h1 style="font-size: 43px;">1:رمضان </h1>
+        <h1 id="hijri-date-header"  style="font-size: 43px;"></h1>
         <h3>السؤال الأول</h3>
         <div id="quiz">
-            <div class="question-card">
+            <div class="question-card" >
                 <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟</p>
                 <div class="options">
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الأكل من الشجره</button>
@@ -39,20 +101,11 @@
                     <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
                 </p>
             </div>
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>ما هو أول بيت بني في الأرض لعبادة الله؟</p>
-                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                <div class="result">
-                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="defineTextAnswer" style="display: none;">
-                    <span>الكعبة المشرفة</span><br>
-                    وهي أول بيت وضع للناس لعبادة الله تعالى.
-                </p>
-            </div>
+            
+            
+            
+            <!-- السؤال الثاني -->
+            
         </div>
         <h1>المهام اليومية</h1>
         <div  id="task-card1" class="task-card">
@@ -76,14 +129,33 @@
             <label for="task5">قيام الليل</label>
         </div>
 
+        <div class="azkar">
+            <button class="azkarbtn"><a target="_blank" href="https://youtube.com/playlist?list=PLWzzF688g_nhDsDJUo9UkSMYF9DMlbac4&si=dgi7EJd7OZH4TEjW">شرح اذكار لاصباح و المساء</a></button>
+        </div>
+
         <h1>نتيجتك</h1>
         <div class="progress-bar">
             <div class="progress" id="progress">0%</div>
         </div>
         <div class="points-display" id="points">0 نقطة من 5 نقاط</div>
+        
+        <div id="hijri-date" class="points-display"></div>
     </div>
 
+
+    <footer>
+        <div class="footer_con">
+            <div class="footer-content">
+                <p> <span>&copy;</span> 2025 Fawazeer Fci. All rights reserved.</p>
+                        <p>Developed by <a href="https://www.linkedin.com/in/abdallah-amr-9b6662316/" target="_blank" style="color: inherit;">Abdallah Amr</a></p>
+            </div>
+          
+        </div>
+        
+    </footer>
+
     <script src="./script.js"></script>
+    
       
 </body>
 </html>

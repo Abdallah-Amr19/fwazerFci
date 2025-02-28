@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <title>عداد تنازلي</title>
+    <style>
+        #countdown {
+            font-size: 24px;
+            font-family: 'Aref Ruqaa', serif;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #countdown span {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown">
+        <span id="hours"></span> ساعات 
+        <span id="minutes"></span> دقائق 
+        <span id="seconds"></span> ثواني
+    </div>
+
+    <script>
+        // الوقت الحالي
+        const now = new Date().getTime();
+
+        // الوقت الهدف (4 ساعات من الآن)
+        const countDownDate = now + (4 * 60 * 60 * 1000); // 4 ساعات بالميلي ثانية
+
+        const countdownFunction = setInterval(function() {
+            const currentTime = new Date().getTime();
+            const distance = countDownDate - currentTime;
+
+            // حساب الساعات، الدقائق، والثواني
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // عرض النتيجة في العنصر المحدد
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // إذا انتهى الوقت، عرض رسالة
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
