@@ -11,6 +11,9 @@
 </head>
 <body>
    
+        
+
+    
     <div class="container">
         <div class="icon_con">
             <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
@@ -24,7 +27,7 @@
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card" >
-                <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟ <span style="color: brown;"><br>(معاك 20 ثانيه فقط للأجابة)</span></p>
+                <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟ <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span></p>
                 <div class="options">
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الأكل من الشجره</button>
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">القتل</button>
@@ -40,7 +43,22 @@
                 </p>
             </div>
             
-            
+            <h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>ما هو الحيوان الذي اُتهم بشئ لم يفعله</p>
+                <div id="countdown">
+                    <span id="seconds"></span> ثانية
+                </div>
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+                <div class="result">
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="defineTextAnswer" style="display: none;">
+                    <span> ذئب النبي يوسف عليه السلام </span><br>
+                </p>
+            </div>
             
             <!-- السؤال الثاني -->
             

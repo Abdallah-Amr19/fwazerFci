@@ -36,6 +36,15 @@ button img{
     }
 }
 
+
+
+#countdown {
+    font-size: 18px;
+    font-weight: bold;
+    color: brown;
+position: relative;
+bottom: 10px;
+}
         body {
             font-family: "Aref Ruqaa", serif;
             background: linear-gradient(135deg, #f4e6d4, #e0c8a8);
