@@ -21,7 +21,6 @@ define_ans.style.display = "none";
             
 //         })
 
-
 // let x = document.querySelector('.question-card')
 
 // x.remove()
@@ -48,7 +47,7 @@ define_ans.style.display = "none";
 let score = 0;
 // function checkTextAnswer() {
 // const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
-// const correctAnswers = ["  لقمان  "];
+// const correctAnswers = [" الذئب ","ذئب سيدنا يوسف" , "ذئب"];
 // const correctTextAnswer = document.getElementById('correctTextAnswer');
 // const falseTextAnswer = document.getElementById('falseTextAnswer');
 // const defineTextAnswer = document.getElementById('defineTextAnswer');
@@ -207,7 +206,6 @@ function resetAllData() {
 //         resetButton2.style.display = "block"; 
 //     }
 // });
-
 
 window.addEventListener('load', () => {
     const savedScore = localStorage.getItem('score');
@@ -533,7 +531,7 @@ const hijriDateElement = document.getElementById('hijri-date');
 const hijriDateHeader = document.getElementById('hijri-date-header');
 const today = new Date();
 
-today.setDate(today.getDate() - 1);
+today.setDate(today.getDate());
 
 const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
     year: 'numeric',

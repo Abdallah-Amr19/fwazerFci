@@ -52,7 +52,7 @@ button img{
         .container {
             max-width: 600px;
             margin: auto;
-            background: rgba(255, 245, 225, 0.7);
+            background: #fff5e1b3;
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(90, 62, 43, 0.3);

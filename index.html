@@ -10,74 +10,7 @@
    
 </head>
 <body>
-    <style>
-        #countdown {
-            font-size: 24px;
-            font-family: 'Aref Ruqaa', serif;
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #countdown span {
-            font-weight: bold;
-            color: #333;
-        }
-        .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color:rgba(139, 94, 60, 0.99)
-}
-
-    </style>
-    <div class="overlay">
-        <div id="countdown">
-            <span id="hours"></span> ساعات 
-            <span id="minutes"></span> دقائق 
-            <span id="seconds"></span> ثواني
-        </div>
-    </div>
    
-
-    <script>
-        
-window.addEventListener('load', () => {
-    let countDownDate;
-
-    if (localStorage.getItem('countDownDate')) {
-        countDownDate = parseInt(localStorage.getItem('countDownDate'));
-    } else {
-        const now = new Date().getTime();
-        countDownDate = now + (16 * 60 * 60 * 1000); 
-        localStorage.setItem('countDownDate', countDownDate); 
-    }
-
-    const countdownFunction = setInterval(function() {
-        const currentTime = new Date().getTime();
-        const distance = countDownDate - currentTime;
-
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
-
-        if (distance < 0) {
-            clearInterval(countdownFunction);
-            document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
-            localStorage.removeItem('countDownDate'); 
-        }
-    }, 1000);
-});
-    </script>
     <div class="container">
         <div class="icon_con">
             <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
@@ -108,7 +41,19 @@ window.addEventListener('load', () => {
             </div>
             
             
-            
+            <!-- <h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>ما هو الحيوان الذي اُتهم بشئ لم يفعله</p>
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+                <div class="result">
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="defineTextAnswer" style="display: none;">
+                    <span> ذئب النبي يوسف عليه السلام </span><br>
+                </p>
+            </div> -->
             <!-- السؤال الثاني -->
             
         </div>
