@@ -42,8 +42,12 @@ button img{
     font-size: 18px;
     font-weight: bold;
     color: brown;
-position: relative;
-bottom: 10px;
+    position: relative;
+    bottom: 10px;
+    border: 3px solid brown;
+    max-width: 42px;
+    padding-bottom: 8px;
+    padding-right: 9px;
 }
         body {
             font-family: "Aref Ruqaa", serif;

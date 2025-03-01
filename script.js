@@ -632,37 +632,17 @@ window.addEventListener('load', () => {
 
 
 window.addEventListener('load', () => {
-    let countDownDate;
+    let seconds = 25; 
+    const countdownElement = document.getElementById('countdown');
 
-    if (localStorage.getItem('countDownDate')) {
-        countDownDate = parseInt(localStorage.getItem('countDownDate'));
+    const countdownFunction = setInterval(() => {
+        seconds--;
+        countdownElement.textContent = seconds; 
 
-        const currentTime = new Date().getTime();
-        if (currentTime >= countDownDate) {
-            document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
-            localStorage.removeItem('countDownDate');
-            return; 
-        }
-    } else {
-        const now = new Date().getTime();
-        countDownDate = now + (25 * 1000);
-        localStorage.setItem('countDownDate', countDownDate);  
-    }
-
-    const countdownFunction = setInterval(function() {
-        const currentTime = new Date().getTime();
-        const distance = countDownDate - currentTime;
-
-        const seconds = Math.floor(distance / 1000);
-
-        document.getElementById("seconds").innerHTML = seconds;
-
-        if (distance < 0) {
+        if (seconds <= 0) {
             clearInterval(countdownFunction);
-            document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
-            localStorage.removeItem('countDownDate'); 
+            countdownElement.textContent = "خلصنا"; 
         }
-    }, 1000);
+    }, 1000); 
 });
-
 // localStorage.clear()
