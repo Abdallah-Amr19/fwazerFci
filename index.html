@@ -10,69 +10,7 @@
    
 </head>
 <body>
-    <style>
-        #countdown {
-            font-size: 24px;
-            font-family: 'Aref Ruqaa', serif;
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #countdown span {
-            font-weight: bold;
-            color: #333;
-        }
-        .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color:rgba(139, 94, 60, 0.99)
-}
-
-    </style>
-    <div class="overlay">
-        <div id="countdown">
-            <span id="hours"></span> ساعات 
-            <span id="minutes"></span> دقائق 
-            <span id="seconds"></span> ثواني
-        </div>
-    </div>
    
-
-    <script>
-        // الوقت الحالي
-        const now = new Date().getTime();
-
-        // الوقت الهدف (4 ساعات من الآن)
-        const countDownDate = now + (2 * 60 * 60 * 1000); // 4 ساعات بالميلي ثانية
-
-        const countdownFunction = setInterval(function() {
-            const currentTime = new Date().getTime();
-            const distance = countDownDate - currentTime;
-
-            // حساب الساعات، الدقائق، والثواني
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // عرض النتيجة في العنصر المحدد
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-
-            // إذا انتهى الوقت، عرض رسالة
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
-            }
-        }, 1000);
-    </script>
     <div class="container">
         <div class="icon_con">
             <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
@@ -86,7 +24,7 @@
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card" >
-                <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟</p>
+                <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟ <span style="color: brown;"><br>(معاك 20 ثانيه فقط للأجابة)</span></p>
                 <div class="options">
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الأكل من الشجره</button>
                     <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">القتل</button>
@@ -146,7 +84,7 @@
     <footer>
         <div class="footer_con">
             <div class="footer-content">
-                <p> <span>&copy;</span> 2025 Fawazeer Fci. All rights reserved.</p>
+                <p> <span>&copy;</span> 2025 Fawazeer Fci. All rights reserved</p>
                         <p>Developed by <a href="https://www.linkedin.com/in/abdallah-amr-9b6662316/" target="_blank" style="color: inherit;">Abdallah Amr</a></p>
             </div>
           
