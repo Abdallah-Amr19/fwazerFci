@@ -138,8 +138,8 @@ function resetAllData() {
             button.disabled = false;
             
         });
-        const submit_button = document.getElementById('submit_button');
-        submit_button.disabled = false;
+        // const submit_button = document.getElementById('submit_button');
+        // submit_button.disabled = false;
         
 
 
