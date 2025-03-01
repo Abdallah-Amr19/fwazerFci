@@ -13,7 +13,7 @@
    
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
             <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
         </div>
         
@@ -43,15 +43,19 @@
             
             <h3>السؤال الثاني</h3>
             <div class="question-card">
-                <p>ما هو الحيوان الذي اُتهم بشئ لم يفعله</p>
-                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                <div class="result">
-                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                <p>  كم عدد اعمار اهل الجنة ؟ </p>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> 31 </button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">32</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">33</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">25</button>
                 </div>
-                <p id="defineTextAnswer" style="display: none;">
-                    <span> ذئب النبي يوسف عليه السلام </span><br>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>الحسد</span><br> وذلك عندما حسد إبليس علي مكانته عند الله تعالى
+                    <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
                 </p>
             </div>
             <!-- السؤال الثاني -->
