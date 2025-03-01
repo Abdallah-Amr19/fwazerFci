@@ -3,14 +3,14 @@ const false_ans = document.getElementById("false_ans");
 const define_ans = document.getElementById("define_ans");
 // const p3 = document.getElementById("p3");
 // const hent_btn = document.getElementById("hent_btn");
-const corect2 = document.getElementById("corect_ans2");
-const false_ans2 = document.getElementById("false_ans2");
-const define_ans2 = document.getElementById("define_ans2");
+// const corect2 = document.getElementById("corect_ans2");
+// const false_ans2 = document.getElementById("false_ans2");
+// const define_ans2 = document.getElementById("define_ans2");
 // const question_card_hedden = document.getElementById("question_card_hedden");
 
 
 const ans_buttons = document.querySelectorAll(".ans_buttons");
-const ans_buttons2= document.querySelectorAll(".ans_buttons2");
+// const ans_buttons2= document.querySelectorAll(".ans_buttons2");
 
 corect.style.display = "none";
 false_ans.style.display = "none";
@@ -21,13 +21,14 @@ define_ans.style.display = "none";
             
 //         })
 
+
 // let x = document.querySelector('.question-card')
 
 // x.remove()
 
-corect2.style.display = "none";
-false_ans2.style.display = "none";
-define_ans2.style.display = "none";
+// corect2.style.display = "none";
+// false_ans2.style.display = "none";
+// define_ans2.style.display = "none";
 // const isHidden = localStorage.getItem('question_card_hedden_hidden');
 
 // if (isHidden === 'true') {
@@ -143,11 +144,11 @@ function resetAllData() {
         
 
 
-        const buttons2 = document.querySelectorAll('.ans_buttons2');
-        buttons2.forEach(button2 => {
-            button2.disabled = false;
+        // const buttons2 = document.querySelectorAll('.ans_buttons2');
+        // buttons2.forEach(button2 => {
+        //     button2.disabled = false;
             
-        });
+        // });
         
         
         corect.style.display = "none";
@@ -158,13 +159,13 @@ function resetAllData() {
        button.style.backgroundColor = '#8b5e3c';
 
    });
-   ans_buttons2.forEach(button2 => {
-    button2.style.backgroundColor = '#8b5e3c';
+//    ans_buttons2.forEach(button2 => {
+//     button2.style.backgroundColor = '#8b5e3c';
 
-});
-        corect2.style.display = "none";
-        false_ans2.style.display = "none";
-        define_ans2.style.display = "none";
+// });
+//         corect2.style.display = "none";
+//         false_ans2.style.display = "none";
+//         define_ans2.style.display = "none";
 
         updateProgress();
         
@@ -175,21 +176,21 @@ function resetAllData() {
         // location.reload();
     }
 
-const resetButton = document.getElementById('resetButton');
+// const resetButton = document.getElementById('resetButton');
 
-resetButton.addEventListener('click', function () {
-    resetAllData();
-    resetButton.style.display = "none"; 
-    localStorage.setItem('resetButtonState', 'hidden');
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const buttonState = localStorage.getItem('resetButtonState');
-    if (buttonState === 'hidden') {
-        resetButton.style.display = "none"; 
-    } else {
-        resetButton.style.display = "block"; 
-    }
-});
+// resetButton.addEventListener('click', function () {
+//     resetAllData();
+//     resetButton.style.display = "none"; 
+//     localStorage.setItem('resetButtonState', 'hidden');
+// });
+// document.addEventListener('DOMContentLoaded', function () {
+//     const buttonState = localStorage.getItem('resetButtonState');
+//     if (buttonState === 'hidden') {
+//         resetButton.style.display = "none"; 
+//     } else {
+//         resetButton.style.display = "block"; 
+//     }
+// });
 
 // const resetButton2 = document.getElementById('resetButton2');
 
@@ -225,14 +226,14 @@ window.addEventListener('load', () => {
     });
    
 
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        const buttonId2 = button2.textContent.trim();
-        const savedButtonState2 = localStorage.getItem(buttonId2);
-        if (savedButtonState2 === 'clicked') {
-            button2.disabled = true;
-        }
-    });
+    // const buttons2 = document.querySelectorAll('.ans_buttons2');
+    // buttons2.forEach(button2 => {
+    //     const buttonId2 = button2.textContent.trim();
+    //     const savedButtonState2 = localStorage.getItem(buttonId2);
+    //     if (savedButtonState2 === 'clicked') {
+    //         button2.disabled = true;
+    //     }
+    // });
 
     const savedCorrectAnswer = localStorage.getItem('correctAnswer');
     if (savedCorrectAnswer === 'shown') {
@@ -248,19 +249,19 @@ window.addEventListener('load', () => {
 
     }
 
-    const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
-    if (savedCorrectAnswer2 === 'shown2') {
+    // const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
+    // if (savedCorrectAnswer2 === 'shown2') {
        
-        corect2.style.display = "block";
-        false_ans2.style.display = "none";
-        define_ans2.style.display = "none";
-    } else if (savedCorrectAnswer2 === 'wrong2') {
+    //     corect2.style.display = "block";
+    //     false_ans2.style.display = "none";
+    //     define_ans2.style.display = "none";
+    // } else if (savedCorrectAnswer2 === 'wrong2') {
         
-        false_ans2.style.display = "block";
-        corect2.style.display = "none";
-        define_ans2.style.display = "block";
+    //     false_ans2.style.display = "block";
+    //     corect2.style.display = "none";
+    //     define_ans2.style.display = "block";
 
-    }
+    // }
 });
 
 function checkAnswer(button, status) {
@@ -288,33 +289,33 @@ function checkAnswer(button, status) {
     updateProgress();
     localStorage.setItem('score', score);
 }
-function checkAnswer2(button2, status2) {
-    if (status2 === 'صح') {
-        score += 25;
+// function checkAnswer2(button2, status2) {
+//     if (status2 === 'صح') {
+//         score += 25;
         
-        corect2.style.display = "block";
-        false_ans2.style.display = "none";
-        localStorage.setItem('correctAnswer2', 'shown2');
-        button2.style.backgroundColor = '#2E8B57';
-        createConfetti();
-    } else {
+//         corect2.style.display = "block";
+//         false_ans2.style.display = "none";
+//         localStorage.setItem('correctAnswer2', 'shown2');
+//         button2.style.backgroundColor = '#2E8B57';
+//         createConfetti();
+//     } else {
         
-        false_ans2.style.display = "block";
-        corect2.style.display = "none";
-        localStorage.setItem('correctAnswer2', 'wrong2');
-        button2.style.backgroundColor = '#DC143C';
-        define_ans2.style.display = "block";
+//         false_ans2.style.display = "block";
+//         corect2.style.display = "none";
+//         localStorage.setItem('correctAnswer2', 'wrong2');
+//         button2.style.backgroundColor = '#DC143C';
+//         define_ans2.style.display = "block";
 
-    }
+//     }
     
-    ans_buttons2.forEach(btn2 => {
-        btn2.disabled = true;
-        localStorage.setItem(btn2.textContent.trim(), 'clicked');
-    });
+//     // ans_buttons2.forEach(btn2 => {
+//     //     btn2.disabled = true;
+//     //     localStorage.setItem(btn2.textContent.trim(), 'clicked');
+//     // });
     
-    updateProgress();
-    localStorage.setItem('score', score);
-}
+//     updateProgress();
+//     localStorage.setItem('score', score);
+// }
 
 function updateScore(points) {
     score += points;
@@ -466,15 +467,15 @@ if (this.checked) {
         }
     });
 
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        const buttonId2 = button2.textContent.trim();
-        const savedButtonState2 = localStorage.getItem(buttonId2);
-        if (savedButtonState2 === 'clicked') {
-            button2.disabled = true;
+    // const buttons2 = document.querySelectorAll('.ans_buttons2');
+    // buttons2.forEach(button2 => {
+    //     const buttonId2 = button2.textContent.trim();
+    //     const savedButtonState2 = localStorage.getItem(buttonId2);
+    //     if (savedButtonState2 === 'clicked') {
+    //         button2.disabled = true;
             
-        }
-    });
+    //     }
+    // });
 
     const checkboxess = document.querySelectorAll('input[type="checkbox"]');
 window.addEventListener('load', () => {
@@ -572,32 +573,32 @@ hijriDateElement.textContent = hijriDate;
  
 
 
-setTimeout(() => {
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        button2.disabled = true;
-    });
-    define_ans2.style.display = 'block';
+// setTimeout(() => {
+//     const buttons2 = document.querySelectorAll('.ans_buttons2');
+//     buttons2.forEach(button2 => {
+//         button2.disabled = true;
+//     });
+//     define_ans2.style.display = 'block';
 
-    localStorage.setItem('buttonsDisabled2', 'true');
-    localStorage.setItem('defineAnsDisplay2', 'block');
-}, 20000);
+//     localStorage.setItem('buttonsDisabled2', 'true');
+//     localStorage.setItem('defineAnsDisplay2', 'block');
+// }, 20000);
 
-window.addEventListener('load', () => {
-    const buttonsDisabled2 = localStorage.getItem('buttonsDisabled2');
-    const defineAnsDisplay2 = localStorage.getItem('defineAnsDisplay2');
+// window.addEventListener('load', () => {
+//     const buttonsDisabled2 = localStorage.getItem('buttonsDisabled2');
+//     const defineAnsDisplay2 = localStorage.getItem('defineAnsDisplay2');
 
-    if (buttonsDisabled2 === 'true') {
-        const buttons2 = document.querySelectorAll('.ans_buttons2');
-        buttons2.forEach(button2 => {
-            button2.disabled = true;
-        });
-    }
+//     if (buttonsDisabled2 === 'true') {
+//         const buttons2 = document.querySelectorAll('.ans_buttons2');
+//         buttons2.forEach(button2 => {
+//             button2.disabled = true;
+//         });
+//     }
 
-    if (defineAnsDisplay2 === 'block') {
-        define_ans2.style.display = 'block';
-    }
-});
+//     if (defineAnsDisplay2 === 'block') {
+//         define_ans2.style.display = 'block';
+//     }
+// });
 
  
 
