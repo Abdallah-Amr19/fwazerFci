@@ -15,6 +15,8 @@ const ans_buttons = document.querySelectorAll(".ans_buttons");
 corect.style.display = "none";
 false_ans.style.display = "none";
 define_ans.style.display = "none";
+define_ans.style.opacity = '0%'
+
 // p3.style.display = "none";
 //     hent_btn.addEventListener("click",function(){
 //         p3.style.display = "block";
@@ -417,6 +419,8 @@ card.style.opacity = "16%";
 localStorage.setItem(cardId, "16%"); 
 });
 });
+
+
 
 const checkboxes = document.querySelectorAll(".checkboxs");
 // window.addEventListener('load', () => {
