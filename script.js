@@ -14,7 +14,6 @@ const define_ansR = document.getElementById("define_ansR");
 // const ans_buttons = document.querySelectorAll(".ans_buttons");
 const ans_buttonsR = document.querySelectorAll(".ans_buttonsR");
 // const ans_buttons2= document.querySelectorAll(".ans_buttons2");
-
 // corect.style.display = "none";
 // false_ans.style.display = "none";
 // define_ans.style.display = "none";
@@ -340,7 +339,7 @@ function checkAnswerR(buttonR, statusR) {
     });
     
     updateProgress();
-    localStorage.setItem('scoreR', scoreR);
+    localStorage.setItem('score', score);
 }
 // function checkAnswer2(button2, status2) {
 //     if (status2 === 'صح') {
