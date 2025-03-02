@@ -16,7 +16,7 @@
     
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
             <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
         </div>
         
@@ -26,42 +26,28 @@
         <h1 id="hijri-date-header"  style="font-size: 43px;"></h1>
         <h3>السؤال الأول</h3>
         <div id="quiz">
-            <div class="question-card" >
-                <p>ما هو أول ذنب اُرتكب في السماء و الأرض ؟ <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span></p>
+            <div class="question-card">
+                <p> من هو أول من قدر الوقت ؟
+                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+                </p>
+                <div id="countdown">
+                    <span id="seconds"></span> 
+                </div>
                 <div class="options">
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الأكل من الشجره</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">القتل</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">الحسد</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">السرقة</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">سيدنا نوح عليه السلام</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> سيدنا محمد عليه الصلاه والسلام </button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> سيدنا صالح عليه السلام</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">سيدنا إدريس عليه السلام</button>
                 </div>
                 <div class="result">
                     <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
                     <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ans"> <span>الحسد</span><br> وذلك عندما حسد إبليس سيدنا آدم علي مكانته عند الله تعالى
-                    <br> وهو الحسد أيضاً ،حينما حسد قابيل أخيه هابيل علي زوجته فقتله.
+                <p id="define_ans"> <span>سيدنا نوح</span><br> في السفينة ليعرف مواقيت الصلاة
                 </p>
             </div>
             
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>ما هو الحيوان الذي اُتهم بشئ لم يفعله
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-                
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div>
-                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                <div class="result">
-                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="defineTextAnswer" style="display: none;">
-                    <span> ذئب النبي يوسف عليه السلام </span><br>
-                </p>
-            </div>
+          
             
             <!-- السؤال الثاني -->
             
@@ -89,7 +75,7 @@
         </div>
 
         <div class="azkar">
-            <button class="azkarbtn"><a target="_blank" href="https://youtube.com/playlist?list=PLWzzF688g_nhDsDJUo9UkSMYF9DMlbac4&si=dgi7EJd7OZH4TEjW">شرح اذكار لاصباح و المساء</a></button>
+            <button class="azkarbtn"><a target="_blank" href="https://youtube.com/playlist?list=PLWzzF688g_nhDsDJUo9UkSMYF9DMlbac4&si=dgi7EJd7OZH4TEjW">شرح أذكار الصباح و المساء</a></button>
         </div>
 
         <h1>نتيجتك</h1>

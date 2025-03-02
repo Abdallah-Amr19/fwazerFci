@@ -1,62 +1,69 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
-    <title>عداد تنازلي</title>
+    <title>استخدام filter في صفحة ويب</title>
     <style>
-        #countdown {
-            font-size: 24px;
-            font-family: 'Aref Ruqaa', serif;
+        body {
+            font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
         }
-
-        #countdown span {
-            font-weight: bold;
-            color: #333;
+        .product {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div id="countdown">
-        <span id="hours"></span> ساعات 
-        <span id="minutes"></span> دقائق 
-        <span id="seconds"></span> ثواني
-    </div>
+
+    <h2>قائمة المنتجات</h2>
+    <div id="products-container"></div>
+    <button onclick="filterProducts()">عرض المنتجات بسعر أقل من 500</button>
 
     <script>
-        // الوقت الحالي
-        const now = new Date().getTime();
+        // قائمة المنتجات الأصلية
+        let products = [
+            { name: "لاب توب", price: 1000 },
+            { name: "هاتف", price: 500 },
+            { name: "سماعات", price: 200 },
+            { name: "ماوس", price: 50 },
+            { name: "كيبورد", price: 150 }
+        ];
 
-        // الوقت الهدف (4 ساعات من الآن)
-        const countDownDate = now + (4 * 60 * 60 * 1000); // 4 ساعات بالميلي ثانية
+        // دالة لعرض المنتجات في الصفحة
+        function displayProducts(productsList) {
+            const container = document.getElementById("products-container");
+            container.innerHTML = ""; // تفريغ المحتوى قبل إعادة الرسم
 
-        const countdownFunction = setInterval(function() {
-            const currentTime = new Date().getTime();
-            const distance = countDownDate - currentTime;
+            productsList.map(product => {
+                const productDiv = document.createElement("div");
+                productDiv.className = "product";
+                productDiv.innerHTML = `<h3>${product.name}</h3><p>السعر: ${product.price} دولار</p>`;
+                container.appendChild(productDiv);
+            });
+        }
 
-            // حساب الساعات، الدقائق، والثواني
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // دالة لتصفية المنتجات باستخدام filter
+        function filterProducts() {
+            const filteredProducts = products.filter(product => product.price < 500);
+            displayProducts(filteredProducts);
+        }
 
-            // عرض النتيجة في العنصر المحدد
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-
-            // إذا انتهى الوقت، عرض رسالة
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "لقد انتهى الوقت!";
-            }
-        }, 1000);
+        // عرض جميع المنتجات عند تحميل الصفحة
+        displayProducts(products);
     </script>
+
 </body>
 </html>

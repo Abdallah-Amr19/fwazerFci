@@ -48,6 +48,7 @@ button img{
     max-width: 42px;
     padding-bottom: 8px;
     padding-right: 9px;
+    border-radius: 14px;
 }
         body {
             font-family: "Aref Ruqaa", serif;
