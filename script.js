@@ -126,6 +126,10 @@ function resetAllData() {
 // document.getElementById('correctTextAnswer').style.display = 'none';
 // document.getElementById('falseTextAnswer').style.display = 'none';
 // document.getElementById('defineTextAnswer').style.display = 'none';
+define_ans.style.opacity = '100%'
+corect.style.opacity = '100%'
+false_ans.style.opacity = '100%'
+
         localStorage.clear();
         
         score = 0;
