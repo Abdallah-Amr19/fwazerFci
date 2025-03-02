@@ -16,6 +16,8 @@ corect.style.display = "none";
 false_ans.style.display = "none";
 define_ans.style.display = "none";
 define_ans.style.opacity = '0%'
+corect.style.opacity = '0%'
+false_ans.style.opacity = '0%'
 
 // p3.style.display = "none";
 //     hent_btn.addEventListener("click",function(){
