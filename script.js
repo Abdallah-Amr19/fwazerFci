@@ -192,21 +192,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-const resetButton2 = document.getElementById('resetButton2');
+// const resetButton2 = document.getElementById('resetButton2');
 
-resetButton2.addEventListener('click', function () {
-    resetAllData(); 
-    resetButton2.style.display = "none"; 
-    localStorage.setItem('resetButtonState2', 'hidden2');
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const buttonState2 = localStorage.getItem('resetButtonState2');
-    if (buttonState2 === 'hidden2') {
-        resetButton2.style.display = "none";    
-    } else {
-        resetButton2.style.display = "block"; 
-    }
-});
+// resetButton2.addEventListener('click', function () {
+//     resetAllData(); 
+//     resetButton2.style.display = "none"; 
+//     localStorage.setItem('resetButtonState2', 'hidden2');
+// });
+// document.addEventListener('DOMContentLoaded', function () {
+//     const buttonState2 = localStorage.getItem('resetButtonState2');
+//     if (buttonState2 === 'hidden2') {
+//         resetButton2.style.display = "none";    
+//     } else {
+//         resetButton2.style.display = "block"; 
+//     }
+// });
 
 window.addEventListener('load', () => {
     const savedScore = localStorage.getItem('score');
