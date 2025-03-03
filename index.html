@@ -17,7 +17,7 @@
     <div class="container">
         <div class="icon_con">
             <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
-            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
         </div>
         
         <div class="logo">
@@ -27,47 +27,24 @@
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
-                <p> من هو أول من قدر الوقت ؟
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-                <!-- <div id="countdown">
-                    <span id="seconds"></span> 
-                </div> -->
-                <div class="options">
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">سيدنا نوح عليه السلام</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')"> سيدنا محمد عليه الصلاه والسلام </button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')"> سيدنا صالح عليه السلام</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">سيدنا إدريس عليه السلام</button>
-                </div>
-                <div class="result">
-                    <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="define_ansR"> <span>سيدنا نوح</span><br> في السفينة ليعرف مواقيت الصلاة
-                </p>
-            </div>
-            
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>  كم عدد اعمار اهل الجنة ؟ 
+                <p>ما هي الصلاة التي لا نسجد ولا نركع فيها 
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
                 <div id="countdown">
                     <span id="seconds"></span> 
                 </div>
-                <div class="options">
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> 31 </button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">32</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">33</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">25</button>
-                </div>
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
                 <div class="result">
-                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ans2"> <span>33</span><br> مثل عمر سيدنا عيسي عليه السلام
+                <p id="defineTextAnswer" style="display: none;">
+                    <span> صلاة الجنازة</span><br>
                 </p>
             </div>
+
+           
             
             <!-- السؤال الثاني -->
             
