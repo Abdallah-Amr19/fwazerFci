@@ -30,9 +30,7 @@
                 <p>ما هي الصلاة التي لا نسجد ولا نركع فيها 
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div>
+               
                 <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
                 <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
                 <div class="result">
@@ -44,7 +42,51 @@
                 </p>
             </div>
 
-           
+            <h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>من مِن هذه الأسماء ليس من اسماء السحره الذين آمنوا بموسي
+                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+                </p>
+                <div id="countdown">
+                    <span id="seconds"></span> 
+                </div>
+                <div class="options">
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> ملوي </button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> المنيا</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> ديروط </button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> اسيوط</button>
+                   
+                </div>
+                <div class="result">
+                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <div id="define_ans">
+            
+                    <p> <span>المنيا</span><br> <ul>
+                      <li>بنها</li>
+                      <li>ملوى</li>
+                      <li>ديروط</li>
+                      <li>أسيوط</li>
+                      <li>سمالوط</li>
+                      <li>سوهاج</li>
+                      <li>منفلوط</li>
+                      <li>دشطوط</li>
+                      <li>أسنا</li>
+                      <li>قنا</li>
+                      <li>أهناسيا</li>
+                      <li>سمسطا</li>
+                      <li>ببا</li>
+                      <li>دشنا</li>
+                      <li>طهطا</li>
+                      <li>جرجا</li>
+                      <li>فرشوط</li>
+                        
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            
             
             <!-- السؤال الثاني -->
             

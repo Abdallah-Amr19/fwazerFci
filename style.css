@@ -130,6 +130,11 @@ font-size: 36px;
 color: #2E8B57;
 
         }
+        #define_ans span{
+            font-size: 36px;
+            color: #2E8B57;
+            
+                    }
         .task-card, .question-card {
             background: #fdf3e7;
             padding: 15px;
