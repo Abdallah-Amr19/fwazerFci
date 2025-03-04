@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
-            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
         </div>
         
         <div class="logo">
@@ -26,67 +26,27 @@
         <h1 id="hijri-date-header"  style="font-size: 43px;"></h1>
         <h3>السؤال الأول</h3>
         <div id="quiz">
+           
             <div class="question-card">
-                <p>ما هي الصلاة التي لا نسجد ولا نركع فيها 
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-               
-                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                <div class="result">
-                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                <p>من مكروهات الصلاة ؟
+                <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+            </p>
+            <div id="countdown">
+                <span id="seconds"></span> 
+            </div>
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> تكرار الفاتحة </button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">تعمد زيادة ركن فعلي</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">تقديم السجود علي الركوع</button>
                 </div>
-                <p id="defineTextAnswer" style="display: none;">
-                    <span> صلاة الجنازة</span><br>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>تعمد زيادة ركن فعلي</span>
                 </p>
             </div>
 
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>من مِن هذه الأسماء ليس من اسماء السحره الذين آمنوا بموسي
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div>
-                <div class="options">
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> ملوي </button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> المنيا</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> ديروط </button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> اسيوط</button>
-                   
-                </div>
-                <div class="result">
-                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <div id="define_ans">
-            
-                    <p> <span>المنيا</span><br> <ul>
-                      <li>بنها</li>
-                      <li>ملوى</li>
-                      <li>ديروط</li>
-                      <li>أسيوط</li>
-                      <li>سمالوط</li>
-                      <li>سوهاج</li>
-                      <li>منفلوط</li>
-                      <li>دشطوط</li>
-                      <li>أسنا</li>
-                      <li>قنا</li>
-                      <li>أهناسيا</li>
-                      <li>سمسطا</li>
-                      <li>ببا</li>
-                      <li>دشنا</li>
-                      <li>طهطا</li>
-                      <li>جرجا</li>
-                      <li>فرشوط</li>
-                        
-                    </ul>
-                    </p>
-                </div>
-            </div>
-            
             
             <!-- السؤال الثاني -->
             
