@@ -16,7 +16,7 @@
     
     <div class="container">
         <div class="icon_con">
-            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
             <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
         </div>
         
@@ -31,9 +31,7 @@
                 <p>من مكروهات الصلاة ؟
                 <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
             </p>
-            <div id="countdown">
-                <span id="seconds"></span> 
-            </div>
+           
                 <div class="options">
                     <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> تكرار الفاتحة </button>
                     <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">تعمد زيادة ركن فعلي</button>
@@ -47,7 +45,31 @@
                 </p>
             </div>
 
-            
+            <h3>السؤال الثاني</h3>
+<div class="question-card">
+    <div class="hent_btn">
+        <button id="hent_btn"><img src="./logic.svg" alt=""></button>
+<p id="p3"> (السوره في الجزء ال 21)</p>
+    </div>
+<p>ما هي السوره التي تنتهي بهذه الأيات </p>
+<p id="p2"> لِّيُعَذِّبَ ٱللَّهُ ٱلۡمُنَٰفِقِينَ وَٱلۡمُنَٰفِقَٰتِ وَٱلۡمُشۡرِكِينَ وَٱلۡمُشۡرِكَٰتِ وَيَتُوبَ ٱللَّهُ عَلَى ٱلۡمُؤۡمِنِينَ وَٱلۡمُؤۡمِنَٰتِۗ وَكَانَ ٱللَّهُ غَفُورٗا رَّحِيمَۢا
+    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+</p>
+<div id="countdown">
+    <span id="seconds"></span> 
+</div>
+
+    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+    <div class="result">
+        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="defineTextAnswer" style="display: none;">
+        <span>سوره الأحزاب</span>
+        const correctAnswers = [ "الاحزاب", "الأحزاب"];
+    </p>
+</div>
             <!-- السؤال الثاني -->
             
         </div>
