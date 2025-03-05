@@ -1,39 +1,39 @@
-// const corect = document.getElementById("corect_ans");
-// const false_ans = document.getElementById("false_ans");
-// const define_ans = document.getElementById("define_ans");
+const corect = document.getElementById("corect_ans");
+const false_ans = document.getElementById("false_ans");
+const define_ans = document.getElementById("define_ans");
 // const corectR = document.getElementById("corect_ansR");
 // const false_ansR = document.getElementById("false_ansR");
 // const define_ansR = document.getElementById("define_ansR");
-const p3 = document.getElementById("p3");
-const hent_btn = document.getElementById("hent_btn");
-const corect2 = document.getElementById("corect_ans2");
-const false_ans2 = document.getElementById("false_ans2");
-const define_ans2 = document.getElementById("define_ans2");
+// const p3 = document.getElementById("p3");
+// const hent_btn = document.getElementById("hent_btn");
+// const corect2 = document.getElementById("corect_ans2");
+// const false_ans2 = document.getElementById("false_ans2");
+// const define_ans2 = document.getElementById("define_ans2");
 // const question_card_hedden = document.getElementById("question_card_hedden");
 
-// const ans_buttons = document.querySelectorAll(".ans_buttons");
+const ans_buttons = document.querySelectorAll(".ans_buttons");
 // const ans_buttonsR = document.querySelectorAll(".ans_buttonsR");
-const ans_buttons2= document.querySelectorAll(".ans_buttons2");
+// const ans_buttons2= document.querySelectorAll(".ans_buttons2");
 // corect.style.display = "none";
 // false_ans.style.display = "none";
 // define_ans.style.display = "none";
 // corectR.style.display = "none";
 // false_ansR.style.display = "none";
 // define_ansR.style.display = "none";
-p3.style.display = "none";
-    hent_btn.addEventListener("click",function(){
-        p3.style.display = "block";
+// p3.style.display = "none";
+//     hent_btn.addEventListener("click",function(){
+//         p3.style.display = "block";
             
-        })
+//         })
 
 
 // let x = document.querySelector('.question-card')
 
 // x.remove()
 
-corect2.style.display = "none";
-false_ans2.style.display = "none";
-define_ans2.style.display = "none";
+// corect2.style.display = "none";
+// false_ans2.style.display = "none";
+// define_ans2.style.display = "none";
 // const isHidden = localStorage.getItem('question_card_hedden_hidden');
 
 // if (isHidden === 'true') {
@@ -51,86 +51,86 @@ define_ans2.style.display = "none";
 
 
 let score = 0;
-function checkTextAnswer() {
-const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
-const correctAnswers = [ "الاحزاب", "الأحزاب"];
-const correctTextAnswer = document.getElementById('correctTextAnswer');
-const falseTextAnswer = document.getElementById('falseTextAnswer');
-const defineTextAnswer = document.getElementById('defineTextAnswer');
+// function checkTextAnswer() {
+// const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
+// const correctAnswers = [ "الاحزاب", "الأحزاب"];
+// const correctTextAnswer = document.getElementById('correctTextAnswer');
+// const falseTextAnswer = document.getElementById('falseTextAnswer');
+// const defineTextAnswer = document.getElementById('defineTextAnswer');
 
-const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
+// const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
 
-if (isCorrect) {
-correctTextAnswer.style.display = "block";
-falseTextAnswer.style.display = "none";
-defineTextAnswer.style.display = "none";
-score += 25; 
-createConfetti();
-localStorage.setItem('textAnswerState', 'correct');
-} else {
-falseTextAnswer.style.display = "block";
-correctTextAnswer.style.display = "none";
-defineTextAnswer.style.display = "block";
-localStorage.setItem('textAnswerState', 'wrong');
-}
+// if (isCorrect) {
+// correctTextAnswer.style.display = "block";
+// falseTextAnswer.style.display = "none";
+// defineTextAnswer.style.display = "none";
+// score += 25; 
+// createConfetti();
+// localStorage.setItem('textAnswerState', 'correct');
+// } else {
+// falseTextAnswer.style.display = "block";
+// correctTextAnswer.style.display = "none";
+// defineTextAnswer.style.display = "block";
+// localStorage.setItem('textAnswerState', 'wrong');
+// }
 
-updateProgress(); 
-localStorage.setItem('score', score); 
-}
+// updateProgress(); 
+// localStorage.setItem('score', score); 
+// }
 
-function normalizeArabicText(text) {
-return text
-.trim()
-.toLowerCase()
-.replace(/[\u064B-\u065F]/g, '')
-.replace(/[أإآا]/g, 'ا')
-.replace(/[ىي]/g, 'ي')
-.replace(/ة/g, 'ه');
-}
-const submit_button = document.getElementById('submit_button');
+// function normalizeArabicText(text) {
+// return text
+// .trim()
+// .toLowerCase()
+// .replace(/[\u064B-\u065F]/g, '')
+// .replace(/[أإآا]/g, 'ا')
+// .replace(/[ىي]/g, 'ي')
+// .replace(/ة/g, 'ه');
+// }
+// const submit_button = document.getElementById('submit_button');
 
 
-submit_button.addEventListener('click', function() {
-submit_button.disabled = true;
-})
-window.addEventListener('load', () => {
-const answerInput = document.getElementById('answerInput');
-const submitButton = document.querySelector('.submit-button');
-const correctTextAnswer = document.getElementById('correctTextAnswer');
-const falseTextAnswer = document.getElementById('falseTextAnswer');
-const defineTextAnswer = document.getElementById('defineTextAnswer');
+// submit_button.addEventListener('click', function() {
+// submit_button.disabled = true;
+// })
+// window.addEventListener('load', () => {
+// const answerInput = document.getElementById('answerInput');
+// const submitButton = document.querySelector('.submit-button');
+// const correctTextAnswer = document.getElementById('correctTextAnswer');
+// const falseTextAnswer = document.getElementById('falseTextAnswer');
+// const defineTextAnswer = document.getElementById('defineTextAnswer');
 
-if (localStorage.getItem('textAnswerSubmitted') === 'true') {
-answerInput.disabled = true;
-submitButton.disabled = true;
+// if (localStorage.getItem('textAnswerSubmitted') === 'true') {
+// answerInput.disabled = true;
+// submitButton.disabled = true;
 
-if (localStorage.getItem('textAnswerCorrect') === 'true') {
-    correctTextAnswer.style.display = "block";
-    falseTextAnswer.style.display = "none";
-    defineTextAnswer.style.display = "none";
-} else {
-    falseTextAnswer.style.display = "block";
-    correctTextAnswer.style.display = "none";
-    defineTextAnswer.style.display = "block";
-}
-}
-const savedTextAnswer = localStorage.getItem('textAnswerState');
-if (savedTextAnswer === 'correct') {
-document.getElementById('correctTextAnswer').style.display = 'block';
-} else if (savedTextAnswer === 'wrong') {
-document.getElementById('falseTextAnswer').style.display = 'block';
-document.getElementById('defineTextAnswer').style.display = 'block';
-}
-});
+// if (localStorage.getItem('textAnswerCorrect') === 'true') {
+//     correctTextAnswer.style.display = "block";
+//     falseTextAnswer.style.display = "none";
+//     defineTextAnswer.style.display = "none";
+// } else {
+//     falseTextAnswer.style.display = "block";
+//     correctTextAnswer.style.display = "none";
+//     defineTextAnswer.style.display = "block";
+// }
+// }
+// const savedTextAnswer = localStorage.getItem('textAnswerState');
+// if (savedTextAnswer === 'correct') {
+// document.getElementById('correctTextAnswer').style.display = 'block';
+// } else if (savedTextAnswer === 'wrong') {
+// document.getElementById('falseTextAnswer').style.display = 'block';
+// document.getElementById('defineTextAnswer').style.display = 'block';
+// }
+// });
 function resetAllData() {
-    document.getElementById('answerInput').value = '';
-document.getElementById('correctTextAnswer').style.display = 'none';
-document.getElementById('falseTextAnswer').style.display = 'none';
-document.getElementById('defineTextAnswer').style.display = 'none';
+//     document.getElementById('answerInput').value = '';
+// document.getElementById('correctTextAnswer').style.display = 'none';
+// document.getElementById('falseTextAnswer').style.display = 'none';
+// document.getElementById('defineTextAnswer').style.display = 'none';
         localStorage.clear();
         
         score = 0;
-p3.style.display = "none";
+// p3.style.display = "none";
         
         const tasks = document.querySelectorAll('.task-card input[type="checkbox"]');
         tasks.forEach(task => {
@@ -139,31 +139,31 @@ p3.style.display = "none";
           
         });
         
-        // const buttons = document.querySelectorAll('.ans_buttons');
-        // buttons.forEach(button => {
-        //     button.disabled = false;
+        const buttons = document.querySelectorAll('.ans_buttons');
+        buttons.forEach(button => {
+            button.disabled = false;
             
-        // });
+        });
         // const buttonsR = document.querySelectorAll('.ans_buttonsR');
         // buttonsR.forEach(buttonR => {
         //     buttonR.disabled = false;
             
         // });
-        const submit_button = document.getElementById('submit_button');
-        submit_button.disabled = false;
+        // const submit_button = document.getElementById('submit_button');
+        // submit_button.disabled = false;
         
 
 
-        const buttons2 = document.querySelectorAll('.ans_buttons2');
-        buttons2.forEach(button2 => {
-            button2.disabled = false;
+        // const buttons2 = document.querySelectorAll('.ans_buttons2');
+        // buttons2.forEach(button2 => {
+        //     button2.disabled = false;
             
-        });
+        // });
         
         
-        // corect.style.display = "none";
-        // false_ans.style.display = "none";
-        // define_ans.style.display = "none";
+        corect.style.display = "none";
+        false_ans.style.display = "none";
+        define_ans.style.display = "none";
 //         corectR.style.display = "none";
 //         false_ansR.style.display = "none";
 //         define_ansR.style.display = "none";
@@ -172,13 +172,13 @@ p3.style.display = "none";
 //        buttonR.style.backgroundColor = '#8b5e3c';
 
 //    });
-   ans_buttons2.forEach(button2 => {
-    button2.style.backgroundColor = '#8b5e3c';
+//    ans_buttons2.forEach(button2 => {
+//     button2.style.backgroundColor = '#8b5e3c';
 
-});
-        corect2.style.display = "none";
-        false_ans2.style.display = "none";
-        define_ans2.style.display = "none";
+// });
+//         corect2.style.display = "none";
+//         false_ans2.style.display = "none";
+//         define_ans2.style.display = "none";
 
         updateProgress();
         
@@ -205,21 +205,21 @@ p3.style.display = "none";
 //     }
 // });
 
-// const resetButton2 = document.getElementById('resetButton2');
+const resetButton2 = document.getElementById('resetButton2');
 
-// resetButton2.addEventListener('click', function () {
-//     resetAllData(); 
-//     resetButton2.style.display = "none"; 
-//     localStorage.setItem('resetButtonState2', 'hidden2');
-// });
-// document.addEventListener('DOMContentLoaded', function () {
-//     const buttonState2 = localStorage.getItem('resetButtonState2');
-//     if (buttonState2 === 'hidden2') {
-//         resetButton2.style.display = "none";    
-//     } else {
-//         resetButton2.style.display = "block"; 
-//     }
-// });
+resetButton2.addEventListener('click', function () {
+    resetAllData(); 
+    resetButton2.style.display = "none"; 
+    localStorage.setItem('resetButtonState2', 'hidden2');
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const buttonState2 = localStorage.getItem('resetButtonState2');
+    if (buttonState2 === 'hidden2') {
+        resetButton2.style.display = "none";    
+    } else {
+        resetButton2.style.display = "block"; 
+    }
+});
 
 window.addEventListener('load', () => {
     const savedScore = localStorage.getItem('score');
@@ -239,26 +239,26 @@ window.addEventListener('load', () => {
     });
    
 
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        const buttonId2 = button2.textContent.trim();
-        const savedButtonState2 = localStorage.getItem(buttonId2);
-        if (savedButtonState2 === 'clicked') {
-            button2.disabled = true;
-        }
-    });
+    // const buttons2 = document.querySelectorAll('.ans_buttons2');
+    // buttons2.forEach(button2 => {
+    //     const buttonId2 = button2.textContent.trim();
+    //     const savedButtonState2 = localStorage.getItem(buttonId2);
+    //     if (savedButtonState2 === 'clicked') {
+    //         button2.disabled = true;
+    //     }
+    // });
 
-    // const savedCorrectAnswer = localStorage.getItem('correctAnswer');
-    // if (savedCorrectAnswer === 'shown') {
-    //     corect.style.display = "block";
-    //     false_ans.style.display = "none";
-    //     define_ans.style.display = "none";
+    const savedCorrectAnswer = localStorage.getItem('correctAnswer');
+    if (savedCorrectAnswer === 'shown') {
+        corect.style.display = "block";
+        false_ans.style.display = "none";
+        define_ans.style.display = "none";
        
-    // } else if (savedCorrectAnswer === 'wrong') {
-    //     false_ans.style.display = "block";
-    //     corect.style.display = "none";
-    //     define_ans.style.display = "block";
-    // }
+    } else if (savedCorrectAnswer === 'wrong') {
+        false_ans.style.display = "block";
+        corect.style.display = "none";
+        define_ans.style.display = "block";
+    }
 
     // const savedCorrectAnswerR = localStorage.getItem('correctAnswerR');
     // if (savedCorrectAnswerR === 'shownR') {
@@ -274,46 +274,46 @@ window.addEventListener('load', () => {
 
     // }
 
-    const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
-    if (savedCorrectAnswer2 === 'shown2') {
+    // const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
+    // if (savedCorrectAnswer2 === 'shown2') {
        
-        corect2.style.display = "block";
-        false_ans2.style.display = "none";
-        define_ans2.style.display = "none";
-    } else if (savedCorrectAnswer2 === 'wrong2') {
+    //     corect2.style.display = "block";
+    //     false_ans2.style.display = "none";
+    //     define_ans2.style.display = "none";
+    // } else if (savedCorrectAnswer2 === 'wrong2') {
         
-        false_ans2.style.display = "block";
-        corect2.style.display = "none";
-        define_ans2.style.display = "block";
+    //     false_ans2.style.display = "block";
+    //     corect2.style.display = "none";
+    //     define_ans2.style.display = "block";
 
-    }
+    // }
 });
 
-// function checkAnswer(button, status) {
-//     if (status === 'صح') {
-//         score += 25;
-//         corect.style.display = "block";
-//         false_ans.style.display = "none";
-//         localStorage.setItem('correctAnswer', 'shown');
-//         button.style.backgroundColor = '#2E8B57';
-//         createConfetti();
-//     } else {
-//         false_ans.style.display = "block";
-//         corect.style.display = "none";
-//         localStorage.setItem('correctAnswer', 'wrong');
-//         button.style.backgroundColor = '#DC143C';
-//         define_ans.style.display = "block";
+function checkAnswer(button, status) {
+    if (status === 'صح') {
+        score += 25;
+        corect.style.display = "block";
+        false_ans.style.display = "none";
+        localStorage.setItem('correctAnswer', 'shown');
+        button.style.backgroundColor = '#2E8B57';
+        createConfetti();
+    } else {
+        false_ans.style.display = "block";
+        corect.style.display = "none";
+        localStorage.setItem('correctAnswer', 'wrong');
+        button.style.backgroundColor = '#DC143C';
+        define_ans.style.display = "block";
 
-//     }
+    }
     
-//     // ans_buttons.forEach(btn => {
-//     //     btn.disabled = true;
-//     //     localStorage.setItem(btn.textContent.trim(), 'clicked');
-//     // });
+    // ans_buttons.forEach(btn => {
+    //     btn.disabled = true;
+    //     localStorage.setItem(btn.textContent.trim(), 'clicked');
+    // });
     
-//     updateProgress();
-//     localStorage.setItem('score', score);
-// }
+    updateProgress();
+    localStorage.setItem('score', score);
+}
 // function checkAnswerR(buttonR, statusR) {
 //     if (statusR === 'صح') {
 //         score += 25;
@@ -339,33 +339,33 @@ window.addEventListener('load', () => {
 //     updateProgress();
 //     localStorage.setItem('score', score);
 // }
-function checkAnswer2(button2, status2) {
-    if (status2 === 'صح') {
-        score += 25;
+// function checkAnswer2(button2, status2) {
+//     if (status2 === 'صح') {
+//         score += 25;
         
-        corect2.style.display = "block";
-        false_ans2.style.display = "none";
-        localStorage.setItem('correctAnswer2', 'shown2');
-        button2.style.backgroundColor = '#2E8B57';
-        createConfetti();
-    } else {
+//         corect2.style.display = "block";
+//         false_ans2.style.display = "none";
+//         localStorage.setItem('correctAnswer2', 'shown2');
+//         button2.style.backgroundColor = '#2E8B57';
+//         createConfetti();
+//     } else {
         
-        false_ans2.style.display = "block";
-        corect2.style.display = "none";
-        localStorage.setItem('correctAnswer2', 'wrong2');
-        button2.style.backgroundColor = '#DC143C';
-        define_ans2.style.display = "block";
+//         false_ans2.style.display = "block";
+//         corect2.style.display = "none";
+//         localStorage.setItem('correctAnswer2', 'wrong2');
+//         button2.style.backgroundColor = '#DC143C';
+//         define_ans2.style.display = "block";
 
-    }
+//     }
     
-    ans_buttons2.forEach(btn2 => {
-        btn2.disabled = true;
-        localStorage.setItem(btn2.textContent.trim(), 'clicked');
-    });
+//     ans_buttons2.forEach(btn2 => {
+//         btn2.disabled = true;
+//         localStorage.setItem(btn2.textContent.trim(), 'clicked');
+//     });
     
-    updateProgress();
-    localStorage.setItem('score', score);
-}
+//     updateProgress();
+//     localStorage.setItem('score', score);
+// }
 
 function updateScore(points) {
     score += points;
@@ -507,15 +507,15 @@ if (this.checked) {
 });
 });
 
-    // const buttons = document.querySelectorAll('.ans_buttons');
-    // buttons.forEach(button => {
-    //     const buttonId = button.textContent.trim();
-    //     const savedButtonState = localStorage.getItem(buttonId);
-    //     if (savedButtonState === 'clicked') {
-    //         button.disabled = true;
+    const buttons = document.querySelectorAll('.ans_buttons');
+    buttons.forEach(button => {
+        const buttonId = button.textContent.trim();
+        const savedButtonState = localStorage.getItem(buttonId);
+        if (savedButtonState === 'clicked') {
+            button.disabled = true;
             
-    //     }
-    // });
+        }
+    });
 
     // const buttonsR = document.querySelectorAll('.ans_buttonsR');
     // buttonsR.forEach(buttonR => {
@@ -527,15 +527,15 @@ if (this.checked) {
     //     }
     // });
 
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        const buttonId2 = button2.textContent.trim();
-        const savedButtonState2 = localStorage.getItem(buttonId2);
-        if (savedButtonState2 === 'clicked') {
-            button2.disabled = true;
+    // const buttons2 = document.querySelectorAll('.ans_buttons2');
+    // buttons2.forEach(button2 => {
+    //     const buttonId2 = button2.textContent.trim();
+    //     const savedButtonState2 = localStorage.getItem(buttonId2);
+    //     if (savedButtonState2 === 'clicked') {
+    //         button2.disabled = true;
             
-        }
-    });
+    //     }
+    // });
 
     const checkboxess = document.querySelectorAll('input[type="checkbox"]');
 window.addEventListener('load', () => {
@@ -605,90 +605,90 @@ hijriDateHeader.textContent = hijriDate;
 hijriDateElement.textContent = hijriDate;
  
 
-setTimeout(() => {
-    submit_button.disabled = true;
-    const defineTextAnswer = document.getElementById('defineTextAnswer');
-    defineTextAnswer.style.display = "block"
+// setTimeout(() => {
+//     submit_button.disabled = true;
+//     const defineTextAnswer = document.getElementById('defineTextAnswer');
+//     defineTextAnswer.style.display = "block"
 
-    localStorage.setItem('submit_button', 'true');
-    localStorage.setItem('defineTextAnswer', 'block');
-}, 25000);
-
-window.addEventListener('load', () => {
-const   submit_button =   localStorage.getItem('submit_button', 'true');
-const   defineTextAnswer =  localStorage.getItem('defineTextAnswer', 'block');
-    
-
-    if (submit_button === 'true') {
-        submit_button.disabled = true;
-        
-    }
-
-    if (defineTextAnswer === 'block') {
-       const defineTextAnswer = document.getElementById('defineTextAnswer');
-        defineTextAnswer.style.display = "block"
-    }
-});
-
- 
-
-
-setTimeout(() => {
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        button2.disabled = true;
-    });
-    define_ans2.style.display = 'block';
-
-    localStorage.setItem('buttonsDisabled2', 'true');
-    localStorage.setItem('defineAnsDisplay2', 'block');
-}, 25000);
-
-window.addEventListener('load', () => {
-    const buttonsDisabled2 = localStorage.getItem('buttonsDisabled2');
-    const defineAnsDisplay2 = localStorage.getItem('defineAnsDisplay2');
-
-    if (buttonsDisabled2 === 'true') {
-        const buttons2 = document.querySelectorAll('.ans_buttons2');
-        buttons2.forEach(button2 => {
-            button2.disabled = true;
-        });
-    }
-
-    if (defineAnsDisplay2 === 'block') {
-        define_ans2.style.display = 'block';
-    }
-});
-
- 
-
-
-//   setTimeout(() => {
-//     const buttons = document.querySelectorAll('.ans_buttons');
-//     buttons.forEach(button => {
-//         button.disabled = true;
-//     });
-//     define_ans.style.display = 'block';
-
-//     localStorage.setItem('buttonsDisabled', 'true');
-//     localStorage.setItem('defineAnsDisplay', 'block');
+//     localStorage.setItem('submit_button', 'true');
+//     localStorage.setItem('defineTextAnswer', 'block');
 // }, 25000);
 
 // window.addEventListener('load', () => {
-//     const buttonsDisabled = localStorage.getItem('buttonsDisabled');
-//     const defineAnsDisplay = localStorage.getItem('defineAnsDisplay');
+// const   submit_button =   localStorage.getItem('submit_button', 'true');
+// const   defineTextAnswer =  localStorage.getItem('defineTextAnswer', 'block');
+    
 
-//     if (buttonsDisabled === 'true') {
-//         const buttons = document.querySelectorAll('.ans_buttons');
-//         buttons.forEach(button => {
-//             button.disabled = true;
+//     if (submit_button === 'true') {
+//         submit_button.disabled = true;
+        
+//     }
+
+//     if (defineTextAnswer === 'block') {
+//        const defineTextAnswer = document.getElementById('defineTextAnswer');
+//         defineTextAnswer.style.display = "block"
+//     }
+// });
+
+ 
+
+
+// setTimeout(() => {
+//     const buttons2 = document.querySelectorAll('.ans_buttons2');
+//     buttons2.forEach(button2 => {
+//         button2.disabled = true;
+//     });
+//     define_ans2.style.display = 'block';
+
+//     localStorage.setItem('buttonsDisabled2', 'true');
+//     localStorage.setItem('defineAnsDisplay2', 'block');
+// }, 25000);
+
+// window.addEventListener('load', () => {
+//     const buttonsDisabled2 = localStorage.getItem('buttonsDisabled2');
+//     const defineAnsDisplay2 = localStorage.getItem('defineAnsDisplay2');
+
+//     if (buttonsDisabled2 === 'true') {
+//         const buttons2 = document.querySelectorAll('.ans_buttons2');
+//         buttons2.forEach(button2 => {
+//             button2.disabled = true;
 //         });
 //     }
 
-//     if (defineAnsDisplay === 'block') {
-//         define_ans.style.display = 'block';
+//     if (defineAnsDisplay2 === 'block') {
+//         define_ans2.style.display = 'block';
 //     }
 // });
+
+ 
+
+
+  setTimeout(() => {
+    const buttons = document.querySelectorAll('.ans_buttons');
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
+    define_ans.style.display = 'block';
+
+    localStorage.setItem('buttonsDisabled', 'true');
+    localStorage.setItem('defineAnsDisplay', 'block');
+}, 25000);
+
+window.addEventListener('load', () => {
+    const buttonsDisabled = localStorage.getItem('buttonsDisabled');
+    const defineAnsDisplay = localStorage.getItem('defineAnsDisplay');
+
+    if (buttonsDisabled === 'true') {
+        const buttons = document.querySelectorAll('.ans_buttons');
+        buttons.forEach(button => {
+            button.disabled = true;
+        });
+    }
+
+    if (defineAnsDisplay === 'block') {
+        define_ans.style.display = 'block';
+    }
+});
 // setTimeout(() => {
 //     const buttonsR = document.querySelectorAll('.ans_buttonsR');
 //     buttonsR.forEach(buttonR => {
