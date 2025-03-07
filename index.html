@@ -31,9 +31,7 @@
                 <p>من مِن ضمن هؤلاء الأنبياء ليس عربياً 
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div>     
+                   
                 <div class="options">
                     <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">محمد عليه الصلاة والسلام</button>
                     <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">إسماعيل عليه السلام</button>
@@ -58,7 +56,24 @@
                 </div>
             </div>
 
-           
+            <h3>السؤال الثاني</h3>
+            <div class="question-card">
+                <p>من هو النبي الذي آمن معه جميع أفراد قومه
+                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+                </p>
+                <div id="countdown">
+                    <span id="seconds"></span> 
+                </div>  
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+                <div class="result">
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="defineTextAnswer" style="display: none;">
+                    <span>يونس عليه السلام</span><br>وَأَرْسَلْنَاهُ إِلَى مِائَةِ أَلْفٍ أَوْ يَزِيدُونَ * فَآمَنُوا فَمَتَّعْنَاهُمْ إِلَى حِينٍ﴾ [سورة الصافات: 147، 148]
+                </p>
+            </div>
             <!-- السؤال الثاني -->
             
         </div>
