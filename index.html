@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
-            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
         </div>
         
         <div class="logo">
@@ -28,52 +28,26 @@
         <div id="quiz">
            
             <div class="question-card">
-                <p>من مِن ضمن هؤلاء الأنبياء ليس عربياً 
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-                   
-                <div class="options">
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">محمد عليه الصلاة والسلام</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">إسماعيل عليه السلام</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">شعيب عليه السلام</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">صالح عليه السلام</button>
-                </div>
-                <div class="result">
-                    <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <div id="define_ansR">
-            
-                    <p> <span>إسماعيل عليه السلام</span><br> <ul>
-                       <li>محمد عليه الصلاه والسلام</li>
-                       <li>شعيب عليه السلام </li>
-                       <li>صالح عليه السلام</li>
-                       <li>هود عليه السلام</li>
-                       <li>صالح عليه السلام</li>
-                        
-                    </ul>
-                    </p>
-                </div>
-            </div>
-
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>من هو النبي الذي آمن معه جميع أفراد قومه
+                <p>الطهارة ليست شرطا لصحة الأذان ؟
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
                 <div id="countdown">
                     <span id="seconds"></span> 
                 </div>  
-                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                <div class="result">
-                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <div class="options">
+                        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> صح </button>
+                        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">خطأ </button>
+                    </div>
+                    <div class="result">
+                        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+                        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    </div>
+                    <p id="define_ans"> <span>صح</span>
+                
+                    </p>
                 </div>
-                <p id="defineTextAnswer" style="display: none;">
-                    <span>يونس عليه السلام</span><br>وَأَرْسَلْنَاهُ إِلَى مِائَةِ أَلْفٍ أَوْ يَزِيدُونَ * فَآمَنُوا فَمَتَّعْنَاهُمْ إِلَى حِينٍ﴾ [سورة الصافات: 147، 148]
-                </p>
-            </div>
+
+            
             <!-- السؤال الثاني -->
             
         </div>
