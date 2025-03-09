@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
-            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
         </div>
         
         <div class="logo">
@@ -28,40 +28,27 @@
         <div id="quiz">
            
             <div class="question-card">
-                <p>الطهارة ليست شرطا لصحة الأذان ؟
-                </p>
-                
-                    <div class="options">
-                        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> صح </button>
-                        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">خطأ </button>
-                    </div>
-                    <div class="result">
-                        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-                        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                    </div>
-                    <p id="define_ans"> <span>صح</span>
-                
-                    </p>
-                </div>
-                <h3>السؤال الثاني</h3>
-
-                <div class="question-card">
-                    <p>من هو النبي الذي دفنه الشيطان حيا
+                <p>يعذر بترك الجماعة
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                    </p>
-                    <div id="countdown">
-                        <span id="seconds"></span> 
-                    </div>  
-                    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                    <div class="result">
-                        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                    </div>
-                    <p id="defineTextAnswer" style="display: none;">
-                        <span>شيث عليه السلام</span>
-                    </p>
+                </p>
+                <div id="countdown">
+                    <span id="seconds"></span> 
+                </div>  
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> لو حصل له أذى شديد بسبب ثلج أو ريح شديده</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">إذا حضر الطعام وهو محتاج إليه</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">أن يخاف من فوات الرفقة فى السفر</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">جميع ما سبق</button>
                 </div>
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>جميع ما سبق</span>
+                </p>
+            </div>
+
+              
             <!-- السؤال الثاني -->
             
         </div>
