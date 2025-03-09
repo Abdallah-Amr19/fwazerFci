@@ -29,11 +29,8 @@
            
             <div class="question-card">
                 <p>الطهارة ليست شرطا لصحة الأذان ؟
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div>  
+                
                     <div class="options">
                         <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> صح </button>
                         <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">خطأ </button>
@@ -46,8 +43,25 @@
                 
                     </p>
                 </div>
+                <h3>السؤال الثاني</h3>
 
-            
+                <div class="question-card">
+                    <p>من هو النبي الذي دفنه الشيطان حيا
+                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+                    </p>
+                    <div id="countdown">
+                        <span id="seconds"></span> 
+                    </div>  
+                    <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                    <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+                    <div class="result">
+                        <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                        <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    </div>
+                    <p id="defineTextAnswer" style="display: none;">
+                        <span>شيث عليه السلام</span><br>فالنبي صلى الله عليه وسلم لم يكن مخطئا في تحريم العسل على نفسه, وإنما فعل ذلك اعتقادا منه وجود رائحة فيه, كما صرح له بعض أزواجه بذلك، وكان صلى الله عليه وسلم حريصا ألا يوجد منه إلا ريح طيب، لأنه يناجي ربه ويناجي الملائكة
+                    </p>
+                </div>
             <!-- السؤال الثاني -->
             
         </div>
