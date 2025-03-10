@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
-            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
         </div>
         
         <div class="logo">
@@ -28,64 +28,24 @@
         <div id="quiz">
            
             <div class="question-card">
-                <p>يعذر بترك الجماعة
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-               
-                <div class="options">
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> لو حصل له أذى شديد بسبب ثلج أو ريح شديده</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">إذا حضر الطعام وهو محتاج إليه</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">أن يخاف من فوات الرفقة فى السفر</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">جميع ما سبق</button>
-                </div>
-                <div class="result">
-                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="define_ans2"> <span>جميع ما سبق</span>
-                </p>
-            </div>
-
-            <div class="question-card">
-                <p>من أركان الصلاة ...؟
+                <p>ما هو الطعام الذي حرمه النبي علي نفسه
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
                 <div id="countdown">
                     <span id="seconds"></span> 
                 </div>  
-                <div class="options">
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">الركوع والسجود و الطمأنينة</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">التسبيح في الركوع و السجود</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">التشهد الأول</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">جميع ما سبق</button>
-                </div>
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
                 <div class="result">
-                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <div id="define_ans">
-            
-                    <p> <span>الركوع والسجود و الطمأنينة</span><br> <ul>
-                      <li>القيام في الفرض على القادر</li>
-                      <li>تكبيرة الإحرام </li>
-                      <li>قراءة الفاتحة</li>
-                      <li>الركوع </li>
-                      <li>الرفع من الركوع</li>
-                      <li>الاعتدال قائما</li>
-                      <li>السجود </li>
-                      <li> الرفع من السجود</li>
-                      <li>الجلوس بين السجدتين</li>
-                      <li>لطمأنينة وهي السكون في كل ركن فعلي</li>
-                      <li>التشهد الأخير</li>
-                      <li>لجلوس للتشهد الأخير وللتسليمتين</li>
-                      <li>التسليمتان </li>
-                      <li>ترتيب الأركان</li>
-            
-                        
-                    </ul>
-                    </p>
-                </div>
+                <p id="defineTextAnswer" style="display: none;">
+                    <span>العسل</span><br>فالنبي صلى الله عليه وسلم لم يكن مخطئا في تحريم العسل على نفسه, وإنما فعل ذلك اعتقادا منه وجود رائحة فيه, كما صرح له بعض أزواجه بذلك، وكان صلى الله عليه وسلم حريصا ألا يوجد منه إلا ريح طيب، لأنه يناجي ربه ويناجي الملائكة
+                </p>
             </div>
+
+           
             
             <!-- السؤال الثاني -->
             
