@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
-            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
+            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
         </div>
         
         <div class="logo">
@@ -28,44 +28,30 @@
         <div id="quiz">
            
             <div class="question-card">
-                <p>ما هو الطعام الذي حرمه النبي علي نفسه
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-               
-                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                <div class="result">
-                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="defineTextAnswer" style="display: none;">
-                    <span>العسل</span><br>فالنبي صلى الله عليه وسلم لم يكن مخطئا في تحريم العسل على نفسه, وإنما فعل ذلك اعتقادا منه وجود رائحة فيه, كما صرح له بعض أزواجه بذلك، وكان صلى الله عليه وسلم حريصا ألا يوجد منه إلا ريح طيب، لأنه يناجي ربه ويناجي الملائكة
-                </p>
-            </div>
-
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>لو تشهد وسلم فى صلاة رباعية بعد الركعة الثالثة
+                <p> فى الحديث ( لا صلاة ........خلف الصف)
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
                 <div id="countdown">
                     <span id="seconds"></span> 
                 </div>  
                 <div class="options">
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">تبطل صلاته ويلزمه الاعادة </button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">يكفيه أن يسجد للسهو فقط ولا يأت بالركعة الرابعة</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">يقوم ويأت بالركعة الرابعة ويتم الصلاة ويسجد للسهو</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">لامرأة</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">لجماعة</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">لمنفرد</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">للصبيان</button>
                     
                 </div>
                 <div class="result">
-                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ans"> <span>يقوم ويأت بالركعة الرابعة ويتم الصلاة ويسجد للسهو</span>
+                <p id="define_ansR"> <span>لمنفرد</span>
                 
             
                 </p>
             </div>
+            
+           
             
             <!-- السؤال الثاني -->
             

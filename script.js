@@ -1,9 +1,9 @@
-const corect = document.getElementById("corect_ans");
-const false_ans = document.getElementById("false_ans");
-const define_ans = document.getElementById("define_ans");
-// const corectR = document.getElementById("corect_ansR");
-// const false_ansR = document.getElementById("false_ansR");
-// const define_ansR = document.getElementById("define_ansR");
+// const corect = document.getElementById("corect_ans");
+// const false_ans = document.getElementById("false_ans");
+// const define_ans = document.getElementById("define_ans");
+const corectR = document.getElementById("corect_ansR");
+const false_ansR = document.getElementById("false_ansR");
+const define_ansR = document.getElementById("define_ansR");
 // const p3 = document.getElementById("p3");
 // const hent_btn = document.getElementById("hent_btn");
 // const corect2 = document.getElementById("corect_ans2");
@@ -11,15 +11,15 @@ const define_ans = document.getElementById("define_ans");
 // const define_ans2 = document.getElementById("define_ans2");
 // const question_card_hedden = document.getElementById("question_card_hedden");
 
-const ans_buttons = document.querySelectorAll(".ans_buttons");
-// const ans_buttonsR = document.querySelectorAll(".ans_buttonsR");
+// const ans_buttons = document.querySelectorAll(".ans_buttons");
+const ans_buttonsR = document.querySelectorAll(".ans_buttonsR");
 // const ans_buttons2= document.querySelectorAll(".ans_buttons2");
-corect.style.display = "none";
-false_ans.style.display = "none";
-define_ans.style.display = "none";
-// corectR.style.display = "none";
-// false_ansR.style.display = "none";
-// define_ansR.style.display = "none";
+// corect.style.display = "none";
+// false_ans.style.display = "none";
+// define_ans.style.display = "none";
+corectR.style.display = "none";
+false_ansR.style.display = "none";
+define_ansR.style.display = "none";
 // p3.style.display = "none";
 //     hent_btn.addEventListener("click",function(){
 //         p3.style.display = "block";
@@ -138,16 +138,16 @@ function resetAllData() {
           
         });
         
-        const buttons = document.querySelectorAll('.ans_buttons');
-        buttons.forEach(button => {
-            button.disabled = false;
-            
-        });
-        // const buttonsR = document.querySelectorAll('.ans_buttonsR');
-        // buttonsR.forEach(buttonR => {
-        //     buttonR.disabled = false;
+        // const buttons = document.querySelectorAll('.ans_buttons');
+        // buttons.forEach(button => {
+        //     button.disabled = false;
             
         // });
+        const buttonsR = document.querySelectorAll('.ans_buttonsR');
+        buttonsR.forEach(buttonR => {
+            buttonR.disabled = false;
+            
+        });
         // const submit_button = document.getElementById('submit_button');
         // submit_button.disabled = false;
         
@@ -160,17 +160,17 @@ function resetAllData() {
         // });
         
         
-        corect.style.display = "none";
-        false_ans.style.display = "none";
-        define_ans.style.display = "none";
-        // corectR.style.display = "none";
-        // false_ansR.style.display = "none";
-        // define_ansR.style.display = "none";
+        // corect.style.display = "none";
+        // false_ans.style.display = "none";
+        // define_ans.style.display = "none";
+        corectR.style.display = "none";
+        false_ansR.style.display = "none";
+        define_ansR.style.display = "none";
        
-//        ans_buttonsR.forEach(buttonR => {
-//        buttonR.style.backgroundColor = '#8b5e3c';
+       ans_buttonsR.forEach(buttonR => {
+       buttonR.style.backgroundColor = '#8b5e3c';
 
-//    });
+   });
 //    ans_buttons2.forEach(button2 => {
 //     button2.style.backgroundColor = '#8b5e3c';
 
@@ -188,37 +188,37 @@ function resetAllData() {
         // location.reload();
     }
 
-// const resetButton = document.getElementById('resetButton');
+const resetButton = document.getElementById('resetButton');
 
-// resetButton.addEventListener('click', function () {
-//     resetAllData();
-//     resetButton.style.display = "none"; 
-//     localStorage.setItem('resetButtonState', 'hidden');
-// });
-// document.addEventListener('DOMContentLoaded', function () {
-//     const buttonState = localStorage.getItem('resetButtonState');
-//     if (buttonState === 'hidden') {
-//         resetButton.style.display = "none"; 
-//     } else {
-//         resetButton.style.display = "block"; 
-//     }
-// });
-
-const resetButton2 = document.getElementById('resetButton2');
-
-resetButton2.addEventListener('click', function () {
-    resetAllData(); 
-    resetButton2.style.display = "none"; 
-    localStorage.setItem('resetButtonState2', 'hidden2');
+resetButton.addEventListener('click', function () {
+    resetAllData();
+    resetButton.style.display = "none"; 
+    localStorage.setItem('resetButtonState', 'hidden');
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const buttonState2 = localStorage.getItem('resetButtonState2');
-    if (buttonState2 === 'hidden2') {
-        resetButton2.style.display = "none";    
+    const buttonState = localStorage.getItem('resetButtonState');
+    if (buttonState === 'hidden') {
+        resetButton.style.display = "none"; 
     } else {
-        resetButton2.style.display = "block"; 
+        resetButton.style.display = "block"; 
     }
 });
+
+// const resetButton2 = document.getElementById('resetButton2');
+
+// resetButton2.addEventListener('click', function () {
+//     resetAllData(); 
+//     resetButton2.style.display = "none"; 
+//     localStorage.setItem('resetButtonState2', 'hidden2');
+// });
+// document.addEventListener('DOMContentLoaded', function () {
+//     const buttonState2 = localStorage.getItem('resetButtonState2');
+//     if (buttonState2 === 'hidden2') {
+//         resetButton2.style.display = "none";    
+//     } else {
+//         resetButton2.style.display = "block"; 
+//     }
+// });
 
 window.addEventListener('load', () => {
     const savedScore = localStorage.getItem('score');
@@ -247,31 +247,31 @@ window.addEventListener('load', () => {
     //     }
     // });
 
-    const savedCorrectAnswer = localStorage.getItem('correctAnswer');
-    if (savedCorrectAnswer === 'shown') {
-        corect.style.display = "block";
-        false_ans.style.display = "none";
-        define_ans.style.display = "none";
+    // const savedCorrectAnswer = localStorage.getItem('correctAnswer');
+    // if (savedCorrectAnswer === 'shown') {
+    //     corect.style.display = "block";
+    //     false_ans.style.display = "none";
+    //     define_ans.style.display = "none";
        
-    } else if (savedCorrectAnswer === 'wrong') {
-        false_ans.style.display = "block";
-        corect.style.display = "none";
-        define_ans.style.display = "block";
-    }
+    // } else if (savedCorrectAnswer === 'wrong') {
+    //     false_ans.style.display = "block";
+    //     corect.style.display = "none";
+    //     define_ans.style.display = "block";
+    // }
 
-    // const savedCorrectAnswerR = localStorage.getItem('correctAnswerR');
-    // if (savedCorrectAnswerR === 'shownR') {
-    //     corectR.style.display = "block";
-    //     false_ansR.style.display = "none";
-    //     define_ansR.style.display = "none";
+    const savedCorrectAnswerR = localStorage.getItem('correctAnswerR');
+    if (savedCorrectAnswerR === 'shownR') {
+        corectR.style.display = "block";
+        false_ansR.style.display = "none";
+        define_ansR.style.display = "none";
        
-    // } else if (savedCorrectAnswerR === 'wrong') {
-    //     false_ansR.style.display = "block";
-    //     corectR.style.display = "none";
-    //     define_ansR.style.display = "block";
+    } else if (savedCorrectAnswerR === 'wrong') {
+        false_ansR.style.display = "block";
+        corectR.style.display = "none";
+        define_ansR.style.display = "block";
       
 
-    // }
+    }
 
     // const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
     // if (savedCorrectAnswer2 === 'shown2') {
@@ -288,56 +288,56 @@ window.addEventListener('load', () => {
     // }
 });
 
-function checkAnswer(button, status) {
-    if (status === 'صح') {
-        score += 25;
-        corect.style.display = "block";
-        false_ans.style.display = "none";
-        localStorage.setItem('correctAnswer', 'shown');
-        button.style.backgroundColor = '#2E8B57';
-        createConfetti();
-    } else {
-        false_ans.style.display = "block";
-        corect.style.display = "none";
-        localStorage.setItem('correctAnswer', 'wrong');
-        button.style.backgroundColor = '#DC143C';
-        define_ans.style.display = "block";
-
-    }
-    
-    ans_buttons.forEach(btn => {
-        btn.disabled = true;
-        localStorage.setItem(btn.textContent.trim(), 'clicked');
-    });
-    
-    updateProgress();
-    localStorage.setItem('score', score);
-}
-// function checkAnswerR(buttonR, statusR) {
-//     if (statusR === 'صح') {
+// function checkAnswer(button, status) {
+//     if (status === 'صح') {
 //         score += 25;
-//         corectR.style.display = "block";
-//         false_ansR.style.display = "none";
-//         localStorage.setItem('correctAnswerR', 'shownR');
-//         buttonR.style.backgroundColor = '#2E8B57';
+//         corect.style.display = "block";
+//         false_ans.style.display = "none";
+//         localStorage.setItem('correctAnswer', 'shown');
+//         button.style.backgroundColor = '#2E8B57';
 //         createConfetti();
 //     } else {
-//         false_ansR.style.display = "block";
-//         corectR.style.display = "none";
-//         localStorage.setItem('correctAnswerR', 'wrongR');
-//         buttonR.style.backgroundColor = '#DC143C';
-//         define_ansR.style.display = "block";
+//         false_ans.style.display = "block";
+//         corect.style.display = "none";
+//         localStorage.setItem('correctAnswer', 'wrong');
+//         button.style.backgroundColor = '#DC143C';
+//         define_ans.style.display = "block";
 
 //     }
     
-//     ans_buttonsR.forEach(btnR => {
-//         btnR.disabled = true;
-//         localStorage.setItem(btnR.textContent.trim(), 'clicked');
+//     ans_buttons.forEach(btn => {
+//         btn.disabled = true;
+//         localStorage.setItem(btn.textContent.trim(), 'clicked');
 //     });
     
 //     updateProgress();
 //     localStorage.setItem('score', score);
 // }
+function checkAnswerR(buttonR, statusR) {
+    if (statusR === 'صح') {
+        score += 25;
+        corectR.style.display = "block";
+        false_ansR.style.display = "none";
+        localStorage.setItem('correctAnswerR', 'shownR');
+        buttonR.style.backgroundColor = '#2E8B57';
+        createConfetti();
+    } else {
+        false_ansR.style.display = "block";
+        corectR.style.display = "none";
+        localStorage.setItem('correctAnswerR', 'wrongR');
+        buttonR.style.backgroundColor = '#DC143C';
+        define_ansR.style.display = "block";
+
+    }
+    
+    ans_buttonsR.forEach(btnR => {
+        btnR.disabled = true;
+        localStorage.setItem(btnR.textContent.trim(), 'clicked');
+    });
+    
+    updateProgress();
+    localStorage.setItem('score', score);
+}
 // function checkAnswer2(button2, status2) {
 //     if (status2 === 'صح') {
 //         score += 25;
@@ -506,25 +506,25 @@ if (this.checked) {
 });
 });
 
-    const buttons = document.querySelectorAll('.ans_buttons');
-    buttons.forEach(button => {
-        const buttonId = button.textContent.trim();
-        const savedButtonState = localStorage.getItem(buttonId);
-        if (savedButtonState === 'clicked') {
-            button.disabled = true;
-            
-        }
-    });
-
-    // const buttonsR = document.querySelectorAll('.ans_buttonsR');
-    // buttonsR.forEach(buttonR => {
-    //     const buttonIdR = buttonR.textContent.trim();
-    //     const savedButtonStateR = localStorage.getItem(buttonIdR);
-    //     if (savedButtonStateR === 'clicked') {
-    //         buttonR.disabled = true;
+    // const buttons = document.querySelectorAll('.ans_buttons');
+    // buttons.forEach(button => {
+    //     const buttonId = button.textContent.trim();
+    //     const savedButtonState = localStorage.getItem(buttonId);
+    //     if (savedButtonState === 'clicked') {
+    //         button.disabled = true;
             
     //     }
     // });
+
+    const buttonsR = document.querySelectorAll('.ans_buttonsR');
+    buttonsR.forEach(buttonR => {
+        const buttonIdR = buttonR.textContent.trim();
+        const savedButtonStateR = localStorage.getItem(buttonIdR);
+        if (savedButtonStateR === 'clicked') {
+            buttonR.disabled = true;
+            
+        }
+    });
 
     // const buttons2 = document.querySelectorAll('.ans_buttons2');
     // buttons2.forEach(button2 => {
@@ -662,58 +662,58 @@ hijriDateElement.textContent = hijriDate;
  
 
 
-  setTimeout(() => {
-    const buttons = document.querySelectorAll('.ans_buttons');
-    buttons.forEach(button => {
-        button.disabled = true;
-    });
-    define_ans.style.display = 'block';
-
-    localStorage.setItem('buttonsDisabled', 'true');
-    localStorage.setItem('defineAnsDisplay', 'block');
-}, 25000);
-
-window.addEventListener('load', () => {
-    const buttonsDisabled = localStorage.getItem('buttonsDisabled');
-    const defineAnsDisplay = localStorage.getItem('defineAnsDisplay');
-
-    if (buttonsDisabled === 'true') {
-        const buttons = document.querySelectorAll('.ans_buttons');
-        buttons.forEach(button => {
-            button.disabled = true;
-        });
-    }
-
-    if (defineAnsDisplay === 'block') {
-        define_ans.style.display = 'block';
-    }
-});
-// setTimeout(() => {
-//     const buttonsR = document.querySelectorAll('.ans_buttonsR');
-//     buttonsR.forEach(buttonR => {
-//         buttonR.disabled = true;
+//   setTimeout(() => {
+//     const buttons = document.querySelectorAll('.ans_buttons');
+//     buttons.forEach(button => {
+//         button.disabled = true;
 //     });
-//     define_ansR.style.display = 'block';
+//     define_ans.style.display = 'block';
 
-//     localStorage.setItem('buttonsDisabledR', 'true');
-//     localStorage.setItem('defineAnsDisplayR', 'block');
+//     localStorage.setItem('buttonsDisabled', 'true');
+//     localStorage.setItem('defineAnsDisplay', 'block');
 // }, 25000);
 
 // window.addEventListener('load', () => {
-//     const buttonsDisabledR = localStorage.getItem('buttonsDisabledR');
-//     const defineAnsDisplayR = localStorage.getItem('defineAnsDisplayR');
+//     const buttonsDisabled = localStorage.getItem('buttonsDisabled');
+//     const defineAnsDisplay = localStorage.getItem('defineAnsDisplay');
 
-//     if (buttonsDisabledR === 'true') {
-//         const buttonsR = document.querySelectorAll('.ans_buttonsR');
-//         buttonsR.forEach(buttonR => {
-//             buttonR.disabled = true;
+//     if (buttonsDisabled === 'true') {
+//         const buttons = document.querySelectorAll('.ans_buttons');
+//         buttons.forEach(button => {
+//             button.disabled = true;
 //         });
 //     }
 
-//     if (defineAnsDisplayR === 'block') {
-//         define_ansR.style.display = 'block';
+//     if (defineAnsDisplay === 'block') {
+//         define_ans.style.display = 'block';
 //     }
 // });
+setTimeout(() => {
+    const buttonsR = document.querySelectorAll('.ans_buttonsR');
+    buttonsR.forEach(buttonR => {
+        buttonR.disabled = true;
+    });
+    define_ansR.style.display = 'block';
+
+    localStorage.setItem('buttonsDisabledR', 'true');
+    localStorage.setItem('defineAnsDisplayR', 'block');
+}, 25000);
+
+window.addEventListener('load', () => {
+    const buttonsDisabledR = localStorage.getItem('buttonsDisabledR');
+    const defineAnsDisplayR = localStorage.getItem('defineAnsDisplayR');
+
+    if (buttonsDisabledR === 'true') {
+        const buttonsR = document.querySelectorAll('.ans_buttonsR');
+        buttonsR.forEach(buttonR => {
+            buttonR.disabled = true;
+        });
+    }
+
+    if (defineAnsDisplayR === 'block') {
+        define_ansR.style.display = 'block';
+    }
+});
 
 
 window.addEventListener('load', () => {
