@@ -126,7 +126,6 @@ function resetAllData() {
 // document.getElementById('correctTextAnswer').style.display = 'none';
 // document.getElementById('falseTextAnswer').style.display = 'none';
 // document.getElementById('defineTextAnswer').style.display = 'none';
-        localStorage.clear();
         
         score = 0;
 // p3.style.display = "none";
@@ -186,6 +185,8 @@ function resetAllData() {
         resetTasksH()
         
         // location.reload();
+        localStorage.clear();
+
     }
 
 // const resetButton = document.getElementById('resetButton');
@@ -603,7 +604,6 @@ hijriDateHeader.textContent = hijriDate;
 
 hijriDateElement.textContent = hijriDate;
  
-
 // setTimeout(() => {
 //     submit_button.disabled = true;
 //     const defineTextAnswer = document.getElementById('defineTextAnswer');
@@ -662,32 +662,32 @@ hijriDateElement.textContent = hijriDate;
  
 
 
-  setTimeout(() => {
-    const buttons = document.querySelectorAll('.ans_buttons');
-    buttons.forEach(button => {
-        button.disabled = true;
-    });
-    define_ans.style.display = 'block';
+//   setTimeout(() => {
+//     const buttons = document.querySelectorAll('.ans_buttons');
+//     buttons.forEach(button => {
+//         button.disabled = true;
+//     });
+//     define_ans.style.display = 'block';
 
-    localStorage.setItem('buttonsDisabled', 'true');
-    localStorage.setItem('defineAnsDisplay', 'block');
-}, 25000);
+//     localStorage.setItem('buttonsDisabled', 'true');
+//     localStorage.setItem('defineAnsDisplay', 'block');
+// }, 25000);
 
-window.addEventListener('load', () => {
-    const buttonsDisabled = localStorage.getItem('buttonsDisabled');
-    const defineAnsDisplay = localStorage.getItem('defineAnsDisplay');
+// window.addEventListener('load', () => {
+//     const buttonsDisabled = localStorage.getItem('buttonsDisabled');
+//     const defineAnsDisplay = localStorage.getItem('defineAnsDisplay');
 
-    if (buttonsDisabled === 'true') {
-        const buttons = document.querySelectorAll('.ans_buttons');
-        buttons.forEach(button => {
-            button.disabled = true;
-        });
-    }
+//     if (buttonsDisabled === 'true') {
+//         const buttons = document.querySelectorAll('.ans_buttons');
+//         buttons.forEach(button => {
+//             button.disabled = true;
+//         });
+//     }
 
-    if (defineAnsDisplay === 'block') {
-        define_ans.style.display = 'block';
-    }
-});
+//     if (defineAnsDisplay === 'block') {
+//         define_ans.style.display = 'block';
+//     }
+// });
 // setTimeout(() => {
 //     const buttonsR = document.querySelectorAll('.ans_buttonsR');
 //     buttonsR.forEach(buttonR => {
