@@ -16,64 +16,42 @@
     
     <div class="container">
         <div class="icon_con">
-            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
-            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
+            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> </button>
         </div>
         
         <div class="logo">
             <img src=".//photo_2025-02-28_18-30-06 (1).svg" alt="">
         </div>
         <h1 id="hijri-date-header"  style="font-size: 43px;"></h1>
+
         <h3>السؤال الأول</h3>
         <div id="quiz">
-           
             <div class="question-card">
-                <p> فى الحديث ( لا صلاة ........خلف الصف)
+                <p>لو نسى الإمام التشهد الأوسط وقام للثالثة 
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-                
+                     </p>
+                     <div id="countdown">
+                        <span id="seconds"></span> 
+                    </div>  
                 <div class="options">
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">لامرأة</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">لجماعة</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">لمنفرد</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">للصبيان</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">يتابعه المأموم ويسجد معه للسهو</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">يسبح له المأموم حتى يعود للتشهد الأوسط</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">ينفرد عنه المأموم ويكمل الصلاة وحده</button>
                     
                 </div>
                 <div class="result">
-                    <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ansR"> <span>لمنفرد</span>
+                <p id="define_ans"> <span>يتابعه المأموم ويسجد معه للسهو</span>
                 
             
                 </p>
             </div>
-            
+                 
 
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p> لو صلى مع الإمام رجل واحد فقط فإنه
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-
-                </p>
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div>  
-                <div class="options">
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">يقف خلفه</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">يقف عن يمينه محاذيا له</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">يقف عن يساره محاذيا له</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">يقف عن يمينه ويتأخر عنه قليلا</button>
-                </div>
-                <div class="result">
-                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="define_ans2"> <span>يقف عن يمينه محاذيا له</span>
-                </p>
-            </div>
            
-            
             <!-- السؤال الثاني -->
             
         </div>
