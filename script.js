@@ -730,4 +730,3 @@ window.addEventListener('load', () => {
         }
     }, 1000); 
 });
-localStorage.clear()
