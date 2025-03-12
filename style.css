@@ -213,6 +213,7 @@ color: #2E8B57;
             font-size: 16px;
             transition: all 0.3s ease;
             display: block;
+            transform: translateY(30%);
         }
 
         .resetButton:hover {
