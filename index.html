@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> </button> -->
-            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> 
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt="">
+            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt="">  -->
                 <h1>دوسواااااعلياا!!!</h1>
             </button>
         </div>
@@ -30,46 +30,28 @@
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
-                <p>لو نسى الإمام التشهد الأوسط وقام للثالثة 
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                     </p>
-                     
-                <div class="options">
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">يتابعه المأموم ويسجد معه للسهو</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">يسبح له المأموم حتى يعود للتشهد الأوسط</button>
-                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">ينفرد عنه المأموم ويكمل الصلاة وحده</button>
-                    
-                </div>
-                <div class="result">
-                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="define_ans"> <span>يتابعه المأموم ويسجد معه للسهو</span>
-                
-            
-                </p>
-            </div>
-                 
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>من عجز عن الركوع فقط فى الصلاة فله أن يصلى جالسا من اول الصلاة 
+                <p> إذا أئتم المسافر بمقيم فإنه....؟
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
                 <div id="countdown">
                     <span id="seconds"></span> 
                 </div>  
                 <div class="options">
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')"> صح</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">خطأ</button>                   
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">يلزمه الإتمام وليس له القصر</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">له أن يقصر الصلاة</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">كلاهما صحيح فله الاتمام أو القصر </button>        
                 </div>
                 <div class="result">
-                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ans2"> <span>خطأ</span>
+                <p id="define_ansR"> <span>يلزمه الإتمام وليس له القصر</span>
+                
+            
                 </p>
             </div>
-           
+            
+         
             <!-- السؤال الثاني -->
             
         </div>
