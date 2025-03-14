@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt="">
-            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt="">  -->
+            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> -->
+            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> 
                 <h1>دوسواااااعلياا!!!</h1>
             </button>
         </div>
@@ -30,45 +30,30 @@
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
-                <p> إذا أئتم المسافر بمقيم فإنه....؟
-                    <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-               
-                <div class="options">
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">يلزمه الإتمام وليس له القصر</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">له أن يقصر الصلاة</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">كلاهما صحيح فله الاتمام أو القصر </button>        
-                </div>
-                <div class="result">
-                    <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                </div>
-                <p id="define_ansR"> <span>يلزمه الإتمام وليس له القصر</span>
-                
-            
-                </p>
-            </div>
-            
-            <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>مما يحرم فعله فى صلاة الجمعة
+                <p>  تختلف صلاة الخوف فى الحرب عن الصلاة العادية فى
                     <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
                 <div id="countdown">
                     <span id="seconds"></span> 
-                </div>  
+                </div> 
                 <div class="options">
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">الكلام والإمام يخطب </button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">تخطى رقاب الناس أثناء الخطبة</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">جميع ما سبق</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">عدد الركعات</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">صفة الصلاة نفسها</button>
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">حمل السلاح فيها</button>        
+                    <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">جميع ما سبق</button>
+            
                 </div>
                 <div class="result">
-                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ans2"> <span>جميع ما سبق</span>
+                <p id="define_ans"> <span>جميع ما سبق</span>
+            
+            
                 </p>
             </div>
+
+            
             <!-- السؤال الثاني -->
             
         </div>
