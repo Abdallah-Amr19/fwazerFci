@@ -33,12 +33,10 @@
                 <p>صيام يوم عرفه يكفر ..... وصيام يوم عاشوراء يكفر .....؟
         <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div> 
+                
                 <div class="options">
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">سنة ,سنتين</button>
-                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">سنتين,سنة</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">سنة ,سنتين</button>
+                    <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')">سنتين,سنة</button>
                     <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">الكبائر, الصغائر</button>        
             
                 </div>
@@ -46,14 +44,32 @@
                     <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
                     <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ansR"> <span>سنة ,سنتين</span>
+                <p id="define_ansR"> <span>سنتين,سنة</span>
             
             
                 </p>
             </div>
+        <h3>السؤال الثاني</h3>
+
+            <div class="question-card">
+                <p>تَسَحَّرُوا فَإِنَّ فِي السَّحُورِ .....؟ 
+        <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+                </p>
+                <div id="countdown">
+                    <span id="seconds"></span> 
+                </div> 
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+                <div class="result">
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="defineTextAnswer" style="display: none;">
+                    <span style="font-size: 36px;">تَسَحَّرُوا فَإِنَّ فِي السَّحُورِ بَرَكَةً</span>
+                    
+                </p>
+            </div>
             
-
-
     
 
            <!-- <S></S> -->
