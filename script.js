@@ -1,9 +1,9 @@
 const corect = document.getElementById("corect_ans");
 const false_ans = document.getElementById("false_ans");
 const define_ans = document.getElementById("define_ans");
-// const corectR = document.getElementById("corect_ansR");
-// const false_ansR = document.getElementById("false_ansR");
-// const define_ansR = document.getElementById("define_ansR");
+const corectR = document.getElementById("corect_ansR");
+const false_ansR = document.getElementById("false_ansR");
+const define_ansR = document.getElementById("define_ansR");
 // // const p3 = document.getElementById("p3");
 // // const hent_btn = document.getElementById("hent_btn");
 // const corect2 = document.getElementById("corect_ans2");
@@ -11,14 +11,14 @@ const define_ans = document.getElementById("define_ans");
 // const define_ans2 = document.getElementById("define_ans2");
 // const question_card_hedden = document.getElementById("question_card_hedden");
 const ans_buttons = document.querySelectorAll(".ans_buttons");
-// const ans_buttonsR = document.querySelectorAll(".ans_buttonsR");
+const ans_buttonsR = document.querySelectorAll(".ans_buttonsR");
 // const ans_buttons2= document.querySelectorAll(".ans_buttons2");
 corect.style.display = "none";
 false_ans.style.display = "none";
 define_ans.style.display = "none";
-// corectR.style.display = "none";
-// false_ansR.style.display = "none";
-// define_ansR.style.display = "none";
+corectR.style.display = "none";
+false_ansR.style.display = "none";
+define_ansR.style.display = "none";
 // p3.style.display = "none";
 //     hent_btn.addEventListener("click",function(){
 //         p3.style.display = "block";
@@ -141,11 +141,11 @@ function resetAllData() {
             button.disabled = false;
             
         });
-        // const buttonsR = document.querySelectorAll('.ans_buttonsR');
-        // buttonsR.forEach(buttonR => {
-        //     buttonR.disabled = false;
+        const buttonsR = document.querySelectorAll('.ans_buttonsR');
+        buttonsR.forEach(buttonR => {
+            buttonR.disabled = false;
             
-        // });
+        });
         // const submit_button = document.getElementById('submit_button');
         // submit_button.disabled = false;
         
@@ -161,14 +161,14 @@ function resetAllData() {
         corect.style.display = "none";
         false_ans.style.display = "none";
         define_ans.style.display = "none";
-//         corectR.style.display = "none";
-//         false_ansR.style.display = "none";
-//         define_ansR.style.display = "none";
+        corectR.style.display = "none";
+        false_ansR.style.display = "none";
+        define_ansR.style.display = "none";
        
-//        ans_buttonsR.forEach(buttonR => {
-//        buttonR.style.backgroundColor = '#8b5e3c';
+       ans_buttonsR.forEach(buttonR => {
+       buttonR.style.backgroundColor = '#8b5e3c';
 
-//    });
+   });
 //    ans_buttons2.forEach(button2 => {
 //     button2.style.backgroundColor = '#8b5e3c';
 
@@ -259,19 +259,19 @@ window.addEventListener('load', () => {
         define_ans.style.display = "block";
     }
 
-    // const savedCorrectAnswerR = localStorage.getItem('correctAnswerR');
-    // if (savedCorrectAnswerR === 'shownR') {
-    //     corectR.style.display = "block";
-    //     false_ansR.style.display = "none";
-    //     define_ansR.style.display = "none";
+    const savedCorrectAnswerR = localStorage.getItem('correctAnswerR');
+    if (savedCorrectAnswerR === 'shownR') {
+        corectR.style.display = "block";
+        false_ansR.style.display = "none";
+        define_ansR.style.display = "none";
        
-    // } else if (savedCorrectAnswerR === 'wrong') {
-    //     false_ansR.style.display = "block";
-    //     corectR.style.display = "none";
-    //     define_ansR.style.display = "block";
+    } else if (savedCorrectAnswerR === 'wrong') {
+        false_ansR.style.display = "block";
+        corectR.style.display = "none";
+        define_ansR.style.display = "block";
       
 
-    // }
+    }
 
 //     const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
 //     if (savedCorrectAnswer2 === 'shown2') {
@@ -313,31 +313,31 @@ function checkAnswer(button, status) {
     updateProgress();
     localStorage.setItem('score', score);
 }
-// function checkAnswerR(buttonR, statusR) {
-//     if (statusR === 'صح') {
-//         score += 25;
-//         corectR.style.display = "block";
-//         false_ansR.style.display = "none";
-//         localStorage.setItem('correctAnswerR', 'shownR');
-//         buttonR.style.backgroundColor = '#2E8B57';
-//         createConfetti();
-//     } else {
-//         false_ansR.style.display = "block";
-//         corectR.style.display = "none";
-//         localStorage.setItem('correctAnswerR', 'wrongR');
-//         buttonR.style.backgroundColor = '#DC143C';
-//         define_ansR.style.display = "block";
+function checkAnswerR(buttonR, statusR) {
+    if (statusR === 'صح') {
+        score += 25;
+        corectR.style.display = "block";
+        false_ansR.style.display = "none";
+        localStorage.setItem('correctAnswerR', 'shownR');
+        buttonR.style.backgroundColor = '#2E8B57';
+        createConfetti();
+    } else {
+        false_ansR.style.display = "block";
+        corectR.style.display = "none";
+        localStorage.setItem('correctAnswerR', 'wrongR');
+        buttonR.style.backgroundColor = '#DC143C';
+        define_ansR.style.display = "block";
 
-//     }
+    }
     
-//     ans_buttonsR.forEach(btnR => {
-//         btnR.disabled = true;
-//         localStorage.setItem(btnR.textContent.trim(), 'clicked');
-//     });
+    ans_buttonsR.forEach(btnR => {
+        btnR.disabled = true;
+        localStorage.setItem(btnR.textContent.trim(), 'clicked');
+    });
     
-//     updateProgress();
-//     localStorage.setItem('score', score);
-// }
+    updateProgress();
+    localStorage.setItem('score', score);
+}
 // function checkAnswer2(button2, status2) {
 //     if (status2 === 'صح') {
 //         score += 25;
@@ -516,15 +516,15 @@ if (this.checked) {
         }
     });
 
-    // const buttonsR = document.querySelectorAll('.ans_buttonsR');
-    // buttonsR.forEach(buttonR => {
-    //     const buttonIdR = buttonR.textContent.trim();
-    //     const savedButtonStateR = localStorage.getItem(buttonIdR);
-    //     if (savedButtonStateR === 'clicked') {
-    //         buttonR.disabled = true;
+    const buttonsR = document.querySelectorAll('.ans_buttonsR');
+    buttonsR.forEach(buttonR => {
+        const buttonIdR = buttonR.textContent.trim();
+        const savedButtonStateR = localStorage.getItem(buttonIdR);
+        if (savedButtonStateR === 'clicked') {
+            buttonR.disabled = true;
             
-    //     }
-    // });
+        }
+    });
 
     // const buttons2 = document.querySelectorAll('.ans_buttons2');
     // buttons2.forEach(button2 => {

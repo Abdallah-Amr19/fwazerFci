@@ -33,9 +33,7 @@
     <p>أفضل الصيام .....؟
         <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
     </p>
-    <div id="countdown">
-        <span id="seconds"></span> 
-    </div> 
+   
     <div class="options">
         <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الأثنين و الخميس</button>
         <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">ثلاث ايام من كل شهر  </button>
@@ -53,7 +51,33 @@
 </div>
 
 
-      
+<h3>السؤال الثاني</h3>
+<div class="question-card">
+    <p>ما حكم صيام يوم الشك (اليوم الأخير من شعبان إذا لم يُرَ الهلال)؟
+        <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+    </p>
+    <div id="countdown">
+        <span id="seconds"></span> 
+    </div> 
+    <div class="options">
+        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">جائز بلا كراهة</button>
+        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">مكروه فقط</button>
+        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')"> محرم إلا لمن كان له عادة صيام</button> 
+        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">يجب صيامه احتياطًا</button>
+
+
+    </div>
+    <div class="result">
+        <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
+        <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+    </div>
+    <p id="define_ansR"> <span style="font-size: 32px;">محرم إلا لمن كان له عادة صيام</span>
+
+
+    </p>
+</div>
+
+
     
 
            <!-- <S></S> -->
