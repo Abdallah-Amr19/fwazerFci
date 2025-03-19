@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> -->
-            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> 
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt="">
+            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt="">  -->
                 <h1>دوسواااااعلياا!!!</h1>
             </button>
         </div>
@@ -29,53 +29,32 @@
 
         <h3>السؤال الأول</h3>
         <div id="quiz">
-<div class="question-card">
-    <p>أفضل الصيام .....؟
+            <div class="question-card">
+                <div class="hent_btn">
+                    <button id="hent_btn"><img src="./logic.svg" alt=""></button>
+            <p id="p3"> (السوره في الجزء ال 21)
+            </p>
+                </div>
+            <p>ما هي السوره التي تبدأ بهذه الأيات </p>
+            <p id="p2">ٱلَّذِينَ كَفَرُواْ وَصَدُّواْ عَن سَبِيلِ ٱللَّهِ أَضَلَّ أَعۡمَٰلَهُمۡ
         <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-    </p>
-   
-    <div class="options">
-        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الأثنين و الخميس</button>
-        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">ثلاث ايام من كل شهر  </button>
-        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">صوم يوم و إفطار يوم</button>        
+            </p>
 
-    </div>
-    <div class="result">
-        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-    </div>
-    <p id="define_ans"> <span>صوم يوم و إفطار يوم</span>
-
-
-    </p>
-</div>
-
-
-<h3>السؤال الثاني</h3>
-<div class="question-card">
-    <p>ما حكم صيام يوم الشك (اليوم الأخير من شعبان إذا لم يُرَ الهلال)؟
-        <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-    </p>
-    <div id="countdown">
-        <span id="seconds"></span> 
-    </div> 
-    <div class="options">
-        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">جائز بلا كراهة</button>
-        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">مكروه فقط</button>
-        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'صح')"> محرم إلا لمن كان له عادة صيام</button> 
-        <button class="ans_buttonsR" onclick="checkAnswerR(this, 'خطأ')">يجب صيامه احتياطًا</button>
-
-
-    </div>
-    <div class="result">
-        <p id="corect_ansR">عااااش إجابة صحيحة 🥳🎈</p>
-        <p id="false_ansR">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-    </div>
-    <p id="define_ansR"> <span style="font-size: 32px;">محرم إلا لمن كان له عادة صيام</span>
-
-
-    </p>
-</div>
+            <div id="countdown">
+                <span id="seconds"></span> 
+            </div> 
+            
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
+                <div class="result">
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="defineTextAnswer" style="display: none;">
+                    <span>سوره محمد</span>
+                </p>
+            </div>
+            
 
 
     
