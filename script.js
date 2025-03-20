@@ -47,84 +47,83 @@ define_ansR.style.display = "none";
 // }
 
 
-
 let score = 0;
-// function checkTextAnswer() {
-// const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
-// const correctAnswers = ["سوره محمد","محمد", "سورة محمد"];
-// const correctTextAnswer = document.getElementById('correctTextAnswer');
-// const falseTextAnswer = document.getElementById('falseTextAnswer');
-// const defineTextAnswer = document.getElementById('defineTextAnswer');
+function checkTextAnswer() {
+const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
+const correctAnswers = ["عاشوراء "];
+const correctTextAnswer = document.getElementById('correctTextAnswer');
+const falseTextAnswer = document.getElementById('falseTextAnswer');
+const defineTextAnswer = document.getElementById('defineTextAnswer');
 
-// const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
+const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
 
-// if (isCorrect) {
-// correctTextAnswer.style.display = "block";
-// falseTextAnswer.style.display = "none";
-// defineTextAnswer.style.display = "none";
-// score += 25; 
-// createConfetti();
-// localStorage.setItem('textAnswerState', 'correct');
-// } else {
-// falseTextAnswer.style.display = "block";
-// correctTextAnswer.style.display = "none";
-// defineTextAnswer.style.display = "block";
-// localStorage.setItem('textAnswerState', 'wrong');
-// }
+if (isCorrect) {
+correctTextAnswer.style.display = "block";
+falseTextAnswer.style.display = "none";
+defineTextAnswer.style.display = "none";
+score += 25; 
+createConfetti();
+localStorage.setItem('textAnswerState', 'correct');
+} else {
+falseTextAnswer.style.display = "block";
+correctTextAnswer.style.display = "none";
+defineTextAnswer.style.display = "block";
+localStorage.setItem('textAnswerState', 'wrong');
+}
 
-// updateProgress(); 
-// localStorage.setItem('score', score); 
-// }
+updateProgress(); 
+localStorage.setItem('score', score); 
+}
 
-// function normalizeArabicText(text) {
-// return text
-// .trim()
-// .toLowerCase()
-// .replace(/[\u064B-\u065F]/g, '')
-// .replace(/[أإآا]/g, 'ا')
-// .replace(/[ىي]/g, 'ي')
-// .replace(/ة/g, 'ه');
-// }
-// const submit_button = document.getElementById('submit_button');
+function normalizeArabicText(text) {
+return text
+.trim()
+.toLowerCase()
+.replace(/[\u064B-\u065F]/g, '')
+.replace(/[أإآا]/g, 'ا')
+.replace(/[ىي]/g, 'ي')
+.replace(/ة/g, 'ه');
+}
+const submit_button = document.getElementById('submit_button');
 
 
-// submit_button.addEventListener('click', function() {
-// submit_button.disabled = true;
-// })
-// window.addEventListener('load', () => {
-// const answerInput = document.getElementById('answerInput');
-// const submitButton = document.querySelector('.submit-button');
-// const correctTextAnswer = document.getElementById('correctTextAnswer');
-// const falseTextAnswer = document.getElementById('falseTextAnswer');
-// const defineTextAnswer = document.getElementById('defineTextAnswer');
+submit_button.addEventListener('click', function() {
+submit_button.disabled = true;
+})
+window.addEventListener('load', () => {
+const answerInput = document.getElementById('answerInput');
+const submitButton = document.querySelector('.submit-button');
+const correctTextAnswer = document.getElementById('correctTextAnswer');
+const falseTextAnswer = document.getElementById('falseTextAnswer');
+const defineTextAnswer = document.getElementById('defineTextAnswer');
 
-// if (localStorage.getItem('textAnswerSubmitted') === 'true') {
-// answerInput.disabled = true;
-// submitButton.disabled = true;
+if (localStorage.getItem('textAnswerSubmitted') === 'true') {
+answerInput.disabled = true;
+submitButton.disabled = true;
 
-// if (localStorage.getItem('textAnswerCorrect') === 'true') {
-//     correctTextAnswer.style.display = "block";
-//     falseTextAnswer.style.display = "none";
-//     defineTextAnswer.style.display = "none";
-// } else {
-//     falseTextAnswer.style.display = "block";
-//     correctTextAnswer.style.display = "none";
-//     defineTextAnswer.style.display = "block";
-// }
-// }
-// const savedTextAnswer = localStorage.getItem('textAnswerState');
-// if (savedTextAnswer === 'correct') {
-// document.getElementById('correctTextAnswer').style.display = 'block';
-// } else if (savedTextAnswer === 'wrong') {
-// document.getElementById('falseTextAnswer').style.display = 'block';
-// document.getElementById('defineTextAnswer').style.display = 'block';
-// }
-// });
+if (localStorage.getItem('textAnswerCorrect') === 'true') {
+    correctTextAnswer.style.display = "block";
+    falseTextAnswer.style.display = "none";
+    defineTextAnswer.style.display = "none";
+} else {
+    falseTextAnswer.style.display = "block";
+    correctTextAnswer.style.display = "none";
+    defineTextAnswer.style.display = "block";
+}
+}
+const savedTextAnswer = localStorage.getItem('textAnswerState');
+if (savedTextAnswer === 'correct') {
+document.getElementById('correctTextAnswer').style.display = 'block';
+} else if (savedTextAnswer === 'wrong') {
+document.getElementById('falseTextAnswer').style.display = 'block';
+document.getElementById('defineTextAnswer').style.display = 'block';
+}
+});
 function resetAllData() {
-//     document.getElementById('answerInput').value = '';
-// document.getElementById('correctTextAnswer').style.display = 'none';
-// document.getElementById('falseTextAnswer').style.display = 'none';
-// document.getElementById('defineTextAnswer').style.display = 'none';
+    document.getElementById('answerInput').value = '';
+document.getElementById('correctTextAnswer').style.display = 'none';
+document.getElementById('falseTextAnswer').style.display = 'none';
+document.getElementById('defineTextAnswer').style.display = 'none';
         
         score = 0;
 // p3.style.display = "none";
@@ -146,8 +145,8 @@ function resetAllData() {
             buttonR.disabled = false;
             
         });
-        // const submit_button = document.getElementById('submit_button');
-        // submit_button.disabled = false;
+        const submit_button = document.getElementById('submit_button');
+        submit_button.disabled = false;
         
 
 
