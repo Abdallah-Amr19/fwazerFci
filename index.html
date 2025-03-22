@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt="">
-            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt="">  -->
+            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> -->
+            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> 
                 <h1>دوسواااااعلياا!!!</h1>
             </button>
         </div>
@@ -30,49 +30,20 @@
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
-                <p>ما هي الغزوة التي لم يشارك بها النبي محمد صلي الله عليه وسلم
+                <p>من هو الصحابي الملقب ب حيدره ؟
         <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
                 </p>
-               
-                    <div class="options">
-                        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')"> غزوة تبوك </button>
-                        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')"> غزوة مؤته  </button>
-                        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">غزوةالخندق</button> 
-                        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">غزوةالأنفال</button>
-                
-                
-                    </div>
-                    <div class="result">
-                        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-                        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-                    </div>
-                    <p id="define_ans"> <span>غزوة مؤته </span>
-                    
-                    </p>
-                </div>
-                
-                <h3>السؤال الثاني</h3>
-            <div class="question-card">
-                <p>كم عدد الرسل الذين ذكروا في القران الكريم 
-        <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-                </p>
-                <div id="countdown">
-                    <span id="seconds"></span> 
-                </div> 
-                <div class="options">
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">12</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">15</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">25</button>
-                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">33</button>
-                </div>
+                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
+                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
                 <div class="result">
-                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
                 </div>
-                <p id="define_ans2"> <span>25</span>
+                <p id="defineTextAnswer" style="display: none;">
+                    <span>علي بن ابي طالب</span><br>أَنا الَّذي سَمَتني أُمي حَيدَرَه. ضِرغامُ آجامٍ وَلَيثُ قَسوَرَه
                 </p>
             </div>
-
+                
       
             
         
