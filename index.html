@@ -16,8 +16,8 @@
     
     <div class="container">
         <div class="icon_con">
-            <!-- <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt=""> -->
-            <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt=""> 
+            <button  id="resetButton" class="resetButton"><img src="./refresh (1).svg" alt="">
+            <!-- <button  id="resetButton2" class="resetButton"><img src="./refresh (1).svg" alt="">  -->
                 <h1>دوسواااااعلياا!!!</h1>
             </button>
         </div>
@@ -30,44 +30,28 @@
         <h3>السؤال الأول</h3>
         <div id="quiz">
             <div class="question-card">
-                <p>من هو الصحابي الملقب ب حيدره ؟
+                <p>من هو الصحابي الذي سماه النبي الطيب المطيب
         <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
+
                 </p>
-                <input type="text" id="answerInput" placeholder="اكتب الإجابة هنا">
-                <button id="submit_button" onclick="checkTextAnswer()">تحقق من الإجابة</button>
-                <div class="result">
-                    <p id="correctTextAnswer">عااااش إجابة صحيحة 🥳🎈</p>
-                    <p id="falseTextAnswer">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                <div id="countdown">
+                    <span id="seconds"></span> 
+                </div> 
+                <div class="options">
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">سعد بن ابي وقاص</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">عمران بن حصين</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'خطأ')">زيد بن حارثه</button>
+                    <button class="ans_buttons2" onclick="checkAnswer2(this, 'صح')">عمار بن ياسر</button>
                 </div>
-                <p id="defineTextAnswer" style="display: none;">
-                    <span>علي بن ابي طالب</span><br>أَنا الَّذي سَمَتني أُمي حَيدَرَه. ضِرغامُ آجامٍ وَلَيثُ قَسوَرَه
+                <div class="result">
+                    <p id="corect_ans2">عااااش إجابة صحيحة 🥳🎈</p>
+                    <p id="false_ans2">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
+                </div>
+                <p id="define_ans2"> <span>عمار بن ياسر</span>
                 </p>
             </div>
-                
 
-            <h3>السؤال الثاني</h3>
-<div class="question-card">
-    <p>من هو الصحابي الذي جمع القران في عهد ابي بكر الصديق ؟
-        <span style="color: brown;"><br>(معاك 25 ثانية فقط للأجابة)</span>
-    </p>
-    <div id="countdown">
-        <span id="seconds"></span> 
-    </div> 
-    <div class="options">
-        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">عثمان بن عفان</button>
-        <button class="ans_buttons" onclick="checkAnswer(this, 'صح')">زيد بن ثابت </button>
-        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">مصعب بن عمير</button>
-        <button class="ans_buttons" onclick="checkAnswer(this, 'خطأ')">الزبير بن العوام</button>
-    </div>
-    <div class="result">
-        <p id="corect_ans">عااااش إجابة صحيحة 🥳🎈</p>
-        <p id="false_ans">للأسف إجابة خطأ 🚶‍♂️😶‍🌫️</p>
-    </div>
-    <p id="define_ans"> <span>زيد بن ثابت</span>
-
-    </p>
-</div>
-
+         
       
             
         
