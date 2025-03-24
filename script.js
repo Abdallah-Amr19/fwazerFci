@@ -1,21 +1,21 @@
-const corect = document.getElementById("corect_ans");
-const false_ans = document.getElementById("false_ans");
-const define_ans = document.getElementById("define_ans");
+// const corect = document.getElementById("corect_ans");
+// const false_ans = document.getElementById("false_ans");
+// const define_ans = document.getElementById("define_ans");
 // const corectR = document.getElementById("corect_ansR");
 // const false_ansR = document.getElementById("false_ansR");
 // const define_ansR = document.getElementById("define_ansR");
 // const p3 = document.getElementById("p3");
 // const hent_btn = document.getElementById("hent_btn");
-const corect2 = document.getElementById("corect_ans2");
-const false_ans2 = document.getElementById("false_ans2");
-const define_ans2 = document.getElementById("define_ans2");
+// const corect2 = document.getElementById("corect_ans2");
+// const false_ans2 = document.getElementById("false_ans2");
+// const define_ans2 = document.getElementById("define_ans2");
 // const question_card_hedden = document.getElementById("question_card_hedden");
-const ans_buttons = document.querySelectorAll(".ans_buttons");
+// const ans_buttons = document.querySelectorAll(".ans_buttons");
 // const ans_buttonsR = document.querySelectorAll(".ans_buttonsR");
-const ans_buttons2= document.querySelectorAll(".ans_buttons2");
-corect.style.display = "none";
-false_ans.style.display = "none";
-define_ans.style.display = "none";
+// const ans_buttons2= document.querySelectorAll(".ans_buttons2");
+// corect.style.display = "none";
+// false_ans.style.display = "none";
+// define_ans.style.display = "none";
 // corectR.style.display = "none";
 // false_ansR.style.display = "none";
 // define_ansR.style.display = "none";
@@ -30,9 +30,9 @@ define_ans.style.display = "none";
 
 // x.remove()
 
-corect2.style.display = "none";
-false_ans2.style.display = "none";
-define_ans2.style.display = "none";
+// corect2.style.display = "none";
+// false_ans2.style.display = "none";
+// define_ans2.style.display = "none";
 // const isHidden = localStorage.getItem('question_card_hedden_hidden');
 
 // if (isHidden === 'true') {
@@ -48,82 +48,82 @@ define_ans2.style.display = "none";
 
 
 let score = 0;
-// function checkTextAnswer() {
-// const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
-// const correctAnswers = ["علي بن ابي طالب", "علي بن أبي طالب", "علي بن ابي طالب رضي الله عنه", "علي بن أبي طالب رضي الله عنه"];
-// const correctTextAnswer = document.getElementById('correctTextAnswer');
-// const falseTextAnswer = document.getElementById('falseTextAnswer');
-// const defineTextAnswer = document.getElementById('defineTextAnswer');
+function checkTextAnswer() {
+const userAnswer = normalizeArabicText(document.getElementById('answerInput').value);
+const correctAnswers = ["عمران بن الحصين","عمران","عمران بن الحصين رضي الله عنه","عمران بن حصين","عمران بن حصين رضي الله عنه","عمران بن حصين"];
+const correctTextAnswer = document.getElementById('correctTextAnswer');
+const falseTextAnswer = document.getElementById('falseTextAnswer');
+const defineTextAnswer = document.getElementById('defineTextAnswer');
 
-// const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
+const isCorrect = correctAnswers.some(answer => normalizeArabicText(answer) === userAnswer);
 
-// if (isCorrect) {
-// correctTextAnswer.style.display = "block";
-// falseTextAnswer.style.display = "none";
-// defineTextAnswer.style.display = "none";
-// score += 25; 
-// createConfetti();
-// localStorage.setItem('textAnswerState', 'correct');
-// } else {
-// falseTextAnswer.style.display = "block";
-// correctTextAnswer.style.display = "none";
-// defineTextAnswer.style.display = "block";
-// localStorage.setItem('textAnswerState', 'wrong');
-// }
+if (isCorrect) {
+correctTextAnswer.style.display = "block";
+falseTextAnswer.style.display = "none";
+defineTextAnswer.style.display = "none";
+score += 25; 
+createConfetti();
+localStorage.setItem('textAnswerState', 'correct');
+} else {
+falseTextAnswer.style.display = "block";
+correctTextAnswer.style.display = "none";
+defineTextAnswer.style.display = "block";
+localStorage.setItem('textAnswerState', 'wrong');
+}
 
-// updateProgress(); 
-// localStorage.setItem('score', score); 
-// }
+updateProgress(); 
+localStorage.setItem('score', score); 
+}
 
-// function normalizeArabicText(text) {
-// return text
-// .trim()
-// .toLowerCase()
-// .replace(/[\u064B-\u065F]/g, '')
-// .replace(/[أإآا]/g, 'ا')
-// .replace(/[ىي]/g, 'ي')
-// .replace(/ة/g, 'ه');
-// }
-// const submit_button = document.getElementById('submit_button');
+function normalizeArabicText(text) {
+return text
+.trim()
+.toLowerCase()
+.replace(/[\u064B-\u065F]/g, '')
+.replace(/[أإآا]/g, 'ا')
+.replace(/[ىي]/g, 'ي')
+.replace(/ة/g, 'ه');
+}
+const submit_button = document.getElementById('submit_button');
 
 
-// submit_button.addEventListener('click', function() {
-// submit_button.disabled = true;
-// })
-// window.addEventListener('load', () => {
-// const answerInput = document.getElementById('answerInput');
-// const submitButton = document.querySelector('.submit-button');
-// const correctTextAnswer = document.getElementById('correctTextAnswer');
-// const falseTextAnswer = document.getElementById('falseTextAnswer');
-// const defineTextAnswer = document.getElementById('defineTextAnswer');
+submit_button.addEventListener('click', function() {
+submit_button.disabled = true;
+})
+window.addEventListener('load', () => {
+const answerInput = document.getElementById('answerInput');
+const submitButton = document.querySelector('.submit-button');
+const correctTextAnswer = document.getElementById('correctTextAnswer');
+const falseTextAnswer = document.getElementById('falseTextAnswer');
+const defineTextAnswer = document.getElementById('defineTextAnswer');
 
-// if (localStorage.getItem('textAnswerSubmitted') === 'true') {
-// answerInput.disabled = true;
-// submitButton.disabled = true;
+if (localStorage.getItem('textAnswerSubmitted') === 'true') {
+answerInput.disabled = true;
+submitButton.disabled = true;
 
-// if (localStorage.getItem('textAnswerCorrect') === 'true') {
-//     correctTextAnswer.style.display = "block";
-//     falseTextAnswer.style.display = "none";
-//     defineTextAnswer.style.display = "none";
-// } else {
-//     falseTextAnswer.style.display = "block";
-//     correctTextAnswer.style.display = "none";
-//     defineTextAnswer.style.display = "block";
-// }
-// }
-// const savedTextAnswer = localStorage.getItem('textAnswerState');
-// if (savedTextAnswer === 'correct') {
-// document.getElementById('correctTextAnswer').style.display = 'block';
-// } else if (savedTextAnswer === 'wrong') {
-// document.getElementById('falseTextAnswer').style.display = 'block';
-// document.getElementById('defineTextAnswer').style.display = 'block';
-// }
-// });
+if (localStorage.getItem('textAnswerCorrect') === 'true') {
+    correctTextAnswer.style.display = "block";
+    falseTextAnswer.style.display = "none";
+    defineTextAnswer.style.display = "none";
+} else {
+    falseTextAnswer.style.display = "block";
+    correctTextAnswer.style.display = "none";
+    defineTextAnswer.style.display = "block";
+}
+}
+const savedTextAnswer = localStorage.getItem('textAnswerState');
+if (savedTextAnswer === 'correct') {
+document.getElementById('correctTextAnswer').style.display = 'block';
+} else if (savedTextAnswer === 'wrong') {
+document.getElementById('falseTextAnswer').style.display = 'block';
+document.getElementById('defineTextAnswer').style.display = 'block';
+}
+});
 function resetAllData() {
-//     document.getElementById('answerInput').value = '';
-// document.getElementById('correctTextAnswer').style.display = 'none';
-// document.getElementById('falseTextAnswer').style.display = 'none';
-// document.getElementById('defineTextAnswer').style.display = 'none';
+    document.getElementById('answerInput').value = '';
+document.getElementById('correctTextAnswer').style.display = 'none';
+document.getElementById('falseTextAnswer').style.display = 'none';
+document.getElementById('defineTextAnswer').style.display = 'none';
         
         score = 0;
 // p3.style.display = "none";
@@ -135,31 +135,31 @@ function resetAllData() {
           
         });
         
-        const buttons = document.querySelectorAll('.ans_buttons');
-        buttons.forEach(button => {
-            button.disabled = false;
+        // const buttons = document.querySelectorAll('.ans_buttons');
+        // buttons.forEach(button => {
+        //     button.disabled = false;
             
-        });
+        // });
         // const buttonsR = document.querySelectorAll('.ans_buttonsR');
         // buttonsR.forEach(buttonR => {
         //     buttonR.disabled = false;
             
         // });
-        // const submit_button = document.getElementById('submit_button');
-        // submit_button.disabled = false;
+        const submit_button = document.getElementById('submit_button');
+        submit_button.disabled = false;
         
 
 
-        const buttons2 = document.querySelectorAll('.ans_buttons2');
-        buttons2.forEach(button2 => {
-            button2.disabled = false;
+        // const buttons2 = document.querySelectorAll('.ans_buttons2');
+        // buttons2.forEach(button2 => {
+        //     button2.disabled = false;
             
-        });
+        // });
         
         
-        corect.style.display = "none";
-        false_ans.style.display = "none";
-        define_ans.style.display = "none";
+        // corect.style.display = "none";
+        // false_ans.style.display = "none";
+        // define_ans.style.display = "none";
 //         corectR.style.display = "none";
 //         false_ansR.style.display = "none";
 //         define_ansR.style.display = "none";
@@ -168,13 +168,13 @@ function resetAllData() {
 //        buttonR.style.backgroundColor = '#8b5e3c';
 
 //    });
-   ans_buttons2.forEach(button2 => {
-    button2.style.backgroundColor = '#8b5e3c';
+//    ans_buttons2.forEach(button2 => {
+//     button2.style.backgroundColor = '#8b5e3c';
 
-});
-        corect2.style.display = "none";
-        false_ans2.style.display = "none";
-        define_ans2.style.display = "none";
+// });
+//         corect2.style.display = "none";
+//         false_ans2.style.display = "none";
+//         define_ans2.style.display = "none";
 
         updateProgress();
         
@@ -187,37 +187,37 @@ function resetAllData() {
 
     }
 
-const resetButton = document.getElementById('resetButton');
+// const resetButton = document.getElementById('resetButton');
 
-resetButton.addEventListener('click', function () {
-    resetAllData();
-    resetButton.style.display = "none"; 
-    localStorage.setItem('resetButtonState', 'hidden');
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const buttonState = localStorage.getItem('resetButtonState');
-    if (buttonState === 'hidden') {
-        resetButton.style.display = "none"; 
-    } else {
-        resetButton.style.display = "block"; 
-    }
-});
-
-// const resetButton2 = document.getElementById('resetButton2');
-
-// resetButton2.addEventListener('click', function () {
-//     resetAllData(); 
-//     resetButton2.style.display = "none"; 
-//     localStorage.setItem('resetButtonState2', 'hidden2');
+// resetButton.addEventListener('click', function () {
+//     resetAllData();
+//     resetButton.style.display = "none"; 
+//     localStorage.setItem('resetButtonState', 'hidden');
 // });
 // document.addEventListener('DOMContentLoaded', function () {
-//     const buttonState2 = localStorage.getItem('resetButtonState2');
-//     if (buttonState2 === 'hidden2') {
-//         resetButton2.style.display = "none";    
+//     const buttonState = localStorage.getItem('resetButtonState');
+//     if (buttonState === 'hidden') {
+//         resetButton.style.display = "none"; 
 //     } else {
-//         resetButton2.style.display = "block"; 
+//         resetButton.style.display = "block"; 
 //     }
 // });
+
+const resetButton2 = document.getElementById('resetButton2');
+
+resetButton2.addEventListener('click', function () {
+    resetAllData(); 
+    resetButton2.style.display = "none"; 
+    localStorage.setItem('resetButtonState2', 'hidden2');
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const buttonState2 = localStorage.getItem('resetButtonState2');
+    if (buttonState2 === 'hidden2') {
+        resetButton2.style.display = "none";    
+    } else {
+        resetButton2.style.display = "block"; 
+    }
+});
 
 window.addEventListener('load', () => {
     const savedScore = localStorage.getItem('score');
@@ -237,26 +237,26 @@ window.addEventListener('load', () => {
     });
    
 
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        const buttonId2 = button2.textContent.trim();
-        const savedButtonState2 = localStorage.getItem(buttonId2);
-        if (savedButtonState2 === 'clicked') {
-            button2.disabled = true;
-        }
-    });
+    // const buttons2 = document.querySelectorAll('.ans_buttons2');
+    // buttons2.forEach(button2 => {
+    //     const buttonId2 = button2.textContent.trim();
+    //     const savedButtonState2 = localStorage.getItem(buttonId2);
+    //     if (savedButtonState2 === 'clicked') {
+    //         button2.disabled = true;
+    //     }
+    // });
 
-    const savedCorrectAnswer = localStorage.getItem('correctAnswer');
-    if (savedCorrectAnswer === 'shown') {
-        corect.style.display = "block";
-        false_ans.style.display = "none";
-        define_ans.style.display = "none";
+    // const savedCorrectAnswer = localStorage.getItem('correctAnswer');
+    // if (savedCorrectAnswer === 'shown') {
+    //     corect.style.display = "block";
+    //     false_ans.style.display = "none";
+    //     define_ans.style.display = "none";
        
-    } else if (savedCorrectAnswer === 'wrong') {
-        false_ans.style.display = "block";
-        corect.style.display = "none";
-        define_ans.style.display = "block";
-    }
+    // } else if (savedCorrectAnswer === 'wrong') {
+    //     false_ans.style.display = "block";
+    //     corect.style.display = "none";
+    //     define_ans.style.display = "block";
+    // }
 
     // const savedCorrectAnswerR = localStorage.getItem('correctAnswerR');
     // if (savedCorrectAnswerR === 'shownR') {
@@ -272,98 +272,98 @@ window.addEventListener('load', () => {
 
     // }
 
-    const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
-    if (savedCorrectAnswer2 === 'shown2') {
+    // const savedCorrectAnswer2 = localStorage.getItem('correctAnswer2');
+    // if (savedCorrectAnswer2 === 'shown2') {
        
-        corect2.style.display = "block";
-        false_ans2.style.display = "none";
-        define_ans2.style.display = "none";
-    } else if (savedCorrectAnswer2 === 'wrong2') {
+    //     corect2.style.display = "block";
+    //     false_ans2.style.display = "none";
+    //     define_ans2.style.display = "none";
+    // } else if (savedCorrectAnswer2 === 'wrong2') {
         
-        false_ans2.style.display = "block";
-        corect2.style.display = "none";
-        define_ans2.style.display = "block";
+    //     false_ans2.style.display = "block";
+    //     corect2.style.display = "none";
+    //     define_ans2.style.display = "block";
 
-    }
+    // }
 });
 
-function checkAnswer(button, status) {
-    if (status === 'صح') {
-        score += 25;
-        corect.style.display = "block";
-        false_ans.style.display = "none";
-        localStorage.setItem('correctAnswer', 'shown');
-        button.style.backgroundColor = '#2E8B57';
-        createConfetti();
-    } else {
-        false_ans.style.display = "block";
-        corect.style.display = "none";
-        localStorage.setItem('correctAnswer', 'wrong');
-        button.style.backgroundColor = '#DC143C';
-        define_ans.style.display = "block";
-
-    }
-    
-    ans_buttons.forEach(btn => {
-        btn.disabled = true;
-        localStorage.setItem(btn.textContent.trim(), 'clicked');
-    });
-    
-    updateProgress();
-    localStorage.setItem('score', score);
-}
-// function checkAnswerR(buttonR, statusR) {
-//     if (statusR === 'صح') {
+// function checkAnswer(button, status) {
+//     if (status === 'صح') {
 //         score += 25;
-//         corectR.style.display = "block";
-//         false_ansR.style.display = "none";
-//         localStorage.setItem('correctAnswerR', 'shownR');
-//         buttonR.style.backgroundColor = '#2E8B57';
+//         corect.style.display = "block";
+//         false_ans.style.display = "none";
+//         localStorage.setItem('correctAnswer', 'shown');
+//         button.style.backgroundColor = '#2E8B57';
 //         createConfetti();
 //     } else {
-//         false_ansR.style.display = "block";
-//         corectR.style.display = "none";
-//         localStorage.setItem('correctAnswerR', 'wrongR');
-//         buttonR.style.backgroundColor = '#DC143C';
-//         define_ansR.style.display = "block";
+//         false_ans.style.display = "block";
+//         corect.style.display = "none";
+//         localStorage.setItem('correctAnswer', 'wrong');
+//         button.style.backgroundColor = '#DC143C';
+//         define_ans.style.display = "block";
 
 //     }
     
-//     ans_buttonsR.forEach(btnR => {
-//         btnR.disabled = true;
-//         localStorage.setItem(btnR.textContent.trim(), 'clicked');
+//     ans_buttons.forEach(btn => {
+//         btn.disabled = true;
+//         localStorage.setItem(btn.textContent.trim(), 'clicked');
 //     });
     
 //     updateProgress();
 //     localStorage.setItem('score', score);
 // }
-function checkAnswer2(button2, status2) {
-    if (status2 === 'صح') {
-        score += 25;
-        
-        corect2.style.display = "block";
-        false_ans2.style.display = "none";
-        localStorage.setItem('correctAnswer2', 'shown2');
-        button2.style.backgroundColor = '#2E8B57';
-        createConfetti();
-    } else {
-        
-        false_ans2.style.display = "block";
-        corect2.style.display = "none";
-        localStorage.setItem('correctAnswer2', 'wrong2');
-        button2.style.backgroundColor = '#DC143C';
-        define_ans2.style.display = "block";
+// // function checkAnswerR(buttonR, statusR) {
+// //     if (statusR === 'صح') {
+// //         score += 25;
+// //         corectR.style.display = "block";
+// //         false_ansR.style.display = "none";
+// //         localStorage.setItem('correctAnswerR', 'shownR');
+// //         buttonR.style.backgroundColor = '#2E8B57';
+// //         createConfetti();
+// //     } else {
+// //         false_ansR.style.display = "block";
+// //         corectR.style.display = "none";
+// //         localStorage.setItem('correctAnswerR', 'wrongR');
+// //         buttonR.style.backgroundColor = '#DC143C';
+// //         define_ansR.style.display = "block";
 
-    }
+// //     }
     
-    ans_buttons2.forEach(btn2 => {
-        btn2.disabled = true;
-        localStorage.setItem(btn2.textContent.trim(), 'clicked');
-    });
+// //     ans_buttonsR.forEach(btnR => {
+// //         btnR.disabled = true;
+// //         localStorage.setItem(btnR.textContent.trim(), 'clicked');
+// //     });
     
-    updateProgress();
-    localStorage.setItem('score', score);
-}
+// //     updateProgress();
+// //     localStorage.setItem('score', score);
+// // }
+// function checkAnswer2(button2, status2) {
+//     if (status2 === 'صح') {
+//         score += 25;
+        
+//         corect2.style.display = "block";
+//         false_ans2.style.display = "none";
+//         localStorage.setItem('correctAnswer2', 'shown2');
+//         button2.style.backgroundColor = '#2E8B57';
+//         createConfetti();
+//     } else {
+        
+//         false_ans2.style.display = "block";
+//         corect2.style.display = "none";
+//         localStorage.setItem('correctAnswer2', 'wrong2');
+//         button2.style.backgroundColor = '#DC143C';
+//         define_ans2.style.display = "block";
+
+//     }
+    
+//     ans_buttons2.forEach(btn2 => {
+//         btn2.disabled = true;
+//         localStorage.setItem(btn2.textContent.trim(), 'clicked');
+//     });
+    
+//     updateProgress();
+//     localStorage.setItem('score', score);
+// }
 
 function updateScore(points) {
     score += points;
@@ -505,15 +505,15 @@ if (this.checked) {
 });
 });
 
-    const buttons = document.querySelectorAll('.ans_buttons');
-    buttons.forEach(button => {
-        const buttonId = button.textContent.trim();
-        const savedButtonState = localStorage.getItem(buttonId);
-        if (savedButtonState === 'clicked') {
-            button.disabled = true;
+    // const buttons = document.querySelectorAll('.ans_buttons');
+    // buttons.forEach(button => {
+    //     const buttonId = button.textContent.trim();
+    //     const savedButtonState = localStorage.getItem(buttonId);
+    //     if (savedButtonState === 'clicked') {
+    //         button.disabled = true;
             
-        }
-    });
+    //     }
+    // });
 
     // const buttonsR = document.querySelectorAll('.ans_buttonsR');
     // buttonsR.forEach(buttonR => {
@@ -525,15 +525,15 @@ if (this.checked) {
     //     }
     // });
 
-    const buttons2 = document.querySelectorAll('.ans_buttons2');
-    buttons2.forEach(button2 => {
-        const buttonId2 = button2.textContent.trim();
-        const savedButtonState2 = localStorage.getItem(buttonId2);
-        if (savedButtonState2 === 'clicked') {
-            button2.disabled = true;
+    // const buttons2 = document.querySelectorAll('.ans_buttons2');
+    // buttons2.forEach(button2 => {
+    //     const buttonId2 = button2.textContent.trim();
+    //     const savedButtonState2 = localStorage.getItem(buttonId2);
+    //     if (savedButtonState2 === 'clicked') {
+    //         button2.disabled = true;
             
-        }
-    });
+    //     }
+    // });
 
     const checkboxess = document.querySelectorAll('input[type="checkbox"]');
 window.addEventListener('load', () => {
